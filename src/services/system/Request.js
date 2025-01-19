@@ -1,7 +1,7 @@
 import axios from "axios";
 import NProgress from 'nprogress';
 
-const API_URL = 'lightconvert-e1hmuxd8v-rainolds-projects.vercel.app';
+const API_URL = 'https://lightconvert-api.vercel.app/';
 
 const apiClient = axios.create({
     baseURL: API_URL,
