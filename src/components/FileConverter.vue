@@ -124,7 +124,7 @@ const downloadConvertedFile = () => {
     document.body.appendChild(link);
     link.click();
 
-    document.body.removeChild(link);
+    // document.body.removeChild(link);
 };
 
 const secretKey = 'mySecretKey123';
