@@ -33,14 +33,16 @@
                 <Button type="primary" class="btn-60" htmlType="submit" :loading="convertionInProgress"
                         :disabled="!selectedFile">{{ convertButtonText }}
                 </Button>
-                <Button
+
+                <a
+                    id="download_converted_file_button"
                     v-if="downloadUrl"
-                    class="btn-60 mt-4"
-                    type="link"
-                    @click="downloadConvertedFile"
+                    class="link-60 mt-4"
+                    download
+                    :href="downloadUrl"
                 >
                     {{ downloadConverterFileButtonText }}
-                </Button>
+                </a>
             </div>
         </form>
     </div>
@@ -117,14 +119,10 @@ const downloadConvertedFile = () => {
         return;
     }
 
-    const link = document.createElement('a');
-    link.href = downloadUrl.value;
-    link.download = downloadUrl.value.split('/').pop();
-
-    document.body.appendChild(link);
-    link.click();
-
-    // document.body.removeChild(link);
+    setTimeout(() => {
+        const downloadButton = document.getElementById('download_converted_file_button');
+        downloadButton.click()
+    }, 1000)
 };
 
 const secretKey = 'mySecretKey123';

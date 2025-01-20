@@ -25,7 +25,6 @@
             </Button>
         </div>
 
-        <!-- Остальная часть страницы -->
         <div class="popular-conversions">
             <h2>Popular Image Conversions</h2>
             <div class="conversion-list">
