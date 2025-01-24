@@ -20,7 +20,6 @@ export const post = (url, data, silent = false) => {
             .then(response => {
                 NProgress.done();
                 resolve(response);
-                console.log(response);
             })
             .catch(error => {
                 NProgress.done();
@@ -36,7 +35,6 @@ export const get = (url, silent = true) => {
             .then(response => {
                 NProgress.done();
                 resolve(response.data);
-                console.log(response);
             })
             .catch(error => {
                 NProgress.done();

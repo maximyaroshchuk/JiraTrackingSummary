@@ -155,11 +155,7 @@ const convertFile = async () => {
     await showToaster('loading', 'Conversion started');
 
     try {
-        const response = await post('/api/convert', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
+        const response = await post('/api/convert', formData);
 
         downloadUrl.value = AES.decrypt(response.data.encryptedDownloadLink, secretKey).toString(enc.Utf8);
 

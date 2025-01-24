@@ -44,5 +44,28 @@
         }
       }
     }
+
+    .first {
+      @media (max-width: 992px) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .second {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+
+      @media (max-width: 992px) {
+        width: 100%;
+
+        p {
+          margin-right: 1rem;
+          margin-left: 1rem;
+          text-align: center;
+        }
+      }
+    }
   }
 }

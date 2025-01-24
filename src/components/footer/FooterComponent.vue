@@ -2,7 +2,7 @@
     <footer class="footer-wrapper">
         <div class="footer-content">
             <div class="footer-menu flex flex-wrap">
-                <div class="align-self-center">
+                <div class="first align-self-center">
                     <div class="flex flex-wrap px-3">
                         <div class="menu-item">
                             <h5 class="text-bold-600">Company</h5>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 text-center mr-6 mt-2 mt-md-2"><p>
+                <div class="second"><p>
                     © 2025 Strixyco <br><span class="text-muted d-none d-lg-inline d-xl-inline d-md-inline mt-1">Made in Ukraine 🇺🇦, with love ❤️  </span>
                 </p></div>
             </div>

@@ -1,6 +1,7 @@
 .converter-wrapper {
   max-width: 480px;
   width: 100%;
+  height: calc(100vh - 70px);
   padding: 0 12px;
 
   .choose-file-button, .convert-file-button {
