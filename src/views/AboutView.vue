@@ -40,6 +40,8 @@
             with
             precision and reliability.
         </p>
+
+        <small>App version: 1.0.0</small>
     </div>
 </template>
 <script setup lang="ts">
