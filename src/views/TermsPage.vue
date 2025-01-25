@@ -114,8 +114,8 @@
                 <h3>13. Contact Information</h3>
                 <p>If you have any questions about these Terms, please contact us at:</p>
                 <ul>
-                    <li>Email: <b>rainolddev@gmail.com</b></li>
-                    <li>Address: <b>Kovpaka St, 80, Lyubotyn, Kharkiv Oblast, 62435</b></li>
+                    <li>Email: <b>support@lightconvert.app</b></li>
+                    <!--                    <li>Address: <b>Kovpaka St, 80, Lyubotyn, Kharkiv Oblast, 62435</b></li>-->
                 </ul>
             </div>
 

@@ -163,9 +163,9 @@ const convertFile = async () => {
         downloadConvertedFile();
         await showToaster('success', 'Conversion completed successfully');
     } catch (error) {
-        console.error('Conversion error:', error);
-        await showToaster('error', error?.message);
+        selectedFile.value = null;
         convertionInProgress.value = false;
+        await showToaster('error', error.data?.message);
     }
 };
 

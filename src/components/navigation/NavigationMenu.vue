@@ -9,14 +9,14 @@ import {useRouter} from 'vue-router';
 const router = useRouter();
 
 const formats = {
-    Images: ['JPEG', 'JPG', 'PNG', 'WEBP', 'GIF', 'TIFF', 'TIF', 'HEIC', 'HEIF', 'SVG', 'JXL'],
+    Images: ['JPEG', 'JPG', 'PNG', 'GIF', 'TIFF', 'TIF', 'HEIC', 'HEIF', 'SVG'],
 };
 
 const conversionRules = {
     jpeg: ['png', 'webp', 'gif', 'tiff'],
     jpg: ['png', 'webp', 'gif', 'tiff'],
     png: ['jpeg', 'webp', 'gif', 'tiff'],
-    webp: ['jpeg', 'png', 'gif', 'tiff'],
+    // webp: ['jpeg', 'png', 'gif', 'tiff'],
     gif: ['jpeg', 'png', 'webp', 'tiff'],
     tiff: ['jpeg', 'png', 'webp', 'gif'],
     tif: ['jpeg', 'png', 'webp', 'gif'],
@@ -24,7 +24,7 @@ const conversionRules = {
     heic: ['jpeg', 'png', 'webp', 'gif', 'tiff'],
     heif: ['jpeg', 'png', 'webp', 'gif', 'tiff'],
 
-    jxl: ['jpeg', 'png', 'webp', 'gif', 'tiff'],
+    // jxl: ['jpeg', 'png', 'webp', 'gif', 'tiff'],
 
     svg: ['png', 'webp', 'gif', 'tiff'],
 };

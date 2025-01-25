@@ -121,7 +121,7 @@
                 <p><b>Inquiries and Concerns</b>: If you have any questions, concerns, or requests regarding this
                     Privacy Policy or our data practices, please contact us at:</p>
                 <ul>
-                    <li>Email: <b>rainolddev@gmail.com</b></li>
+                    <li>Email: <b>support@lightconvert.app</b></li>
                     <!--                    <li>Phone: <b>0738137712</b></li>-->
                     <!--                    <li>Address: <b>Kovpaka St, 80, Lyubotyn, Kharkiv Oblast, 62435</b></li>-->
                 </ul>
