@@ -45,7 +45,7 @@
 
                 <a
                     v-if="downloadUrl"
-                    ref="downloadLink"
+                    id="download_converted_file_button"
                     class="link-60"
                     download
                     :href="downloadUrl"
@@ -83,9 +83,7 @@ const props = defineProps({
     }
 });
 
-// Refs with minimal state
 const fileInputRef = ref(null);
-const downloadLink = ref(null);
 const fileName = ref('');
 const hasFile = ref(false);
 const fileSize = ref(0);
@@ -96,7 +94,6 @@ const selectedInputFormat = ref(null);
 const conversionInProgress = ref(false);
 const downloadUrl = ref(null);
 
-// Cleanup function to prevent memory leaks
 const cleanup = () => {
     if (downloadUrl.value) {
         URL.revokeObjectURL(downloadUrl.value);
@@ -185,6 +182,19 @@ const handleFileChange = async (event) => {
     hasFile.value = true;
 };
 
+const downloadConvertedFile = () => {
+    if (!downloadUrl.value) {
+        showToaster('error', t('converter.noFileAvailableForDownload'));
+        return;
+    }
+
+    setTimeout(() => {
+        const downloadButton = document.getElementById('download_converted_file_button');
+        downloadButton.click()
+    }, 1000)
+};
+
+
 const convertFile = async () => {
     if (!hasFile.value || !selectedOutputFormat.value) return;
 
@@ -215,10 +225,7 @@ const convertFile = async () => {
         const decryptedUrl = AES.decrypt(response.data.encryptedDownloadLink, CONVERSION_KEY).toString(enc.Utf8);
 
         downloadUrl.value = decryptedUrl;
-
-        if (downloadLink.value) {
-            setTimeout(() => downloadLink.value.click(), 1000);
-        }
+        downloadConvertedFile()
 
         await showToaster('success', t('converter.conversionSuccessfullyCompleted'));
     } catch (error) {
