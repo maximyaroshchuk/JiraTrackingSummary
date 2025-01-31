@@ -1,13 +1,13 @@
 import {createI18n} from 'vue-i18n';
-import en from '@/locales/en.json';
-import uk from '@/locales/uk.json';
-import zh from '@/locales/zh.json';
-import ja from '@/locales/ja.json';
-import pt from '@/locales/pt.json';
-import es from '@/locales/es.json';
-import de from '@/locales/de.json';
-import ru from '@/locales/ru.json';
-import pl from '@/locales/pl.json';
+import en from '../locales/en.json';
+import uk from '../locales/uk.json';
+import zh from '../locales/zh.json';
+import ja from '../locales/ja.json';
+import pt from '../locales/pt.json';
+import es from '../locales/es.json';
+import de from '../locales/de.json';
+import ru from '../locales/ru.json';
+import pl from '../locales/pl.json';
 
 // Все доступные переводы
 const messages = {
@@ -43,14 +43,7 @@ const i18n = createI18n({
     legacy: false,
     locale: detectLanguage(),
     fallbackLocale: 'en',
-    messages: Object.fromEntries(
-        Object.entries(messages).map(([key, value]) => [
-            key,
-            JSON.parse(JSON.stringify(value))
-        ])
-    ),
-    missingWarn: false,
-    fallbackWarn: false
+    messages,
 });
 
 

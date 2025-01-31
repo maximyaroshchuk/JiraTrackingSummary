@@ -114,84 +114,84 @@
     "terms": {
         "title": "Termos de Uso",
         "introduction": {
-            "title": "1. Introdução",
+            "title": "Introdução",
             "content": "Bem-vindo ao <b>LightConvert</b>! Estes Termos de Uso (\"Termos\") regem o seu acesso e uso do site, serviços e aplicativos do <b>LightConvert</b> (coletivamente, o \"Serviço\"). Ao usar o Serviço, você concorda em ficar vinculado a estes Termos. Se você não concordar com estes Termos, não deve usar o Serviço."
         },
         "eligibility": {
-            "title": "2. Elegibilidade",
+            "title": "Elegibilidade",
             "content": "Para usar o Serviço, você deve:<ul><li>Ter pelo menos <b>13 anos de idade</b>.</li><li>Ter capacidade legal para celebrar um contrato vinculativo.</li><li>Cumprir todas as leis e regulamentos aplicáveis.</li></ul>"
         },
         "description": {
-            "title": "3. Descrição do Serviço",
+            "title": "Descrição do Serviço",
             "content": "<b>LightConvert</b> fornece uma plataforma online para <b>conversão de arquivos</b> e <b>armazenamento</b>. O Serviço permite que os usuários:<ul><li>Convertam arquivos entre vários formatos.</li><li>Armazenem arquivos temporariamente para fins de conversão.</li><li>Baixem arquivos convertidos.</li></ul>"
         },
         "responsibilities": {
-            "title": "4. Responsabilidades do Usuário",
+            "title": "Responsabilidades do Usuário",
             "content": "Ao usar o Serviço, você concorda em:<ul><li>Usar o Serviço apenas para <b>fins legais</b>.</li><li>Não carregar ou converter arquivos que infrinjam <b>direitos de propriedade intelectual</b>, contenham <b>conteúdo ilegal</b> ou violem qualquer lei.</li><li>Não usar o Serviço para distribuir <b>malware</b>, <b>vírus</b> ou outro software prejudicial.</li><li>Não tentar fazer <b>engenharia reversa</b>, <b>descompilar</b> ou <b>desmontar</b> o Serviço.</li></ul>"
         },
         "intellectualProperty": {
-            "title": "5. Propriedade intelectual",
+            "title": "Propriedade intelectual",
             "yourContent": "<b>Seu Conteúdo</b>: Você mantém a propriedade de quaisquer arquivos que carregar ou converter usando o Serviço. Ao carregar arquivos, você concede ao <b>LightConvert</b> uma licença não exclusiva, mundial, isenta de royalties para usar, processar e armazenar seus arquivos exclusivamente para a prestação do Serviço.",
             "ourContent": "<b>Nosso Conteúdo</b>: Todos os direitos de propriedade intelectual no Serviço, incluindo, mas não se limitando a <b>software</b>, <b>logotipos</b> e <b>marcas registradas</b>, são de propriedade do <b>LightConvert</b> ou de seus licenciantes."
         },
         "prohibitedActivities": {
-            "title": "6. Atividades Proibidas",
+            "title": "Atividades Proibidas",
             "content": "Você não pode:<ul><li>Usar o Serviço para qualquer finalidade <b>ilegal</b> ou <b>não autorizada</b>.</li><li>Carregar ou converter arquivos que contenham <b>vírus</b>, <b>malware</b> ou outro conteúdo prejudicial.</li><li>Tentar obter <b>acesso não autorizado</b> ao Serviço ou seus sistemas.</li><li>Usar o Serviço de forma que possa <b>danificar</b>, <b>desativar</b> ou <b>prejudicar</b> o Serviço.</li></ul>"
         },
         "fileStorage": {
-            "title": "7. Armazenamento e Exclusão de Arquivos",
+            "title": "Armazenamento e Exclusão de Arquivos",
             "content": "Os arquivos carregados no <b>LightConvert</b> são armazenados temporariamente e serão automaticamente excluídos após <b>24 horas</b>. O <b>LightConvert</b> não é responsável por qualquer perda de dados resultante da exclusão de arquivos."
         },
         "limitationOfLiability": {
-            "title": "8. Limitação de Responsabilidade",
+            "title": "Limitação de Responsabilidade",
             "content": "O <b>LightConvert</b> é fornecido \"no estado em que se encontra\" e \"conforme disponível\", sem garantias de qualquer tipo, expressas ou implícitas. O <b>LightConvert</b> não é responsável por quaisquer <b>danos indiretos</b>, <b>incidentais</b> ou <b>consequenciais</b> decorrentes do uso do Serviço. O <b>LightConvert</b> não é responsável por qualquer perda ou corrupção de dados resultante do uso do Serviço."
         },
         "indemnification": {
-            "title": "9. Indenização",
+            "title": "Indenização",
             "content": "Você concorda em indenizar e isentar o <b>LightConvert</b>, suas afiliadas e seus respectivos diretores, funcionários e agentes de quaisquer reivindicações, responsabilidades, danos, perdas ou despesas decorrentes do seu uso do Serviço ou violação destes Termos."
         },
         "termination": {
-            "title": "10. Rescisão",
+            "title": "Rescisão",
             "content": "O <b>LightConvert</b> reserva-se o direito de suspender ou rescindir seu acesso ao Serviço a qualquer momento, com ou sem aviso prévio, por qualquer motivo, incluindo, mas não se limitando a, violação destes Termos."
         },
         "changesToTerms": {
-            "title": "11. Alterações a Estes Termos",
+            "title": "Alterações a Estes Termos",
             "content": "O <b>LightConvert</b> pode atualizar estes Termos periodicamente. Notificaremos você sobre quaisquer alterações publicando os novos Termos em nosso site. O uso contínuo do Serviço após as alterações entrarem em vigor constitui sua aceitação dos Termos revisados."
         },
         "governingLaw": {
-            "title": "12. Lei Aplicável",
+            "title": "Lei Aplicável",
             "content": "Estes Termos são regidos e interpretados de acordo com as leis da <b>Ucrânia</b>. Quaisquer disputas decorrentes ou relacionadas a estes Termos ou ao Serviço estarão sujeitas à jurisdição exclusiva dos tribunais da <b>Ucrânia</b>."
         },
         "contactInfo": {
-            "title": "13. Informações de Contato",
+            "title": "Informações de Contato",
             "content": "Se você tiver alguma dúvida sobre estes Termos, entre em contato conosco em:<ul><li>E-mail: <b>support@lightconvert.app</b></li></ul>"
         },
         "entireAgreement": {
-            "title": "14. Acordo Integral",
+            "title": " Acordo Integral",
             "content": "Estes Termos constituem o acordo integral entre você e o <b>LightConvert</b> em relação ao uso do Serviço e substituem quaisquer acordos ou entendimentos anteriores."
         },
         "severability": {
-            "title": "15. Divisibilidade",
+            "title": "Divisibilidade",
             "content": "Se qualquer disposição destes Termos for considerada inválida ou inexequível, as demais disposições permanecerão em pleno vigor e efeito."
         },
         "waiver": {
-            "title": "16. Renúncia",
+            "title": "Renúncia",
             "content": "A renúncia pelo <b>LightConvert</b> de qualquer disposição destes Termos não será considerada uma renúncia adicional ou contínua dessa disposição ou de qualquer outra disposição."
         },
         "assignment": {
-            "title": "17. Cessão",
+            "title": "Cessão",
             "content": "Você não pode ceder ou transferir seus direitos ou obrigações sob estes Termos sem o consentimento prévio por escrito do <b>LightConvert</b>."
         },
         "thirdPartyServices": {
-            "title": "18. Serviços de Terceiros",
+            "title": "Serviços de Terceiros",
             "content": "O Serviço pode integrar ou fornecer links para <b>serviços de terceiros</b>. O <b>LightConvert</b> não é responsável pelo conteúdo ou práticas desses serviços de terceiros."
         },
         "betaFeatures": {
-            "title": "19. Recursos Beta",
+            "title": "Recursos Beta",
             "content": "O <b>LightConvert</b> pode oferecer <b>recursos beta</b> ou serviços. Esses recursos são fornecidos \"no estado em que se encontram\" e podem ser descontinuados a qualquer momento sem aviso prévio."
         },
         "feedback": {
-            "title": "20. Feedback",
+            "title": "Feedback",
             "content": "Se você fornecer feedback ou sugestões sobre o Serviço, o <b>LightConvert</b> poderá usar esse feedback sem qualquer obrigação para com você."
         },
         "downloadOriginalFileText": "Baixar arquivo original"
@@ -234,42 +234,42 @@
     "privacy": {
         "title": "Política de Privacidade",
         "introduction": {
-            "title": "1. Introdução",
+            "title": "Introdução",
             "purpose": "<b>Propósito</b>: Esta Política de Privacidade descreve como a <b>Strixyco</b> (\"nós\", \"nosso\") coleta, usa e protege dados pessoais e não pessoais de usuários e clientes em relação ao nosso produto <b>LightConvert</b>. A proteção de dados é crítica para nós, e nos comprometemos a garantir sua privacidade de acordo com as leis aplicáveis.",
             "scope": "<b>Escopo</b>: Esta política aplica-se a todos os usuários do <b>LightConvert</b>, incluindo aqueles que utilizam nossos serviços, visitam nosso site ou interagem conosco por outros meios. Abrange todos os serviços do <b>LightConvert</b>, como <b>conversão de arquivos</b> e <b>armazenamento</b>."
         },
         "dataCollection": {
-            "title": "2. Tipos de Dados Coletados",
+            "title": "Tipos de Dados Coletados",
             "personalData": "<b>Dados Pessoais</b>: Nome, e-mail, nome de usuário, senha (armazenada com segurança), informações de pagamento (se aplicável), contato (ex: telefone) e outras informações que você fornecer.",
             "nonPersonalData": "<b>Dados Não Pessoais</b>: Endereço IP, informações do dispositivo (tipo, sistema operacional), cookies, dados de uso (interação com os serviços) e tipo/navegador."
         },
         "dataCollectionMethods": {
-            "title": "3. Métodos de Coleta",
+            "title": "Métodos de Coleta",
             "direct": "<b>Coleta Direta</b>: Coletamos dados pessoais quando você cria uma conta, preenche formulários ou faz compras.",
             "automated": "<b>Coleta Automática</b>: Dados não pessoais são coletados via cookies e tecnologias de rastreamento para analisar comportamento e uso.",
             "thirdParty": "<b>Dados de Terceiros</b>: Podemos receber dados de redes sociais ou processadores de pagamento se você vincular suas contas."
         },
         "dataUsage": {
-            "title": "4. Uso dos Dados",
+            "title": "Uso dos Dados",
             "serviceProvision": "<b>Prestação de Serviços</b>: Usamos dados para gerenciar conversão de arquivos, contas e suporte ao cliente.",
             "analyticsImprovement": "<b>Análise e Melhoria</b>: Analisamos dados para otimizar serviços e desenvolver funcionalidades.",
             "marketing": "<b>Marketing</b>: Enviamos comunicações de marketing. Você pode cancelar a qualquer momento.",
             "legalCompliance": "<b>Conformidade Legal</b>: Usamos dados para cumprir obrigações legais, como prevenção de fraudes."
         },
         "dataRetention": {
-            "title": "5. Retenção de Dados",
+            "title": "Retenção de Dados",
             "storageDuration": "<b>Período de Armazenamento</b>: Mantemos dados apenas pelo tempo necessário, salvo exigência legal.",
             "dataDeletion": "<b>Exclusão de Dados</b>: Solicite a exclusão via contato. Cumpriremos conforme a lei.",
             "fileDeletionPolicy": "<b>Política de Exclusão de Arquivos</b>: Arquivos são excluídos após <b>24 horas</b>, a menos que salvos em sua conta. Exclusão manual também é possível."
         },
         "dataSecurity": {
-            "title": "6. Segurança de Dados",
+            "title": "Segurança de Dados",
             "encryption": "<b>Criptografia</b>: Usamos padrões de criptografia para proteger dados contra acesso não autorizado.",
             "accessControl": "<b>Controle de Acesso</b>: Apenas pessoal autorizado tem acesso aos dados.",
             "breachResponse": "<b>Resposta a Violações</b>: Notificaremos você e autoridades em caso de violação."
         },
         "cookies": {
-            "title": "7. Cookies e Rastreamento",
+            "title": "Cookies e Rastreamento",
             "usage": "<b>Uso de Cookies</b>: Usamos cookies para melhorar experiência, memorizar preferências e analisar tráfego. Tipos incluem:",
             "types": {
                 "essential": "<b>Cookies Essenciais</b>: Necessários para funcionamento dos serviços.",
@@ -279,35 +279,35 @@
             "optOut": "<b>Opção de Recusa</b>: Gerencie cookies nas configurações do navegador ou entre em contato."
         },
         "dataSharing": {
-            "title": "8. Compartilhamento com Terceiros",
+            "title": "Compartilhamento com Terceiros",
             "partners": "<b>Parceiros</b>: Compartilhamos dados com processadores de pagamento e provedores de hospedagem.",
             "legalObligations": "<b>Obrigações Legais</b>: Divulgamos dados se exigido por lei.",
             "internationalTransfers": "<b>Transferências Internacionais</b>: Dados podem ser transferidos para outros países, com proteção adequada."
         },
         "userRights": {
-            "title": "9. Direitos do Usuário",
+            "title": "Direitos do Usuário",
             "access": "<b>Acesso e Correção</b>: Acesse e atualize dados via configurações da conta.",
             "portability": "<b>Portabilidade</b>: Solicite uma cópia dos dados em formato legível.",
             "erasure": "<b>Exclusão</b>: Peça a exclusão de dados, sujeito a retenções legais.",
             "withdrawal": "<b>Retirada de Consentimento</b>: Retire o consentimento a qualquer momento."
         },
         "childrenPrivacy": {
-            "title": "10. Privacidade de Crianças",
+            "title": "Privacidade de Crianças",
             "ageRestrictions": "<b>Restrição de Idade</b>: Nossos serviços são para maiores de 13 anos. Não coletamos dados de crianças menores.",
             "parentalConsent": "<b>Consentimento dos Pais</b>: Se detectarmos dados de menores, os excluiremos."
         },
         "policyChanges": {
-            "title": "11. Alterações na Política",
+            "title": "Alterações na Política",
             "notification": "<b>Notificação</b>: Atualizaremos esta política periodicamente. Alterações serão publicadas aqui.",
             "versioning": "<b>Versão</b>: Vigente desde <b>17 de janeiro de 2025</b>. Mudanças relevantes serão destacadas."
         },
         "contact": {
-            "title": "12. Contato",
+            "title": "Contato",
             "inquiries": "<b>Dúvidas</b>: Para questões sobre esta política, contate-nos:",
             "email": "support@lightconvert.app"
         },
         "governingLaw": {
-            "title": "13. Lei Aplicável",
+            "title": "Lei Aplicável",
             "jurisdiction": "<b>Jurisdição</b>: Esta política é regida pelas leis da <b>Ucrânia</b>. Disputas serão resolvidas nos tribunais da <b>Ucrânia</b>."
         },
         "downloadOriginalFileText": "Baixar arquivo original"

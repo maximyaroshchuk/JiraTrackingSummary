@@ -114,84 +114,84 @@
     "terms": {
         "title": "Nutzungsbedingungen",
         "introduction": {
-            "title": "1. Einführung",
+            "title": "Einführung",
             "content": "Willkommen bei <b>LightConvert</b>! Diese Nutzungsbedingungen („Bedingungen“) regeln Ihren Zugriff auf und die Nutzung der <b>LightConvert</b>-Website, -Dienste und -Anwendungen (zusammengefasst als „Dienst“). Durch die Nutzung des Dienstes erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie den Dienst nicht nutzen."
         },
         "eligibility": {
-            "title": "2. Berechtigung",
+            "title": "Berechtigung",
             "content": "Um den Dienst nutzen zu können, müssen Sie:<ul><li>Mindestens <b>13 Jahre alt</b> sein.</li><li>Die rechtliche Befähigung haben, eine bindende Vereinbarung einzugehen.</li><li>Alle geltenden Gesetze und Vorschriften einhalten.</li></ul>"
         },
         "description": {
-            "title": "3. Beschreibung des Dienstes",
+            "title": "Beschreibung des Dienstes",
             "content": "<b>LightConvert</b> bietet eine Online-Plattform für die <b>Dateikonvertierung</b> und <b>-speicherung</b>. Der Dienst ermöglicht es Benutzern:<ul><li>Dateien zwischen verschiedenen Formaten zu konvertieren.</li><li>Dateien vorübergehend zum Zweck der Konvertierung zu speichern.</li><li>Konvertierte Dateien herunterzuladen.</li></ul>"
         },
         "responsibilities": {
-            "title": "4. Benutzerpflichten",
+            "title": "Benutzerpflichten",
             "content": "Durch die Nutzung des Dienstes erklären Sie sich damit einverstanden:<ul><li>Den Dienst nur für <b>legale Zwecke</b> zu nutzen.</li><li>Keine Dateien hochzuladen oder zu konvertieren, die <b>geistige Eigentumsrechte</b> verletzen, <b>illegale Inhalte</b> enthalten oder gegen Gesetze verstoßen.</li><li>Den Dienst nicht zur Verbreitung von <b>Malware</b>, <b>Viren</b> oder anderer schädlicher Software zu nutzen.</li><li>Nicht zu versuchen, den Dienst <b>rückzuentwickeln</b>, <b>zu dekompilieren</b> oder <b>zu disassemblieren</b>.</li></ul>"
         },
         "intellectualProperty": {
-            "title": "5. Geistiges Eigentum",
+            "title": "Geistiges Eigentum",
             "yourContent": "<b>Ihre Inhalte</b>: Sie behalten das Eigentum an allen Dateien, die Sie mit dem Dienst hochladen oder konvertieren. Durch das Hochladen von Dateien gewähren Sie <b>LightConvert</b> eine nicht-exklusive, weltweite, gebührenfreie Lizenz, Ihre Dateien ausschließlich zum Zweck der Bereitstellung des Dienstes zu nutzen, zu verarbeiten und zu speichern.",
             "ourContent": "<b>Unsere Inhalte</b>: Alle geistigen Eigentumsrechte am Dienst, einschließlich, aber nicht beschränkt auf <b>Software</b>, <b>Logos</b> und <b>Marken</b>, sind Eigentum von <b>LightConvert</b> oder seinen Lizenzgebern."
         },
         "prohibitedActivities": {
-            "title": "6. Verbotene Aktivitäten",
+            "title": "Verbotene Aktivitäten",
             "content": "Sie dürfen:<ul><li>Den Dienst nicht für <b>illegale</b> oder <b>unautorisierte</b> Zwecke nutzen.</li><li>Keine Dateien hochladen oder konvertieren, die <b>Viren</b>, <b>Malware</b> oder andere schädliche Inhalte enthalten.</li><li>Nicht versuchen, <b>unbefugten Zugriff</b> auf den Dienst oder seine Systeme zu erlangen.</li><li>Den Dienst nicht auf eine Weise nutzen, die den Dienst <b>beschädigen</b>, <b>deaktivieren</b> oder <b>beeinträchtigen</b> könnte.</li></ul>"
         },
         "fileStorage": {
-            "title": "7. Dateispeicherung und -löschung",
+            "title": "Dateispeicherung und -löschung",
             "content": "Dateien, die auf <b>LightConvert</b> hochgeladen werden, werden vorübergehend gespeichert und nach <b>24 Stunden</b> automatisch gelöscht. <b>LightConvert</b> ist nicht verantwortlich für Datenverluste, die durch das Löschen von Dateien entstehen."
         },
         "limitationOfLiability": {
-            "title": "8. Haftungsbeschränkung",
+            "title": "Haftungsbeschränkung",
             "content": "<b>LightConvert</b> wird „wie besehen“ und „wie verfügbar“ ohne jegliche Gewährleistung, ausdrücklich oder implizit, bereitgestellt. <b>LightConvert</b> haftet nicht für <b>indirekte</b>, <b>zufällige</b> oder <b>Folgeschäden</b>, die sich aus der Nutzung des Dienstes ergeben. <b>LightConvert</b> ist nicht verantwortlich für Datenverluste oder -beschädigungen, die durch die Nutzung des Dienstes entstehen."
         },
         "indemnification": {
-            "title": "9. Freistellung",
+            "title": "Freistellung",
             "content": "Sie erklären sich damit einverstanden, <b>LightConvert</b>, seine verbundenen Unternehmen sowie deren jeweilige Direktoren, Mitarbeiter und Vertreter von allen Ansprüchen, Haftungen, Schäden, Verlusten oder Kosten freizustellen, die sich aus Ihrer Nutzung des Dienstes oder der Verletzung dieser Bedingungen ergeben."
         },
         "termination": {
-            "title": "10. Beendigung",
+            "title": "Beendigung",
             "content": "<b>LightConvert</b> behält sich das Recht vor, Ihren Zugriff auf den Dienst jederzeit ohne Vorankündigung aus beliebigem Grund, einschließlich, aber nicht beschränkt auf Verstöße gegen diese Bedingungen, zu suspendieren oder zu beenden."
         },
         "changesToTerms": {
-            "title": "11. Änderungen dieser Bedingungen",
+            "title": "Änderungen dieser Bedingungen",
             "content": "<b>LightConvert</b> kann diese Bedingungen von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neuen Bedingungen auf unserer Website veröffentlichen. Ihre fortgesetzte Nutzung des Dienstes nach Inkrafttreten der Änderungen stellt Ihre Zustimmung zu den überarbeiteten Bedingungen dar."
         },
         "governingLaw": {
-            "title": "12. Anwendbares Recht",
+            "title": "Anwendbares Recht",
             "content": "Diese Bedingungen unterliegen den Gesetzen der <b>Ukraine</b> und werden nach diesen ausgelegt. Alle Streitigkeiten, die sich aus oder im Zusammenhang mit diesen Bedingungen oder dem Dienst ergeben, unterliegen der ausschließlichen Zuständigkeit der Gerichte der <b>Ukraine</b>."
         },
         "contactInfo": {
-            "title": "13. Kontaktinformationen",
+            "title": "Kontaktinformationen",
             "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter:<ul><li>E-Mail: <b>support@lightconvert.app</b></li></ul>"
         },
         "entireAgreement": {
-            "title": "14. Vollständige Vereinbarung",
+            "title": "Vollständige Vereinbarung",
             "content": "Diese Bedingungen stellen die vollständige Vereinbarung zwischen Ihnen und <b>LightConvert</b> in Bezug auf die Nutzung des Dienstes dar und ersetzen alle vorherigen Vereinbarungen oder Absprachen."
         },
         "severability": {
-            "title": "15. Teilbarkeit",
+            "title": "Teilbarkeit",
             "content": "Sollte eine Bestimmung dieser Bedingungen als ungültig oder nicht durchsetzbar angesehen werden, bleiben die übrigen Bestimmungen in vollem Umfang gültig."
         },
         "waiver": {
-            "title": "16. Verzicht",
+            "title": "Verzicht",
             "content": "Der Verzicht von <b>LightConvert</b> auf eine Bestimmung dieser Bedingungen gilt nicht als weiterer oder fortlaufender Verzicht auf diese oder eine andere Bestimmung."
         },
         "assignment": {
-            "title": "17. Übertragung",
+            "title": "Übertragung",
             "content": "Sie dürfen Ihre Rechte oder Pflichten aus diesen Bedingungen nicht ohne vorherige schriftliche Zustimmung von <b>LightConvert</b> übertragen oder abtreten."
         },
         "thirdPartyServices": {
-            "title": "18. Drittanbieterdienste",
+            "title": "Drittanbieterdienste",
             "content": "Der Dienst kann Integrationen mit oder Links zu <b>Drittanbieterdiensten</b> bereitstellen. <b>LightConvert</b> ist nicht verantwortlich für die Inhalte oder Praktiken dieser Drittanbieterdienste."
         },
         "betaFeatures": {
-            "title": "19. Beta-Funktionen",
+            "title": "Beta-Funktionen",
             "content": "<b>LightConvert</b> kann <b>Beta-Funktionen</b> oder -Dienste anbieten. Diese Funktionen werden „wie besehen“ bereitgestellt und können jederzeit ohne Vorankündigung eingestellt werden."
         },
         "feedback": {
-            "title": "20. Feedback",
+            "title": "Feedback",
             "content": "Wenn Sie Feedback oder Vorschläge zum Dienst geben, kann <b>LightConvert</b> dieses Feedback ohne jegliche Verpflichtung Ihnen gegenüber verwenden."
         },
         "downloadOriginalFileText": "Originaldatei herunterladen"
@@ -234,42 +234,42 @@
     "privacy": {
         "title": "Datenschutzrichtlinie",
         "introduction": {
-            "title": "1. Einführung",
+            "title": "Einführung",
             "purpose": "<b>Zweck</b>: Diese Datenschutzrichtlinie beschreibt, wie <b>Strixyco</b> („wir“, „uns“ oder „unser“) personenbezogene und nicht personenbezogene Daten unserer Nutzer und Kunden in Bezug auf unser Produkt <b>LightConvert</b> sammelt, verwendet und schützt. Datenschutz ist für uns von entscheidender Bedeutung, und wir verpflichten uns, Ihre Privatsphäre gemäß den geltenden Gesetzen und Vorschriften zu schützen.",
             "scope": "<b>Geltungsbereich</b>: Diese Richtlinie gilt für alle Nutzer und Kunden von <b>LightConvert</b>, einschließlich derjenigen, die unsere Dienste nutzen, unsere Website besuchen oder auf anderen Wegen mit uns interagieren. Sie umfasst alle von <b>LightConvert</b> angebotenen Dienste, einschließlich <b>Dateikonvertierung</b> und <b>Speicherung</b>."
         },
         "dataCollection": {
-            "title": "2. Arten der gesammelten Daten",
+            "title": "Arten der gesammelten Daten",
             "personalData": "<b>Personenbezogene Daten</b>: Name, E-Mail-Adresse, Benutzername, Passwort (sicher gespeichert), Zahlungsinformationen (falls zutreffend), Kontaktdaten (z. B. Telefonnummer) und alle anderen persönlichen Informationen, die Sie uns zur Verfügung stellen.",
             "nonPersonalData": "<b>Nicht personenbezogene Daten</b>: IP-Adresse, Geräteinformationen (z. B. Gerätetyp, Betriebssystem), Cookies und andere Tracking-Technologien, Nutzungsdaten (z. B. wie Sie mit unseren Diensten interagieren) sowie Browser-Typ und -Version."
         },
         "dataCollectionMethods": {
-            "title": "3. Wie wir Daten sammeln",
+            "title": "Wie wir Daten sammeln",
             "direct": "<b>Direkte Sammlung</b>: Wir sammeln personenbezogene Daten direkt von Ihnen, wenn Sie ein Konto erstellen, Formulare ausfüllen, einen Kauf tätigen oder uns auf andere Weise Informationen zur Verfügung stellen.",
             "automated": "<b>Automatisierte Sammlung</b>: Wir sammeln nicht personenbezogene Daten automatisch über Cookies, Web-Beacons und andere Tracking-Technologien. Diese Daten umfassen Informationen über Ihr Gerät, Ihr Surfverhalten und Ihre Nutzung unserer Dienste.",
             "thirdParty": "<b>Daten von Dritten</b>: Wir können auch Daten über Sie von Dritten erhalten, wie z. B. von Social-Media-Plattformen oder Zahlungsdienstleistern, wenn Sie Ihr Konto mit deren Diensten verknüpfen."
         },
         "dataUsage": {
-            "title": "4. Wie wir Ihre Daten verwenden",
+            "title": "Wie wir Ihre Daten verwenden",
             "serviceProvision": "<b>Dienstleistungserbringung</b>: Wir verwenden Ihre Daten, um die von Ihnen genutzten Dienste bereitzustellen und zu verwalten, wie z. B. Dateikonvertierung, Kontoverwaltung und Kundensupport.",
             "analyticsImprovement": "<b>Analyse und Verbesserung</b>: Wir analysieren Nutzungsdaten, um unsere Dienste zu verbessern, das Nutzerverhalten zu verstehen und neue Funktionen zu entwickeln.",
             "marketing": "<b>Marketing & Kommunikation</b>: Wir können Ihre Daten verwenden, um Ihnen Marketingmitteilungen, Produktaktualisierungen und Newsletter zu senden. Sie können diese Mitteilungen jederzeit abbestellen.",
             "legalCompliance": "<b>Rechtliche Compliance</b>: Wir verwenden Ihre Daten, um gesetzliche Verpflichtungen zu erfüllen, wie z. B. Meldepflichten, Betrugsprävention und die Beantwortung rechtlicher Anfragen."
         },
         "dataRetention": {
-            "title": "5. Aufbewahrung von Daten",
+            "title": "Aufbewahrung von Daten",
             "storageDuration": "<b>Speicherdauer</b>: Wir bewahren Ihre Daten so lange auf, wie es zur Erfüllung der in dieser Richtlinie genannten Zwecke erforderlich ist, es sei denn, eine längere Aufbewahrungsfrist ist gesetzlich vorgeschrieben.",
             "dataDeletion": "<b>Löschung von Daten</b>: Sie können jederzeit die Löschung Ihrer Daten beantragen, indem Sie uns kontaktieren. Wir werden Ihrem Antrag gemäß den geltenden Gesetzen entsprechen.",
             "fileDeletionPolicy": "<b>Dateilöschungsrichtlinie</b>: Hochgeladene Dateien werden automatisch nach <b>24 Stunden</b> gelöscht, es sei denn, Sie speichern sie in Ihrem Konto. Sie können Dateien auch jederzeit manuell löschen."
         },
         "dataSecurity": {
-            "title": "6. Datensicherheit",
+            "title": "Datensicherheit",
             "encryption": "<b>Verschlüsselung und Schutz</b>: Wir verwenden branchenübliche Verschlüsselungs- und Sicherheitsmaßnahmen, um Ihre Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen.",
             "accessControl": "<b>Zugriffskontrolle</b>: Der Zugriff auf Ihre Daten ist auf autorisiertes Personal beschränkt, das diese zur Erfüllung seiner Aufgaben benötigt. Alle Mitarbeiter werden in Datenschutzpraktiken geschult.",
             "breachResponse": "<b>Reaktion auf Datenpannen</b>: Im Falle einer Datenpanne werden wir Sie und die zuständigen Behörden gemäß den geltenden Gesetzen benachrichtigen."
         },
         "cookies": {
-            "title": "7. Cookies und Tracking-Technologien",
+            "title": "Cookies und Tracking-Technologien",
             "usage": "<b>Verwendung von Cookies</b>: Wir verwenden Cookies und ähnliche Technologien, um Ihr Nutzererlebnis zu verbessern, Ihre Präferenzen zu speichern und den Datenverkehr zu analysieren. Die von uns verwendeten Cookies umfassen:",
             "types": {
                 "essential": "<b>Notwendige Cookies</b>: Erforderlich für den Betrieb unserer Dienste.",
@@ -279,35 +279,35 @@
             "optOut": "<b>Opt-out-Optionen</b>: Sie können Ihre Cookie-Einstellungen über Ihre Browsereinstellungen oder durch direkte Kontaktaufnahme mit uns verwalten."
         },
         "dataSharing": {
-            "title": "8. Weitergabe an Dritte",
+            "title": "Weitergabe an Dritte",
             "partners": "<b>Partner und Dienstleister</b>: Wir können Ihre Daten an Drittanbieter weitergeben, die uns bei der Erbringung unserer Dienste unterstützen, wie z. B. Zahlungsdienstleister, Hosting-Anbieter und Analysedienste.",
             "legalObligations": "<b>Rechtliche Verpflichtungen</b>: Wir können Ihre Daten an Behörden oder Dritte weitergeben, wenn dies gesetzlich vorgeschrieben ist.",
             "internationalTransfers": "<b>Internationale Übermittlungen</b>: Ihre Daten können in Länder außerhalb Ihres Wohnsitzlandes übermittelt und dort gespeichert werden. Wir stellen sicher, dass angemessene Schutzmaßnahmen gemäß den geltenden Gesetzen getroffen werden."
         },
         "userRights": {
-            "title": "9. Nutzerrechte",
+            "title": "Nutzerrechte",
             "access": "<b>Zugriff und Berichtigung</b>: Sie haben das Recht, auf Ihre personenbezogenen Daten zuzugreifen und sie zu aktualisieren. Dies können Sie über Ihre Kontoeinstellungen oder durch direkte Kontaktaufnahme mit uns tun.",
             "portability": "<b>Datenübertragbarkeit</b>: Sie können eine Kopie Ihrer Daten in einem maschinenlesbaren Format anfordern.",
             "erasure": "<b>Löschung und Widerspruch</b>: Sie haben das Recht, die Löschung Ihrer Daten zu beantragen oder deren Verarbeitung zu widersprechen. Beachten Sie, dass einige Daten aus rechtlichen oder betrieblichen Gründen aufbewahrt werden können.",
             "withdrawal": "<b>Widerruf der Einwilligung</b>: Wenn wir Ihre Einwilligung zur Verarbeitung Ihrer Daten benötigen, können Sie diese jederzeit widerrufen, indem Sie uns kontaktieren."
         },
         "childrenPrivacy": {
-            "title": "10. Datenschutz für Kinder",
+            "title": "Datenschutz für Kinder",
             "ageRestrictions": "<b>Altersbeschränkungen</b>: Unsere Dienste richten sich an Personen ab 13 Jahren. Wir sammeln keine Daten von Kindern unter 13 Jahren.",
             "parentalConsent": "<b>Elterliche Zustimmung</b>: Wenn wir feststellen, dass wir Daten von einem Kind unter 13 Jahren gesammelt haben, werden wir diese Daten umgehend löschen."
         },
         "policyChanges": {
-            "title": "11. Änderungen dieser Datenschutzrichtlinie",
+            "title": "Änderungen dieser Datenschutzrichtlinie",
             "notification": "<b>Benachrichtigung</b>: Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite veröffentlicht, und wir empfehlen Ihnen, sie regelmäßig zu überprüfen.",
             "versioning": "<b>Versionierung</b>: Diese Datenschutzrichtlinie ist ab dem <b>17. Januar 2025</b> gültig. Wesentliche Änderungen werden hervorgehoben."
         },
         "contact": {
-            "title": "12. Kontaktinformationen",
+            "title": "Kontaktinformationen",
             "inquiries": "<b>Anfragen und Bedenken</b>: Wenn Sie Fragen, Bedenken oder Anfragen zu dieser Datenschutzrichtlinie oder unseren Datenschutzpraktiken haben, kontaktieren Sie uns bitte unter:",
             "email": "support@lightconvert.app"
         },
         "governingLaw": {
-            "title": "13. Anwendbares Recht",
+            "title": "Anwendbares Recht",
             "jurisdiction": "<b>Gerichtsstand</b>: Diese Datenschutzrichtlinie unterliegt den Gesetzen der <b>Ukraine</b>, unter Ausschluss der kollisionsrechtlichen Bestimmungen. Streitigkeiten im Zusammenhang mit dieser Richtlinie unterliegen der ausschließlichen Zuständigkeit der Gerichte der <b>Ukraine</b>."
         },
         "downloadOriginalFileText": "Originaldatei herunterladen"
