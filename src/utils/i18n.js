@@ -43,7 +43,14 @@ const i18n = createI18n({
     legacy: false,
     locale: detectLanguage(),
     fallbackLocale: 'en',
-    messages,
+    messages: Object.fromEntries(
+        Object.entries(messages).map(([key, value]) => [
+            key,
+            JSON.parse(JSON.stringify(value))
+        ])
+    ),
+    missingWarn: false,
+    fallbackWarn: false
 });
 
 
