@@ -115,7 +115,7 @@
         "title": "使用条款",
         "introduction": {
             "title": "介绍",
-            "content": "欢迎来到 <b>LightConvert</b>！这些使用条款（\"条款\"）管理您访问和使用 <b>LightConvert</b> 网站、服务和应用程序（统称为\"服务\"）。使用该服务即表示您同意遵守这些条款。如果您不同意这些条款，则不得使用该服务。"
+            "content": "欢迎来到 <b>LightConvert</b>！这些使用条款（条款）管理您访问和使用 <b>LightConvert</b> 网站、服务和应用程序（统称为服务）。使用该服务即表示您同意遵守这些条款。如果您不同意这些条款，则不得使用该服务。"
         },
         "eligibility": {
             "title": "使用资格",
@@ -144,7 +144,7 @@
         },
         "limitationOfLiability": {
             "title": "责任限制",
-            "content": "<b>LightConvert</b> 按照 \"现状\" 和 \"可用\" 提供，不提供任何明示或暗示的保证。<b>LightConvert</b> 对因您使用该服务而引起的任何<b>间接</b>、<b>附带</b>或<b>间接损害</b>不承担责任。<b>LightConvert</b> 对因使用该服务导致的数据丢失或损坏不负责。"
+            "content": "<b>LightConvert</b> 按照 现状 和 可用 提供，不提供任何明示或暗示的保证。<b>LightConvert</b> 对因您使用该服务而引起的任何<b>间接</b>、<b>附带</b>或<b>间接损害</b>不承担责任。<b>LightConvert</b> 对因使用该服务导致的数据丢失或损坏不负责。"
         },
         "indemnification": {
             "title": "赔偿",
@@ -188,7 +188,7 @@
         },
         "betaFeatures": {
             "title": "测试版功能",
-            "content": "<b>LightConvert</b> 可能提供<b>测试版功能</b>或服务。这些功能按 \"现状\" 提供，并且可能随时无通知终止。"
+            "content": "<b>LightConvert</b> 可能提供<b>测试版功能</b>或服务。这些功能按 现状 提供，并且可能随时无通知终止。"
         },
         "feedback": {
             "title": "反馈",

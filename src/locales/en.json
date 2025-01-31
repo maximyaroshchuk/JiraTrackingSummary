@@ -118,7 +118,7 @@
         "title": "Terms of Use",
         "introduction": {
             "title": "Introduction",
-            "content": "Welcome to <b>LightConvert</b>! These Terms of Use (\"Terms\") govern your access to and use of the <b>LightConvert</b> website, services, and applications (collectively, the \"Service\"). By using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Service."
+            "content": "Welcome to <b>LightConvert</b>! These Terms of Use (Terms) govern your access to and use of the <b>LightConvert</b> website, services, and applications (collectively, the Service). By using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Service."
         },
         "eligibility": {
             "title": "Eligibility",
@@ -147,7 +147,7 @@
         },
         "limitationOfLiability": {
             "title": "Limitation of Liability",
-            "content": "<b>LightConvert</b> is provided \"as is\" and \"as available\" without any warranties, express or implied. <b>LightConvert</b> is not liable for any <b>indirect</b>, <b>incidental</b>, or <b>consequential damages</b> arising from your use of the Service. <b>LightConvert</b> is not responsible for any loss or corruption of data resulting from the use of the Service."
+            "content": "<b>LightConvert</b> is provided as is and as available without any warranties, express or implied. <b>LightConvert</b> is not liable for any <b>indirect</b>, <b>incidental</b>, or <b>consequential damages</b> arising from your use of the Service. <b>LightConvert</b> is not responsible for any loss or corruption of data resulting from the use of the Service."
         },
         "indemnification": {
             "title": "Indemnification",
@@ -191,7 +191,7 @@
         },
         "betaFeatures": {
             "title": "Beta Features",
-            "content": "<b>LightConvert</b> may offer <b>beta features</b> or services. These features are provided <b>\"as is\"</b> and may be discontinued at any time without notice."
+            "content": "<b>LightConvert</b> may offer <b>beta features</b> or services. These features are provided <b>as is</b> and may be discontinued at any time without notice."
         },
         "feedback": {
             "title": "Feedback",
@@ -238,7 +238,7 @@
         "title": "Privacy Policy",
         "introduction": {
             "title": "Introduction",
-            "purpose": "<b>Purpose</b>: This Privacy Policy outlines how <b>Strixyco</b> (\"we,\" \"us,\" or \"our\") collects, uses, and protects the personal and non-personal data of our users and customers in relation to our product <b>LightConvert</b>. Data protection is critical to us, and we are committed to safeguarding the privacy and security of your information in accordance with applicable laws and regulations.",
+            "purpose": "<b>Purpose</b>: This Privacy Policy outlines how <b>Strixyco</b> (we, us, or our) collects, uses, and protects the personal and non-personal data of our users and customers in relation to our product <b>LightConvert</b>. Data protection is critical to us, and we are committed to safeguarding the privacy and security of your information in accordance with applicable laws and regulations.",
             "scope": "<b>Scope</b>: This policy applies to all users and customers of <b>LightConvert</b>, including those who use our services, visit our website, or engage with us through other channels. It covers all services provided by <b>LightConvert</b>, including <b>file conversion</b> and <b>storage</b>."
         },
         "dataCollection": {

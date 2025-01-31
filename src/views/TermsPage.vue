@@ -132,5 +132,3 @@ ul {
     list-style: none;
 }
 </style>
-<script setup lang="ts">
-</script>
