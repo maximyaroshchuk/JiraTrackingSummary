@@ -1,0 +1,340 @@
+{
+    "welcome": "Welcome to",
+    "brand": "LightConvert",
+    "description": "Fast and free online converter for your media files",
+    "to": "to",
+    "start_converting_now": "Start Converting Now",
+    "select_conversion_type": "Select conversion type",
+    "conversion_types": {
+        "images": "Images",
+        "videos": "Videos"
+    },
+    "popular_image_conversions": "Popular Image Conversions",
+    "popular_video_conversions": "Popular Video Conversions",
+    "why_choose": "Why Choose LightConvert",
+    "benefits": {
+        "lightning_fast": "Lightning Fast",
+        "lightning_fast_desc": "Experience rapid conversions with our optimized processing engine",
+        "no_registration": "No Registration",
+        "no_registration_desc": "Start converting immediately - no sign up required",
+        "secure_private": "Secure & Private",
+        "secure_private_desc": "Your files are processed securely and deleted after conversion",
+        "developer_friendly_api": "Developer API",
+        "developer_friendly_api_desc": "Access our conversion tools programmatically",
+        "learn_more": "Learn more"
+    },
+    "about": {
+        "title": "About us",
+        "projectName": "LightConvert",
+        "developedBy": "developed by",
+        "companyName": "Strixyco",
+        "description": "is a Ukrainian project born out of a passion for simplifying and streamlining file conversion processes.",
+        "tooltipUkraine": "Brave with Ukraine 🇺🇦",
+        "ukraine": "Ukrainian",
+        "process": "Our goal is to provide a powerful yet user-friendly platform that caters to individuals and businesses around the world.",
+        "mission": "At LightConvert, we believe file conversion should be effortless, secure, and accessible to all. By supporting a wide range of file formats, our service enables users to work more efficiently, saving time and resources in today’s fast-paced digital environment.",
+        "security": "Data security is at the heart of what we do. Every file processed on LightConvert is treated with the highest level of care, utilizing state-of-the-art security measures to ensure privacy and trust.",
+        "foundation": "reflects our values of innovation, resilience, and a commitment to excellence.",
+        "values": "We operate with a small, dynamic team dedicated to constant improvement and delivering an unparalleled user experience.",
+        "focus": "With LightConvert, you can focus on your priorities while we take care of all your file conversion needs with precision and reliability.",
+        "version": "App version: 1.310125.0"
+    },
+    "footer": {
+        "company": {
+            "title": "Company",
+            "aboutUs": "About Us",
+            "security": "Security"
+        },
+        "resources": {
+            "title": "Resources",
+            "status": "Status"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Privacy",
+            "terms": "Terms"
+        },
+        "contact": {
+            "title": "Contact",
+            "contactUs": "Contact Us"
+        },
+        "companyName": "Strixyco",
+        "madeInUkraine": "Made in Ukraine 🇺🇦, with love ❤️"
+    },
+    "footer_statistics": {
+        "convertedFiles": "We've already converted",
+        "withTotalSize": "files with a total size of",
+        "format": "TB"
+    },
+    "contact": {
+        "title": "Contact us",
+        "nameLabel": "Your name",
+        "nameError": "Please fill your name",
+        "emailLabel": "Your email",
+        "emailError": "Please fill your email",
+        "subjectLabel": "Subject",
+        "subjectError": "Please select a subject",
+        "subjectPlaceholder": "Please select Subject",
+        "subjectOptions": {
+            "api": "Technical and API support",
+            "errorReport": "Conversion does not work as expected",
+            "other": "Other"
+        },
+        "messageLabel": "Your message",
+        "messageError": "Please write your message",
+        "privacyPolicy": "I accept the {link}",
+        "privacyPolicyLinkText": "Privacy Policy",
+        "submit": "Send",
+        "errorOccurred": "An error occurred. Please try again.",
+        "invalidEmail": "Enter a valid email address",
+        "pleaseFillFieldsCorrectly": "Please fill all required fields correctly."
+    },
+    "converter": {
+        "convertTo": "Convert",
+        "to": "to",
+        "chooseFile": "Choose a file (up to 50MB)",
+        "downloadConverterFileButtonText": "Download converted file",
+        "convertButtonText": "Convert",
+        "convertButtonTextInProgress": "Convert in progress...",
+        "errorOccurred": "An error occurred. Please try again.",
+        "invalidEmail": "Enter a valid email address",
+        "pleaseFillFieldsCorrectly": "Please fill all required fields correctly.",
+        "conversionStarted": "Conversion started",
+        "conversionSuccessfullyCompleted": "Conversion completed successfully",
+        "noFileAvailableForDownload": "No file available for download",
+        "metaTitle": "Convert {from} to {to} - LightConvert",
+        "metaDescription": "Convert {from} files to {to} format online. Fast, free, and easy to use!",
+        "metaKeywords": "Convert {from} to {to}, by LightConvert {from} to {to}, online {from} to {to} converter",
+        "fileTooLarge": "File too large. Upload a file no larger than 50MB"
+    },
+    "menu": {
+        "convert": "Convert",
+        "download": "Download",
+        "images": "Images",
+        "videos": "Videos",
+        "convertTo": "Convert {from} to {to}"
+    },
+    "terms": {
+        "title": "Terms of Use",
+        "introduction": {
+            "title": "1. Introduction",
+            "content": "Welcome to <b>LightConvert</b>! These Terms of Use (\"Terms\") govern your access to and use of the <b>LightConvert</b> website, services, and applications (collectively, the \"Service\"). By using the Service, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Service."
+        },
+        "eligibility": {
+            "title": "2. Eligibility",
+            "content": "To use the Service, you must:<ul><li>Be at least <b>13 years old</b>.</li><li>Have the legal capacity to enter into a binding agreement.</li><li>Comply with all applicable laws and regulations.</li></ul>"
+        },
+        "description": {
+            "title": "3. Description of Service",
+            "content": "<b>LightConvert</b> provides an online platform for <b>file conversion</b> and <b>storage</b>. The Service allows users to:<ul><li>Convert files between various formats.</li><li>Store files temporarily for the purpose of conversion.</li><li>Download converted files.</li></ul>"
+        },
+        "responsibilities": {
+            "title": "4. User Responsibilities",
+            "content": "By using the Service, you agree to:<ul><li>Use the Service only for <b>lawful purposes</b>.</li><li>Not upload or convert files that infringe on <b>intellectual property rights</b>, contain <b>illegal content</b>, or violate any laws.</li><li>Not use the Service to distribute <b>malware</b>, <b>viruses</b>, or other harmful software.</li><li>Not attempt to <b>reverse-engineer</b>, <b>decompile</b>, or <b>disassemble</b> the Service.</li></ul>"
+        },
+        "intellectualProperty": {
+            "title": "5. Intellectual property",
+            "yourContent": "<b>Your Content</b>: You retain ownership of any files you upload or convert using the Service. By uploading files, you grant <b>LightConvert</b> a non-exclusive, worldwide, royalty-free license to use, process, and store your files solely for the purpose of providing the Service.",
+            "ourContent": "<b>Our Content</b>: All intellectual property rights in the Service, including but not limited to <b>software</b>, <b>logos</b>, and <b>trademarks</b>, are owned by <b>LightConvert</b> or its licensors."
+        },
+        "prohibitedActivities": {
+            "title": "6. Prohibited Activities",
+            "content": "You may not:<ul><li>Use the Service for any <b>illegal</b> or <b>unauthorized</b> purpose.</li><li>Upload or convert files that contain <b>viruses</b>, <b>malware</b>, or other harmful content.</li><li>Attempt to gain <b>unauthorized access</b> to the Service or its systems.</li><li>Use the Service in a way that could <b>damage</b>, <b>disable</b>, or <b>impair</b> the Service.</li></ul>"
+        },
+        "fileStorage": {
+            "title": "7. File Storage and Deletion",
+            "content": "Files uploaded to <b>LightConvert</b> are stored temporarily and will be automatically deleted after <b>24 hours</b>. <b>LightConvert</b> is not responsible for any loss of data resulting from the deletion of files."
+        },
+        "limitationOfLiability": {
+            "title": "8. Limitation of Liability",
+            "content": "<b>LightConvert</b> is provided \"as is\" and \"as available\" without any warranties, express or implied. <b>LightConvert</b> is not liable for any <b>indirect</b>, <b>incidental</b>, or <b>consequential damages</b> arising from your use of the Service. <b>LightConvert</b> is not responsible for any loss or corruption of data resulting from the use of the Service."
+        },
+        "indemnification": {
+            "title": "9. Indemnification",
+            "content": "You agree to indemnify and hold harmless <b>LightConvert</b>, its affiliates, and their respective officers, directors, employees, and agents from any claims, liabilities, damages, losses, or expenses arising out of your use of the Service or violation of these Terms."
+        },
+        "termination": {
+            "title": "10. Termination",
+            "content": "<b>LightConvert</b> reserves the right to suspend or terminate your access to the Service at any time, with or without notice, for any reason, including but not limited to violation of these Terms."
+        },
+        "changesToTerms": {
+            "title": "11. Changes to These Terms",
+            "content": "<b>LightConvert</b> may update these Terms from time to time. We will notify you of any changes by posting the new Terms on our website. Your continued use of the Service after the changes take effect constitutes your acceptance of the revised Terms."
+        },
+        "governingLaw": {
+            "title": "12. Governing Law",
+            "content": "These Terms are governed by and construed in accordance with the laws of <b>Ukraine</b>. Any disputes arising out of or related to these Terms or the Service will be subject to the exclusive jurisdiction of the courts of <b>Ukraine</b>."
+        },
+        "contactInfo": {
+            "title": "13. Contact Information",
+            "content": "If you have any questions about these Terms, please contact us at:<ul><li>Email: <b>support@lightconvert.app</b></li></ul>"
+        },
+        "entireAgreement": {
+            "title": "14. Entire Agreement",
+            "content": "These Terms constitute the entire agreement between you and <b>LightConvert</b> regarding the use of the Service and supersede any prior agreements or understandings."
+        },
+        "severability": {
+            "title": "15. Severability",
+            "content": "If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect."
+        },
+        "waiver": {
+            "title": "16. Waiver",
+            "content": "No waiver of any provision of these Terms by <b>LightConvert</b> shall be deemed a further or continuing waiver of such provision or any other provision."
+        },
+        "assignment": {
+            "title": "17. Assignment",
+            "content": "You may not assign or transfer your rights or obligations under these Terms without the prior written consent of <b>LightConvert</b>."
+        },
+        "thirdPartyServices": {
+            "title": "18. Third-Party Services",
+            "content": "The Service may integrate with or provide links to <b>third-party services</b>. <b>LightConvert</b> is not responsible for the content or practices of these third-party services."
+        },
+        "betaFeatures": {
+            "title": "19. Beta Features",
+            "content": "<b>LightConvert</b> may offer <b>beta features</b> or services. These features are provided <b>\"as is\"</b> and may be discontinued at any time without notice."
+        },
+        "feedback": {
+            "title": "20. Feedback",
+            "content": "If you provide feedback or suggestions about the Service, <b>LightConvert</b> may use such feedback without any obligation to you."
+        },
+        "downloadOriginalFileText": "Download original file"
+    },
+    "security": {
+        "title": "Security and Compliance",
+        "introduction": {
+            "content": "At <b>LightConvert</b>, we understand that data security and compliance are crucial for our users and their businesses. Our platform is designed with the highest standards of security to ensure that your files and information remain safe throughout the conversion process."
+        },
+        "features": {
+            "dataEncryption": {
+                "title": "Data Encryption",
+                "icon": "pi pi-shield",
+                "content": "We use industry-standard encryption protocols to protect your data during transmission and storage. All files uploaded to <b>LightConvert</b> are encrypted using secure protocols (SSL/TLS), ensuring that your files are protected from unauthorized access at all times."
+            },
+            "privacyProtection": {
+                "title": "Privacy Protection",
+                "icon": "pi pi-lock",
+                "content": "Your privacy is our priority. We adhere to the strictest data privacy regulations, including GDPR, to ensure that your personal and business data is handled securely and responsibly. We do not share or sell your data to third parties."
+            },
+            "regulatoryCompliance": {
+                "title": "Regulatory Compliance",
+                "icon": "pi pi-check-circle",
+                "content": "<b>LightConvert</b> complies with various global regulations to ensure that our platform meets the required standards for data protection. We are committed to keeping up with the latest compliance frameworks and regulations to give you peace of mind that your data is secure and compliant."
+            }
+        },
+        "commitment": {
+            "content": "Our commitment to security and compliance extends beyond encryption and privacy. We implement regular security audits, monitor our systems 24/7, and work with external experts to continuously improve our platform's security posture. With <b>LightConvert</b>, you can trust that your file conversion process is in safe hands."
+        },
+        "securityFeatures": {
+            "title": "Security Featuresf at a Glance",
+            "features": "<li><b>SSL/TLS encryption</b> for secure data transfer</li><li><b>GDPR compliance</b> for privacy and data protection</li><li><b>Regular security audits</b> to maintain a high level of security</li><li><b>24/7 monitoring</b> to prevent unauthorized access</li><li><b>Data retention policy</b> ensuring files are deleted after conversion</li>"
+
+        },
+        "conclusion": {
+            "content": "At <b>LightConvert</b>, we are committed to maintaining the highest level of trust with our users. Your security and compliance are at the core of everything we do."
+        },
+        "downloadOriginalFileText": "Download original file"
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "introduction": {
+            "title": "1. Introduction",
+            "purpose": "<b>Purpose</b>: This Privacy Policy outlines how <b>Strixyco</b> (\"we,\" \"us,\" or \"our\") collects, uses, and protects the personal and non-personal data of our users and customers in relation to our product <b>LightConvert</b>. Data protection is critical to us, and we are committed to safeguarding the privacy and security of your information in accordance with applicable laws and regulations.",
+            "scope": "<b>Scope</b>: This policy applies to all users and customers of <b>LightConvert</b>, including those who use our services, visit our website, or engage with us through other channels. It covers all services provided by <b>LightConvert</b>, including <b>file conversion</b> and <b>storage</b>."
+        },
+        "dataCollection": {
+            "title": "2. Types of Data We Collect",
+            "personalData": "<b>Personal Data</b>: Name, email address, username, password (stored securely), payment information (if applicable), contact information (e.g., phone number), and any other personal information you choose to provide.",
+            "nonPersonalData": "<b>Non-Personal Data</b>: IP address, device information (e.g., device type, operating system), cookies and other tracking technologies, usage data (e.g., how you interact with our services), and browser type and version."
+        },
+        "dataCollectionMethods": {
+            "title": "3. How We Collect Data",
+            "direct": "<b>Direct Collection</b>: We collect personal data directly from you when you create an account, submit forms, make a purchase, or otherwise provide information to us.",
+            "automated": "<b>Automated Collection</b>: We automatically collect non-personal data through cookies, web beacons, and other tracking technologies. This data includes information about your device, browsing behavior, and usage of our services.",
+            "thirdParty": "<b>Third-party Data</b>: We may also receive data about you from third parties, such as social media platforms or payment processors, if you choose to connect your account with theirs."
+        },
+        "dataUsage": {
+            "title": "4. How We Use Your Data",
+            "serviceProvision": "<b>Service Provision</b>: We use your data to provide and manage the services you use, such as file conversion, account management, and customer support.",
+            "analyticsImprovement": "<b>Analytics and Improvement</b>: We analyze usage data to improve our services, understand user behavior, and develop new features.",
+            "marketing": "<b>Marketing & Communication</b>: We may use your data to send you marketing communications, product updates, and newsletters. You can opt out of these communications at any time.",
+            "legalCompliance": "<b>Legal Compliance</b>: We use your data to comply with legal obligations, such as reporting requirements, fraud prevention, and responding to legal requests."
+        },
+        "dataRetention": {
+            "title": "5. Data Retention",
+            "storageDuration": "<b>Storage Duration</b>: We retain your data for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required by law.",
+            "dataDeletion": "<b>Data Deletion</b>: You can request the deletion of your data at any time by contacting us. We will comply with your request in accordance with applicable laws.",
+            "fileDeletionPolicy": "<b>File Deletion Policy</b>: Uploaded files are deleted automatically after <b>24 hours</b> unless you choose to store them in your account. You can also delete files manually at any time."
+        },
+        "dataSecurity": {
+            "title": "6. Data Security",
+            "encryption": "<b>Encryption and Protection</b>: We use industry-standard encryption and security measures to protect your data from unauthorized access, alteration, disclosure, or destruction.",
+            "accessControl": "<b>Access Control</b>: Access to your data is limited to authorized personnel who need it to perform their job functions. All employees are trained on data protection practices.",
+            "breachResponse": "<b>Breach Response</b>: In the event of a data breach, we will notify you and relevant authorities in accordance with applicable laws."
+        },
+        "cookies": {
+            "title": "7. Cookies and Tracking Technologies",
+            "usage": "<b>Cookies Usage</b>: We use cookies and similar technologies to enhance your user experience, remember your preferences, and analyze traffic. The cookies we use include:",
+            "types": {
+                "essential": "<b>Essential Cookies</b>: Necessary for the operation of our services.",
+                "analytical": "<b>Analytical Cookies</b>: Used to analyze how you use our services.",
+                "marketing": "<b>Marketing Cookies</b>: Used to deliver personalized advertising."
+            },
+            "optOut": "<b>Opt-out Options</b>: You can manage your cookie preferences through your browser settings or by contacting us directly."
+        },
+        "dataSharing": {
+            "title": "8. Third-party Sharing",
+            "partners": "<b>Partners and Service Providers</b>: We may share your data with third-party service providers who assist us in delivering our services, such as payment processors, hosting providers, and analytics services.",
+            "legalObligations": "<b>Legal Obligations</b>: We may share your data with legal authorities or third parties if required by law, regulation, or legal process.",
+            "internationalTransfers": "<b>International Transfers</b>: Your data may be transferred to and stored in countries outside of your country of residence. We ensure that appropriate safeguards are in place to protect your data in accordance with applicable laws."
+        },
+        "userRights": {
+            "title": "9. User Rights",
+            "access": "<b>Access and Rectification</b>: You have the right to access and update your personal data. You can do this through your account settings or by contacting us directly.",
+            "portability": "<b>Data Portability</b>: You can request a copy of your data in a machine-readable format.",
+            "erasure": "<b>Erasure and Objection</b>: You have the right to request the deletion of your data or to object to its processing. Please note that some data may be retained for legal or operational reasons.",
+            "withdrawal": "<b>Withdrawal of Consent</b>: If we rely on your consent to process your data, you can withdraw that consent at any time by contacting us."
+        },
+        "childrenPrivacy": {
+            "title": "10. Children's Privacy",
+            "ageRestrictions": "<b>Age Restrictions</b>: Our services are intended for individuals aged 13 and older. We do not knowingly collect data from children under the age of 13.",
+            "parentalConsent": "<b>Parental Consent</b>: If we become aware that we have collected data from a child under 13, we will take steps to delete that data."
+        },
+        "policyChanges": {
+            "title": "11. Changes to This Privacy Policy",
+            "notification": "<b>Notification</b>: We may update this Privacy Policy from time to time. Any changes will be posted on this page, and we encourage you to review it regularly.",
+            "versioning": "<b>Versioning</b>: This Privacy Policy is effective as of <b>17 January 2025</b>. Significant changes will be highlighted."
+        },
+        "contact": {
+            "title": "12. Contact Information",
+            "inquiries": "<b>Inquiries and Concerns</b>: If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:",
+            "email": "support@lightconvert.app"
+        },
+        "governingLaw": {
+            "title": "13. Governing Law",
+            "jurisdiction": "<b>Jurisdiction</b>: This Privacy Policy is governed by the laws of <b>Ukraine</b>, excluding its conflict of law principles. Any disputes arising out of or in connection with this policy will be subject to the exclusive jurisdiction of the courts of <b>Ukraine</b>."
+        },
+        "downloadOriginalFileText": "Download original file"
+    },
+    "api_doc": {
+        "title": "API Documentation",
+        "content": "We're working hard to bring you the best API experience. Please check back soon!",
+        "contact_us": "In the meantime, feel free to {link} if you have any questions.",
+        "contact_us_link": "contact us"
+    },
+    "notFoundPage": {
+        "title": "Page not found",
+        "message": "Sorry, the page you’re looking for does not exist or has been moved.",
+        "closeButton": {
+            "title": "Return to homepage"
+        }
+    },
+    "meta": {
+        "title": "LightConvert - Free Online Video & Image Converter",
+        "description": "Convert videos and images online with LightConvert. Easy-to-use, free online converter for multiple formats. Video downloader coming soon!",
+        "keywords": "video converter, image converter, online converter, free converter, format converter, media converter, LightConvert, video downloader",
+        "ogTitle": "LightConvert - Convert Videos & Images Online For Free",
+        "ogDescription": "Transform your media files easily with LightConvert. Free online converter for videos and images, with video downloading features coming soon.",
+        "schemaName": "LightConvert",
+        "schemaDescription": "Free online platform for converting videos and images between different formats. User-friendly interface with upcoming video downloading capabilities from various sources."
+    }
+}

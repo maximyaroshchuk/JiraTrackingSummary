@@ -1,0 +1,337 @@
+{
+    "welcome": "Willkommen bei",
+    "brand": "LightConvert",
+    "description": "Schneller und kostenloser Online-Konverter für Ihre Mediendateien",
+    "to": "zu",
+    "start_converting_now": "Jetzt mit der Konvertierung beginnen",
+    "select_conversion_type": "Konvertierungstyp auswählen",
+    "conversion_types": {
+        "images": "Bilder",
+        "videos": "Videos"
+    },
+    "popular_image_conversions": "Beliebte Bildkonvertierungen",
+    "popular_video_conversions": "Beliebte Videokonvertierungen",
+    "why_choose": "Warum LightConvert wählen",
+    "benefits": {
+        "lightning_fast": "Blitzschnell",
+        "lightning_fast_desc": "Erleben Sie schnelle Konvertierungen mit unserer optimierten Verarbeitungsengine",
+        "no_registration": "Keine Registrierung",
+        "no_registration_desc": "Starten Sie sofort mit der Konvertierung - keine Anmeldung erforderlich",
+        "secure_private": "Sicher & Privat",
+        "secure_private_desc": "Ihre Dateien werden sicher verarbeitet und nach der Konvertierung gelöscht",
+        "developer_friendly_api": "Entwickler-API",
+        "developer_friendly_api_desc": "Greifen Sie programmatisch auf unsere Konvertierungstools zu",
+        "learn_more": "Mehr erfahren"
+    },
+    "about": {
+        "title": "Über uns",
+        "projectName": "LightConvert",
+        "developedBy": "entwickelt von",
+        "companyName": "Strixyco",
+        "description": "ist ein ukrainisches Projekt, das aus der Leidenschaft geboren wurde, die Datei-Konvertierungsprozesse zu vereinfachen und zu optimieren.",
+        "tooltipUkraine": "Brav mit der Ukraine 🇺🇦",
+        "ukraine": "Ukrainisch",
+        "process": "Unser Ziel ist es, eine leistungsstarke und benutzerfreundliche Plattform bereitzustellen, die sowohl Einzelpersonen als auch Unternehmen weltweit dient.",
+        "mission": "Bei LightConvert glauben wir, dass die Dateikonvertierung mühelos, sicher und für alle zugänglich sein sollte. Durch die Unterstützung einer Vielzahl von Dateiformaten ermöglicht unser Service den Nutzern, effizienter zu arbeiten, Zeit und Ressourcen in der heutigen schnelllebigen digitalen Umgebung zu sparen.",
+        "security": "Datensicherheit steht im Zentrum unseres Handelns. Jede Datei, die bei LightConvert verarbeitet wird, wird mit höchster Sorgfalt behandelt, wobei modernste Sicherheitsmaßnahmen eingesetzt werden, um Privatsphäre und Vertrauen zu gewährleisten.",
+        "foundation": "spiegelt unsere Werte der Innovation, Resilienz und unseres Engagements für Exzellenz wider.",
+        "values": "Wir arbeiten mit einem kleinen, dynamischen Team, das sich der kontinuierlichen Verbesserung und der Bereitstellung einer unübertroffenen Benutzererfahrung widmet.",
+        "focus": "Mit LightConvert können Sie sich auf Ihre Prioritäten konzentrieren, während wir uns um alle Ihre Dateikonvertierungsbedürfnisse kümmern – mit Präzision und Zuverlässigkeit.",
+        "version": "App-Version: 1.310125.0"
+    },
+    "footer": {
+        "company": {
+            "title": "Unternehmen",
+            "aboutUs": "Über uns",
+            "security": "Sicherheit"
+        },
+        "resources": {
+            "title": "Ressourcen",
+            "status": "Status"
+        },
+        "legal": {
+            "title": "Rechtliches",
+            "privacy": "Datenschutz",
+            "terms": "AGB"
+        },
+        "contact": {
+            "title": "Kontakt",
+            "contactUs": "Kontaktieren Sie uns"
+        },
+        "companyName": "Strixyco",
+        "madeInUkraine": "Hergestellt in der Ukraine 🇺🇦, mit Liebe ❤️"
+    },
+    "footer_statistics": {
+        "convertedFiles": "Wir haben bereits konvertiert",
+        "withTotalSize": "Dateien mit einer Gesamtgröße von",
+        "format": "TB"
+    },
+    "contact": {
+        "title": "Kontaktiere uns",
+        "nameLabel": "Dein Name",
+        "nameError": "Bitte gib deinen Namen ein",
+        "emailLabel": "Deine E-Mail",
+        "emailError": "Bitte gib deine E-Mail ein",
+        "subjectLabel": "Betreff",
+        "subjectError": "Bitte wähle einen Betreff",
+        "subjectPlaceholder": "Bitte wähle einen Betreff",
+        "subjectOptions": {
+            "api": "Technische und API-Unterstützung",
+            "errorReport": "Konvertierung funktioniert nicht wie erwartet",
+            "other": "Andere"
+        },
+        "messageLabel": "Deine Nachricht",
+        "messageError": "Bitte schreibe deine Nachricht",
+        "privacyPolicy": "Ich akzeptiere die {link}",
+        "privacyPolicyLinkText": "Datenschutzrichtlinie",
+        "submit": "Absenden"
+    },
+    "converter": {
+        "convertTo": "Konvertieren",
+        "to": "zu",
+        "chooseFile": "Wählen Sie eine Datei (bis zu 50 MB)",
+        "downloadConverterFileButtonText": "Konvertierte Datei herunterladen",
+        "convertButtonText": "Konvertieren",
+        "convertButtonTextInProgress": "Konvertierung läuft...",
+        "errorOccurred": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        "invalidEmail": "Geben Sie eine gültige E-Mail-Adresse ein",
+        "pleaseFillFieldsCorrectly": "Bitte füllen Sie alle erforderlichen Felder korrekt aus.",
+        "conversionStarted": "Konvertierung gestartet",
+        "conversionSuccessfullyCompleted": "Konvertierung erfolgreich abgeschlossen",
+        "noFileAvailableForDownload": "Keine Datei zum Herunterladen verfügbar",
+        "metaTitle": "{from} in {to} umwandeln - LightConvert",
+        "metaDescription": "Wandeln Sie {from}-Dateien online in das {to}-Format um. Schnell, kostenlos und einfach zu bedienen!",
+        "metaKeywords": "{from} in {to} umwandeln, mit LightConvert {from} in {to} umwandeln, Online-Konverter {from} zu {to}",
+        "fileTooLarge": "Datei zu groß. Laden Sie eine Datei von maximal 50 MB hoch"
+    },
+    "menu": {
+        "convert": "Konvertieren",
+        "download": "Herunterladen",
+        "images": "Bilder",
+        "videos": "Videos",
+        "convertTo": "{from} in {to} konvertieren"
+    },
+    "terms": {
+        "title": "Nutzungsbedingungen",
+        "introduction": {
+            "title": "1. Einführung",
+            "content": "Willkommen bei <b>LightConvert</b>! Diese Nutzungsbedingungen („Bedingungen“) regeln Ihren Zugriff auf und die Nutzung der <b>LightConvert</b>-Website, -Dienste und -Anwendungen (zusammengefasst als „Dienst“). Durch die Nutzung des Dienstes erklären Sie sich mit diesen Bedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, dürfen Sie den Dienst nicht nutzen."
+        },
+        "eligibility": {
+            "title": "2. Berechtigung",
+            "content": "Um den Dienst nutzen zu können, müssen Sie:<ul><li>Mindestens <b>13 Jahre alt</b> sein.</li><li>Die rechtliche Befähigung haben, eine bindende Vereinbarung einzugehen.</li><li>Alle geltenden Gesetze und Vorschriften einhalten.</li></ul>"
+        },
+        "description": {
+            "title": "3. Beschreibung des Dienstes",
+            "content": "<b>LightConvert</b> bietet eine Online-Plattform für die <b>Dateikonvertierung</b> und <b>-speicherung</b>. Der Dienst ermöglicht es Benutzern:<ul><li>Dateien zwischen verschiedenen Formaten zu konvertieren.</li><li>Dateien vorübergehend zum Zweck der Konvertierung zu speichern.</li><li>Konvertierte Dateien herunterzuladen.</li></ul>"
+        },
+        "responsibilities": {
+            "title": "4. Benutzerpflichten",
+            "content": "Durch die Nutzung des Dienstes erklären Sie sich damit einverstanden:<ul><li>Den Dienst nur für <b>legale Zwecke</b> zu nutzen.</li><li>Keine Dateien hochzuladen oder zu konvertieren, die <b>geistige Eigentumsrechte</b> verletzen, <b>illegale Inhalte</b> enthalten oder gegen Gesetze verstoßen.</li><li>Den Dienst nicht zur Verbreitung von <b>Malware</b>, <b>Viren</b> oder anderer schädlicher Software zu nutzen.</li><li>Nicht zu versuchen, den Dienst <b>rückzuentwickeln</b>, <b>zu dekompilieren</b> oder <b>zu disassemblieren</b>.</li></ul>"
+        },
+        "intellectualProperty": {
+            "title": "5. Geistiges Eigentum",
+            "yourContent": "<b>Ihre Inhalte</b>: Sie behalten das Eigentum an allen Dateien, die Sie mit dem Dienst hochladen oder konvertieren. Durch das Hochladen von Dateien gewähren Sie <b>LightConvert</b> eine nicht-exklusive, weltweite, gebührenfreie Lizenz, Ihre Dateien ausschließlich zum Zweck der Bereitstellung des Dienstes zu nutzen, zu verarbeiten und zu speichern.",
+            "ourContent": "<b>Unsere Inhalte</b>: Alle geistigen Eigentumsrechte am Dienst, einschließlich, aber nicht beschränkt auf <b>Software</b>, <b>Logos</b> und <b>Marken</b>, sind Eigentum von <b>LightConvert</b> oder seinen Lizenzgebern."
+        },
+        "prohibitedActivities": {
+            "title": "6. Verbotene Aktivitäten",
+            "content": "Sie dürfen:<ul><li>Den Dienst nicht für <b>illegale</b> oder <b>unautorisierte</b> Zwecke nutzen.</li><li>Keine Dateien hochladen oder konvertieren, die <b>Viren</b>, <b>Malware</b> oder andere schädliche Inhalte enthalten.</li><li>Nicht versuchen, <b>unbefugten Zugriff</b> auf den Dienst oder seine Systeme zu erlangen.</li><li>Den Dienst nicht auf eine Weise nutzen, die den Dienst <b>beschädigen</b>, <b>deaktivieren</b> oder <b>beeinträchtigen</b> könnte.</li></ul>"
+        },
+        "fileStorage": {
+            "title": "7. Dateispeicherung und -löschung",
+            "content": "Dateien, die auf <b>LightConvert</b> hochgeladen werden, werden vorübergehend gespeichert und nach <b>24 Stunden</b> automatisch gelöscht. <b>LightConvert</b> ist nicht verantwortlich für Datenverluste, die durch das Löschen von Dateien entstehen."
+        },
+        "limitationOfLiability": {
+            "title": "8. Haftungsbeschränkung",
+            "content": "<b>LightConvert</b> wird „wie besehen“ und „wie verfügbar“ ohne jegliche Gewährleistung, ausdrücklich oder implizit, bereitgestellt. <b>LightConvert</b> haftet nicht für <b>indirekte</b>, <b>zufällige</b> oder <b>Folgeschäden</b>, die sich aus der Nutzung des Dienstes ergeben. <b>LightConvert</b> ist nicht verantwortlich für Datenverluste oder -beschädigungen, die durch die Nutzung des Dienstes entstehen."
+        },
+        "indemnification": {
+            "title": "9. Freistellung",
+            "content": "Sie erklären sich damit einverstanden, <b>LightConvert</b>, seine verbundenen Unternehmen sowie deren jeweilige Direktoren, Mitarbeiter und Vertreter von allen Ansprüchen, Haftungen, Schäden, Verlusten oder Kosten freizustellen, die sich aus Ihrer Nutzung des Dienstes oder der Verletzung dieser Bedingungen ergeben."
+        },
+        "termination": {
+            "title": "10. Beendigung",
+            "content": "<b>LightConvert</b> behält sich das Recht vor, Ihren Zugriff auf den Dienst jederzeit ohne Vorankündigung aus beliebigem Grund, einschließlich, aber nicht beschränkt auf Verstöße gegen diese Bedingungen, zu suspendieren oder zu beenden."
+        },
+        "changesToTerms": {
+            "title": "11. Änderungen dieser Bedingungen",
+            "content": "<b>LightConvert</b> kann diese Bedingungen von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neuen Bedingungen auf unserer Website veröffentlichen. Ihre fortgesetzte Nutzung des Dienstes nach Inkrafttreten der Änderungen stellt Ihre Zustimmung zu den überarbeiteten Bedingungen dar."
+        },
+        "governingLaw": {
+            "title": "12. Anwendbares Recht",
+            "content": "Diese Bedingungen unterliegen den Gesetzen der <b>Ukraine</b> und werden nach diesen ausgelegt. Alle Streitigkeiten, die sich aus oder im Zusammenhang mit diesen Bedingungen oder dem Dienst ergeben, unterliegen der ausschließlichen Zuständigkeit der Gerichte der <b>Ukraine</b>."
+        },
+        "contactInfo": {
+            "title": "13. Kontaktinformationen",
+            "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter:<ul><li>E-Mail: <b>support@lightconvert.app</b></li></ul>"
+        },
+        "entireAgreement": {
+            "title": "14. Vollständige Vereinbarung",
+            "content": "Diese Bedingungen stellen die vollständige Vereinbarung zwischen Ihnen und <b>LightConvert</b> in Bezug auf die Nutzung des Dienstes dar und ersetzen alle vorherigen Vereinbarungen oder Absprachen."
+        },
+        "severability": {
+            "title": "15. Teilbarkeit",
+            "content": "Sollte eine Bestimmung dieser Bedingungen als ungültig oder nicht durchsetzbar angesehen werden, bleiben die übrigen Bestimmungen in vollem Umfang gültig."
+        },
+        "waiver": {
+            "title": "16. Verzicht",
+            "content": "Der Verzicht von <b>LightConvert</b> auf eine Bestimmung dieser Bedingungen gilt nicht als weiterer oder fortlaufender Verzicht auf diese oder eine andere Bestimmung."
+        },
+        "assignment": {
+            "title": "17. Übertragung",
+            "content": "Sie dürfen Ihre Rechte oder Pflichten aus diesen Bedingungen nicht ohne vorherige schriftliche Zustimmung von <b>LightConvert</b> übertragen oder abtreten."
+        },
+        "thirdPartyServices": {
+            "title": "18. Drittanbieterdienste",
+            "content": "Der Dienst kann Integrationen mit oder Links zu <b>Drittanbieterdiensten</b> bereitstellen. <b>LightConvert</b> ist nicht verantwortlich für die Inhalte oder Praktiken dieser Drittanbieterdienste."
+        },
+        "betaFeatures": {
+            "title": "19. Beta-Funktionen",
+            "content": "<b>LightConvert</b> kann <b>Beta-Funktionen</b> oder -Dienste anbieten. Diese Funktionen werden „wie besehen“ bereitgestellt und können jederzeit ohne Vorankündigung eingestellt werden."
+        },
+        "feedback": {
+            "title": "20. Feedback",
+            "content": "Wenn Sie Feedback oder Vorschläge zum Dienst geben, kann <b>LightConvert</b> dieses Feedback ohne jegliche Verpflichtung Ihnen gegenüber verwenden."
+        },
+        "downloadOriginalFileText": "Originaldatei herunterladen"
+    },
+    "security": {
+        "title": "Sicherheit und Compliance",
+        "introduction": {
+            "content": "Bei <b>LightConvert</b> verstehen wir, dass Datensicherheit und Compliance für unsere Nutzer und deren Unternehmen von entscheidender Bedeutung sind. Unsere Plattform wurde mit höchsten Sicherheitsstandards entwickelt, um sicherzustellen, dass Ihre Dateien und Informationen während des gesamten Konvertierungsprozesses sicher bleiben."
+        },
+        "features": {
+            "dataEncryption": {
+                "title": "Datenverschlüsselung",
+                "icon": "pi pi-shield",
+                "content": "Wir verwenden branchenübliche Verschlüsselungsprotokolle, um Ihre Daten während der Übertragung und Speicherung zu schützen. Alle auf <b>LightConvert</b> hochgeladenen Dateien werden mit sicheren Protokollen (SSL/TLS) verschlüsselt, um sicherzustellen, dass Ihre Dateien jederzeit vor unbefugtem Zugriff geschützt sind."
+            },
+            "privacyProtection": {
+                "title": "Datenschutz",
+                "icon": "pi pi-lock",
+                "content": "Ihre Privatsphäre hat für uns höchste Priorität. Wir halten uns an die strengsten Datenschutzbestimmungen, einschließlich der DSGVO, um sicherzustellen, dass Ihre persönlichen und geschäftlichen Daten sicher und verantwortungsbewusst behandelt werden. Wir geben Ihre Daten nicht an Dritte weiter oder verkaufen sie."
+            },
+            "regulatoryCompliance": {
+                "title": "Gesetzliche Konformität",
+                "icon": "pi pi-check-circle",
+                "content": "<b>LightConvert</b> erfüllt verschiedene globale Vorschriften, um sicherzustellen, dass unsere Plattform die erforderlichen Standards für den Datenschutz erfüllt. Wir verpflichten uns, mit den neuesten Compliance-Frameworks und -Vorschriften Schritt zu halten, um Ihnen die Gewissheit zu geben, dass Ihre Daten sicher und konform sind."
+            }
+        },
+        "commitment": {
+            "content": "Unser Engagement für Sicherheit und Compliance geht über Verschlüsselung und Datenschutz hinaus. Wir führen regelmäßig Sicherheitsaudits durch, überwachen unsere Systeme rund um die Uhr und arbeiten mit externen Experten zusammen, um die Sicherheitslage unserer Plattform kontinuierlich zu verbessern. Mit <b>LightConvert</b> können Sie darauf vertrauen, dass Ihr Datei-Konvertierungsprozess in sicheren Händen ist."
+        },
+        "securityFeatures": {
+            "title": "Sicherheitsfunktionen auf einen Blick",
+            "features": "<li><b>SSL/TLS-Verschlüsselung</b> für sichere Datenübertragung</li><li><b>DSGVO-Konformität</b> für Datenschutz und Datenschutz</li><li><b>Regelmäßige Sicherheitsaudits</b> zur Aufrechterhaltung eines hohen Sicherheitsniveaus</li><li><b>Rund-um-die-Uhr-Überwachung</b> zur Verhinderung von unbefugtem Zugriff</li><li><b>Datenaufbewahrungsrichtlinie</b>, die sicherstellt, dass Dateien nach der Konvertierung gelöscht werden</li>"
+
+        },
+        "conclusion": {
+            "content": "Bei <b>LightConvert</b> sind wir bestrebt, das höchste Maß an Vertrauen zu unseren Nutzern aufrechtzuerhalten. Ihre Sicherheit und Compliance stehen im Mittelpunkt all unserer Bemühungen."
+        },
+        "downloadOriginalFileText": "Originaldatei herunterladen"
+    },
+    "privacy": {
+        "title": "Datenschutzrichtlinie",
+        "introduction": {
+            "title": "1. Einführung",
+            "purpose": "<b>Zweck</b>: Diese Datenschutzrichtlinie beschreibt, wie <b>Strixyco</b> („wir“, „uns“ oder „unser“) personenbezogene und nicht personenbezogene Daten unserer Nutzer und Kunden in Bezug auf unser Produkt <b>LightConvert</b> sammelt, verwendet und schützt. Datenschutz ist für uns von entscheidender Bedeutung, und wir verpflichten uns, Ihre Privatsphäre gemäß den geltenden Gesetzen und Vorschriften zu schützen.",
+            "scope": "<b>Geltungsbereich</b>: Diese Richtlinie gilt für alle Nutzer und Kunden von <b>LightConvert</b>, einschließlich derjenigen, die unsere Dienste nutzen, unsere Website besuchen oder auf anderen Wegen mit uns interagieren. Sie umfasst alle von <b>LightConvert</b> angebotenen Dienste, einschließlich <b>Dateikonvertierung</b> und <b>Speicherung</b>."
+        },
+        "dataCollection": {
+            "title": "2. Arten der gesammelten Daten",
+            "personalData": "<b>Personenbezogene Daten</b>: Name, E-Mail-Adresse, Benutzername, Passwort (sicher gespeichert), Zahlungsinformationen (falls zutreffend), Kontaktdaten (z. B. Telefonnummer) und alle anderen persönlichen Informationen, die Sie uns zur Verfügung stellen.",
+            "nonPersonalData": "<b>Nicht personenbezogene Daten</b>: IP-Adresse, Geräteinformationen (z. B. Gerätetyp, Betriebssystem), Cookies und andere Tracking-Technologien, Nutzungsdaten (z. B. wie Sie mit unseren Diensten interagieren) sowie Browser-Typ und -Version."
+        },
+        "dataCollectionMethods": {
+            "title": "3. Wie wir Daten sammeln",
+            "direct": "<b>Direkte Sammlung</b>: Wir sammeln personenbezogene Daten direkt von Ihnen, wenn Sie ein Konto erstellen, Formulare ausfüllen, einen Kauf tätigen oder uns auf andere Weise Informationen zur Verfügung stellen.",
+            "automated": "<b>Automatisierte Sammlung</b>: Wir sammeln nicht personenbezogene Daten automatisch über Cookies, Web-Beacons und andere Tracking-Technologien. Diese Daten umfassen Informationen über Ihr Gerät, Ihr Surfverhalten und Ihre Nutzung unserer Dienste.",
+            "thirdParty": "<b>Daten von Dritten</b>: Wir können auch Daten über Sie von Dritten erhalten, wie z. B. von Social-Media-Plattformen oder Zahlungsdienstleistern, wenn Sie Ihr Konto mit deren Diensten verknüpfen."
+        },
+        "dataUsage": {
+            "title": "4. Wie wir Ihre Daten verwenden",
+            "serviceProvision": "<b>Dienstleistungserbringung</b>: Wir verwenden Ihre Daten, um die von Ihnen genutzten Dienste bereitzustellen und zu verwalten, wie z. B. Dateikonvertierung, Kontoverwaltung und Kundensupport.",
+            "analyticsImprovement": "<b>Analyse und Verbesserung</b>: Wir analysieren Nutzungsdaten, um unsere Dienste zu verbessern, das Nutzerverhalten zu verstehen und neue Funktionen zu entwickeln.",
+            "marketing": "<b>Marketing & Kommunikation</b>: Wir können Ihre Daten verwenden, um Ihnen Marketingmitteilungen, Produktaktualisierungen und Newsletter zu senden. Sie können diese Mitteilungen jederzeit abbestellen.",
+            "legalCompliance": "<b>Rechtliche Compliance</b>: Wir verwenden Ihre Daten, um gesetzliche Verpflichtungen zu erfüllen, wie z. B. Meldepflichten, Betrugsprävention und die Beantwortung rechtlicher Anfragen."
+        },
+        "dataRetention": {
+            "title": "5. Aufbewahrung von Daten",
+            "storageDuration": "<b>Speicherdauer</b>: Wir bewahren Ihre Daten so lange auf, wie es zur Erfüllung der in dieser Richtlinie genannten Zwecke erforderlich ist, es sei denn, eine längere Aufbewahrungsfrist ist gesetzlich vorgeschrieben.",
+            "dataDeletion": "<b>Löschung von Daten</b>: Sie können jederzeit die Löschung Ihrer Daten beantragen, indem Sie uns kontaktieren. Wir werden Ihrem Antrag gemäß den geltenden Gesetzen entsprechen.",
+            "fileDeletionPolicy": "<b>Dateilöschungsrichtlinie</b>: Hochgeladene Dateien werden automatisch nach <b>24 Stunden</b> gelöscht, es sei denn, Sie speichern sie in Ihrem Konto. Sie können Dateien auch jederzeit manuell löschen."
+        },
+        "dataSecurity": {
+            "title": "6. Datensicherheit",
+            "encryption": "<b>Verschlüsselung und Schutz</b>: Wir verwenden branchenübliche Verschlüsselungs- und Sicherheitsmaßnahmen, um Ihre Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen.",
+            "accessControl": "<b>Zugriffskontrolle</b>: Der Zugriff auf Ihre Daten ist auf autorisiertes Personal beschränkt, das diese zur Erfüllung seiner Aufgaben benötigt. Alle Mitarbeiter werden in Datenschutzpraktiken geschult.",
+            "breachResponse": "<b>Reaktion auf Datenpannen</b>: Im Falle einer Datenpanne werden wir Sie und die zuständigen Behörden gemäß den geltenden Gesetzen benachrichtigen."
+        },
+        "cookies": {
+            "title": "7. Cookies und Tracking-Technologien",
+            "usage": "<b>Verwendung von Cookies</b>: Wir verwenden Cookies und ähnliche Technologien, um Ihr Nutzererlebnis zu verbessern, Ihre Präferenzen zu speichern und den Datenverkehr zu analysieren. Die von uns verwendeten Cookies umfassen:",
+            "types": {
+                "essential": "<b>Notwendige Cookies</b>: Erforderlich für den Betrieb unserer Dienste.",
+                "analytical": "<b>Analytische Cookies</b>: Werden verwendet, um zu analysieren, wie Sie unsere Dienste nutzen.",
+                "marketing": "<b>Marketing-Cookies</b>: Werden verwendet, um personalisierte Werbung anzuzeigen."
+            },
+            "optOut": "<b>Opt-out-Optionen</b>: Sie können Ihre Cookie-Einstellungen über Ihre Browsereinstellungen oder durch direkte Kontaktaufnahme mit uns verwalten."
+        },
+        "dataSharing": {
+            "title": "8. Weitergabe an Dritte",
+            "partners": "<b>Partner und Dienstleister</b>: Wir können Ihre Daten an Drittanbieter weitergeben, die uns bei der Erbringung unserer Dienste unterstützen, wie z. B. Zahlungsdienstleister, Hosting-Anbieter und Analysedienste.",
+            "legalObligations": "<b>Rechtliche Verpflichtungen</b>: Wir können Ihre Daten an Behörden oder Dritte weitergeben, wenn dies gesetzlich vorgeschrieben ist.",
+            "internationalTransfers": "<b>Internationale Übermittlungen</b>: Ihre Daten können in Länder außerhalb Ihres Wohnsitzlandes übermittelt und dort gespeichert werden. Wir stellen sicher, dass angemessene Schutzmaßnahmen gemäß den geltenden Gesetzen getroffen werden."
+        },
+        "userRights": {
+            "title": "9. Nutzerrechte",
+            "access": "<b>Zugriff und Berichtigung</b>: Sie haben das Recht, auf Ihre personenbezogenen Daten zuzugreifen und sie zu aktualisieren. Dies können Sie über Ihre Kontoeinstellungen oder durch direkte Kontaktaufnahme mit uns tun.",
+            "portability": "<b>Datenübertragbarkeit</b>: Sie können eine Kopie Ihrer Daten in einem maschinenlesbaren Format anfordern.",
+            "erasure": "<b>Löschung und Widerspruch</b>: Sie haben das Recht, die Löschung Ihrer Daten zu beantragen oder deren Verarbeitung zu widersprechen. Beachten Sie, dass einige Daten aus rechtlichen oder betrieblichen Gründen aufbewahrt werden können.",
+            "withdrawal": "<b>Widerruf der Einwilligung</b>: Wenn wir Ihre Einwilligung zur Verarbeitung Ihrer Daten benötigen, können Sie diese jederzeit widerrufen, indem Sie uns kontaktieren."
+        },
+        "childrenPrivacy": {
+            "title": "10. Datenschutz für Kinder",
+            "ageRestrictions": "<b>Altersbeschränkungen</b>: Unsere Dienste richten sich an Personen ab 13 Jahren. Wir sammeln keine Daten von Kindern unter 13 Jahren.",
+            "parentalConsent": "<b>Elterliche Zustimmung</b>: Wenn wir feststellen, dass wir Daten von einem Kind unter 13 Jahren gesammelt haben, werden wir diese Daten umgehend löschen."
+        },
+        "policyChanges": {
+            "title": "11. Änderungen dieser Datenschutzrichtlinie",
+            "notification": "<b>Benachrichtigung</b>: Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite veröffentlicht, und wir empfehlen Ihnen, sie regelmäßig zu überprüfen.",
+            "versioning": "<b>Versionierung</b>: Diese Datenschutzrichtlinie ist ab dem <b>17. Januar 2025</b> gültig. Wesentliche Änderungen werden hervorgehoben."
+        },
+        "contact": {
+            "title": "12. Kontaktinformationen",
+            "inquiries": "<b>Anfragen und Bedenken</b>: Wenn Sie Fragen, Bedenken oder Anfragen zu dieser Datenschutzrichtlinie oder unseren Datenschutzpraktiken haben, kontaktieren Sie uns bitte unter:",
+            "email": "support@lightconvert.app"
+        },
+        "governingLaw": {
+            "title": "13. Anwendbares Recht",
+            "jurisdiction": "<b>Gerichtsstand</b>: Diese Datenschutzrichtlinie unterliegt den Gesetzen der <b>Ukraine</b>, unter Ausschluss der kollisionsrechtlichen Bestimmungen. Streitigkeiten im Zusammenhang mit dieser Richtlinie unterliegen der ausschließlichen Zuständigkeit der Gerichte der <b>Ukraine</b>."
+        },
+        "downloadOriginalFileText": "Originaldatei herunterladen"
+    },
+    "api_doc": {
+        "title": "API-Dokumentation",
+        "content": "Wir arbeiten hart daran, Ihnen das beste API-Erlebnis zu bieten. Bitte schauen Sie bald wieder vorbei!",
+        "contact_us": "In der Zwischenzeit können Sie uns gerne {link}, wenn Sie Fragen haben.",
+        "contact_us_link": "kontaktieren Sie uns"
+    },
+    "notFoundPage": {
+        "title": "Seite nicht gefunden",
+        "message": "Entschuldigung, die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
+        "closeButton": {
+            "title": "Zur Startseite zurückkehren"
+        }
+    },
+    "meta": {
+        "title": "LightConvert - Kostenloser Online Video- und Bildkonverter",
+        "description": "Konvertieren Sie Videos und Bilder online mit LightConvert. Einfach zu bedienender, kostenloser Online-Konverter für verschiedene Formate. Video-Download-Funktion kommt bald!",
+        "keywords": "Videokonverter, Bildkonverter, Online-Konverter, kostenloser Konverter, Formatkonverter, Medienkonverter, LightConvert, Video-Download",
+        "ogTitle": "LightConvert - Konvertieren Sie Videos und Bilder kostenlos online",
+        "ogDescription": "Wandeln Sie Ihre Mediendateien einfach mit LightConvert um. Kostenloser Online-Konverter für Videos und Bilder, bald mit Video-Download-Funktionen.",
+        "schemaName": "LightConvert",
+        "schemaDescription": "Kostenlose Online-Plattform zur Konvertierung von Videos und Bildern zwischen verschiedenen Formaten. Benutzerfreundliche Oberfläche mit kommender Video-Download-Funktion aus verschiedenen Quellen."
+    }
+}
