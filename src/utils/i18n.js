@@ -11,16 +11,25 @@ import pl from '../locales/pl.json';
 
 // Все доступные переводы
 const messages = {
-    en: JSON.parse(JSON.stringify(en)),
-    uk: JSON.parse(JSON.stringify(uk)),
-    zh: JSON.parse(JSON.stringify(zh)),
-    ja: JSON.parse(JSON.stringify(ja)),
-    pt: JSON.parse(JSON.stringify(pt)),
-    es: JSON.parse(JSON.stringify(es)),
-    de: JSON.parse(JSON.stringify(de)),
-    ru: JSON.parse(JSON.stringify(ru)),
-    pl: JSON.parse(JSON.stringify(pl))
+    en: processLocaleFile(en),
+    uk: processLocaleFile(uk),
+    zh: processLocaleFile(zh),
+    ja: processLocaleFile(ja),
+    pt: processLocaleFile(pt),
+    es: processLocaleFile(es),
+    de: processLocaleFile(de),
+    ru: processLocaleFile(ru),
+    pl: processLocaleFile(pl)
 };
+
+function processLocaleFile(localeData) {
+    try {
+        return JSON.parse(JSON.stringify(localeData));
+    } catch (error) {
+        console.error('Locale parsing error:', error);
+        return {};
+    }
+}
 
 const supportedLanguages = Object.keys(messages);
 
