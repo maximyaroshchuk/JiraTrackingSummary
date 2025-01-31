@@ -1,13 +1,11 @@
 <template>
     <div>
         <h2>{{ $t('converter.convertTo') }} <span class="uppercase">{{ selectedInputFormat }}</span>
-            {{ $t('converter.to') }} <span
-                class="uppercase">{{ selectedOutputFormat }}</span></h2>
+            {{ $t('converter.to') }} <span class="uppercase">{{ selectedOutputFormat }}</span></h2>
 
         <div class="flex flex-column">
-            <Button type="dashed" class="input-60" @click="triggerFileSelection">{{
-                    $t('converter.chooseFile')
-                }}
+            <Button type="dashed" class="input-60" @click="triggerFileSelection">
+                {{ $t('converter.chooseFile') }}
             </Button>
             <input
                 :key="selectFileInputKey"
@@ -18,30 +16,36 @@
                 @change="handleFileChange"
                 style="display: none;"
             />
-            <p class="m-0 mt-3" for="fileInput">{{ selectedFile?.name }}</p>
+            <p class="m-0 mt-3" for="fileInput">{{ fileName }}</p>
         </div>
 
         <form @submit.prevent="convertFile">
             <div v-if="!selectedOutputFormat" class="flex justify-content-center align-items-center">
                 <h5>
-                    <span class="uppercase">
-                        {{ selectedInputFormat }}
-                    </span>
+                    <span class="uppercase">{{ selectedInputFormat }}</span>
                     {{ $t('converter.to') }}
                 </h5>
                 <Select class="ml-2 uppercase" size="large" v-model:value="selectedOutputFormat">
                     <option class="uppercase" v-for="format in availableOutputFormats" :key="format" :value="format">
+                        {{ format }}
                     </option>
                 </Select>
             </div>
             <div class="flex flex-column">
-                <Button type="primary" class="input-60 mt-3" htmlType="submit" :loading="convertionInProgress"
-                        :disabled="!selectedFile || !selectedOutputFormat">{{ convertButtonText }}
+                <Button
+                    :key="convertButtonKey"
+                    type="primary"
+                    class="input-60 mt-3"
+                    htmlType="submit"
+                    :loading="conversionInProgress"
+                    :disabled="!hasFile || !selectedOutputFormat"
+                >
+                    {{ convertButtonText }}
                 </Button>
 
                 <a
-                    id="download_converted_file_button"
                     v-if="downloadUrl"
+                    ref="downloadLink"
                     class="link-60"
                     download
                     :href="downloadUrl"
@@ -54,18 +58,19 @@
 </template>
 
 <script setup>
-import {ref, computed, watch, defineProps, onMounted} from 'vue';
+import {ref, computed, watch, defineProps, onMounted, onBeforeUnmount} from 'vue';
 import {getFileCategory, getAvailableOutputFormats} from '@/services/fileFormatService';
 import {showToaster} from "@/services/messagesService";
 import {post} from "@/services/system/Request";
 import {AES, enc} from 'crypto-js';
 import {useI18n} from "vue-i18n";
-import {useHead} from '@vueuse/head'
+import {useHead} from '@vueuse/head';
 
 const {t} = useI18n();
 
 const MAX_FILE_SIZE = 104857600;
-const CONVERSION_KEY = process.env.VUE_APP_CONVERSION_SECRET_KEY
+const CHUNK_SIZE = 1024 * 1024;
+const CONVERSION_KEY = process.env.VUE_APP_CONVERSION_SECRET_KEY;
 
 const props = defineProps({
     from: {
@@ -78,22 +83,43 @@ const props = defineProps({
     }
 });
 
-const selectedFile = ref(null);
+// Refs with minimal state
+const fileInputRef = ref(null);
+const downloadLink = ref(null);
+const fileName = ref('');
+const hasFile = ref(false);
+const fileSize = ref(0);
 const selectFileInputKey = ref(0);
+const convertButtonKey = ref(0);
 const selectedOutputFormat = ref(null);
 const selectedInputFormat = ref(null);
-const convertionInProgress = ref(false);
+const conversionInProgress = ref(false);
 const downloadUrl = ref(null);
-const fileInputRef = ref(null);
+
+// Cleanup function to prevent memory leaks
+const cleanup = () => {
+    if (downloadUrl.value) {
+        URL.revokeObjectURL(downloadUrl.value);
+    }
+    fileName.value = '';
+    hasFile.value = false;
+    fileSize.value = 0;
+    downloadUrl.value = null;
+};
 
 onMounted(() => {
     selectedInputFormat.value = props.from;
     selectedOutputFormat.value = props.to;
 });
 
+onBeforeUnmount(() => {
+    cleanup();
+});
+
 watch(
     () => [props.from, props.to],
     ([newFrom, newTo]) => {
+        cleanup();
         selectedInputFormat.value = newFrom;
         selectedOutputFormat.value = newTo;
     },
@@ -102,13 +128,15 @@ watch(
 
 const fileCategory = computed(() => getFileCategory(selectedInputFormat.value, props.to));
 
-const availableOutputFormats = computed(() => {
-    return getAvailableOutputFormats(fileCategory.value, selectedInputFormat.value);
-});
+const availableOutputFormats = computed(() =>
+    getAvailableOutputFormats(fileCategory.value, selectedInputFormat.value)
+);
 
-const convertButtonText = computed(() => {
-    return convertionInProgress.value ? t('converter.convertButtonTextInProgress') : t('converter.convertButtonText');
-});
+const convertButtonText = computed(() =>
+    conversionInProgress.value
+        ? t('converter.convertButtonTextInProgress')
+        : t('converter.convertButtonText')
+);
 
 const triggerFileSelection = () => {
     if (fileInputRef.value) {
@@ -116,88 +144,95 @@ const triggerFileSelection = () => {
     }
 };
 
-const handleFileChange = (event) => {
-    const file = event.target.files[0];
+async function processFileInChunks(file) {
+    const chunks = Math.ceil(file.size / CHUNK_SIZE);
+    let processedData = '';
 
+    for (let i = 0; i < chunks; i++) {
+        const start = i * CHUNK_SIZE;
+        const end = Math.min(start + CHUNK_SIZE, file.size);
+        const chunk = file.slice(start, end);
+
+        const buffer = await chunk.arrayBuffer();
+        processedData += arrayBufferToBase64Chunk(buffer);
+
+        await new Promise(resolve => setTimeout(resolve, 0));
+    }
+
+    return processedData;
+}
+
+const arrayBufferToBase64Chunk = (buffer) => {
+    const bytes = new Uint8Array(buffer);
+    return Array.from(bytes)
+        .map(byte => String.fromCharCode(byte))
+        .join('');
+};
+
+const handleFileChange = async (event) => {
+    cleanup();
+
+    const file = event.target.files?.[0];
     if (!file) return;
 
     if (file.size > MAX_FILE_SIZE) {
-        showToaster('error', t('converter.fileTooLarge', {size: '100MB'}));
-        selectedFile.value = null;
+        await showToaster('error', t('converter.fileTooLarge', {size: '100MB'}));
         return;
     }
 
-    selectedFile.value = file;
-    downloadUrl.value = null;
-};
-
-const downloadConvertedFile = () => {
-    if (!downloadUrl.value) {
-        showToaster('error', t('converter.noFileAvailableForDownload'));
-        return;
-    }
-
-    setTimeout(() => {
-        const downloadButton = document.getElementById('download_converted_file_button');
-        downloadButton.click()
-    }, 1000)
+    fileName.value = file.name;
+    fileSize.value = file.size;
+    hasFile.value = true;
 };
 
 const convertFile = async () => {
-    if (!selectedFile.value || !selectedOutputFormat.value) return;
-
-    const fileBuffer = await selectedFile.value.arrayBuffer();
-
-    const fileBase64 = arrayBufferToBase64(fileBuffer);
-
-    const encryptedFile = AES.encrypt(fileBase64, CONVERSION_KEY).toString();
-
-    const dataToEncrypt = {
-        fileType: fileCategory.value,
-        inputFormat: selectedInputFormat.value,
-        outputFormat: selectedOutputFormat.value.toLowerCase(),
-        fileName: selectedFile.value.name,
-    };
-
-    const encryptedData = AES.encrypt(JSON.stringify(dataToEncrypt), CONVERSION_KEY).toString();
-
-    const formData = new FormData();
-    formData.append('file', new Blob([encryptedFile], {type: 'text/plain'}), selectedFile.value.name);
-    formData.append('encryptedData', encryptedData);
-
-    convertionInProgress.value = true;
-    downloadUrl.value = null;
-
-    await showToaster('loading', t('converter.conversionStarted'));
+    if (!hasFile.value || !selectedOutputFormat.value) return;
 
     try {
+        convertButtonKey.value++;
+        conversionInProgress.value = true;
+
+        const file = fileInputRef.value.files[0];
+        const processedData = await processFileInChunks(file);
+        const encryptedFile = AES.encrypt(btoa(processedData), CONVERSION_KEY).toString();
+
+        const dataToEncrypt = {
+            fileType: fileCategory.value,
+            inputFormat: selectedInputFormat.value,
+            outputFormat: selectedOutputFormat.value.toLowerCase(),
+            fileName: fileName.value,
+        };
+
+        const encryptedData = AES.encrypt(JSON.stringify(dataToEncrypt), CONVERSION_KEY).toString();
+
+        const formData = new FormData();
+        formData.append('file', new Blob([encryptedFile], {type: 'text/plain'}), fileName.value);
+        formData.append('encryptedData', encryptedData);
+
+        await showToaster('loading', t('converter.conversionStarted'));
+
         const response = await post('/api/convert', formData);
+        const decryptedUrl = AES.decrypt(response.data.encryptedDownloadLink, CONVERSION_KEY).toString(enc.Utf8);
 
-        downloadUrl.value = AES.decrypt(response.data.encryptedDownloadLink, CONVERSION_KEY).toString(enc.Utf8);
+        downloadUrl.value = decryptedUrl;
 
-        convertionInProgress.value = false;
-        downloadConvertedFile();
+        if (downloadLink.value) {
+            setTimeout(() => downloadLink.value.click(), 1000);
+        }
+
         await showToaster('success', t('converter.conversionSuccessfullyCompleted'));
     } catch (error) {
-        selectedFile.value = null;
-        selectFileInputKey.value += 1
-        convertionInProgress.value = false;
+        cleanup();
+        selectFileInputKey.value++;
         await showToaster('error', error.data?.message);
+    } finally {
+        conversionInProgress.value = false;
     }
-};
-
-const arrayBufferToBase64 = (buffer) => {
-    let binary = '';
-    const bytes = new Uint8Array(buffer);
-    for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-    }
-    return btoa(binary);
 };
 
 const updateMeta = () => {
-    const fromUpper = props.from.toUpperCase()
-    const toUpper = props.to.toUpperCase()
+    const fromUpper = props.from.toUpperCase();
+    const toUpper = props.to.toUpperCase();
 
     useHead({
         title: t('converter.metaTitle', {from: fromUpper, to: toUpper}),
@@ -219,14 +254,8 @@ const updateMeta = () => {
                 content: t('converter.metaDescription', {from: fromUpper, to: toUpper})
             }
         ]
-    })
-}
+    });
+};
 
-watch(
-    () => [props.from, props.to],
-    () => {
-        updateMeta()
-    },
-    {immediate: true}
-)
+watch(() => [props.from, props.to], updateMeta, {immediate: true});
 </script>
