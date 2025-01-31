@@ -11,15 +11,15 @@ import pl from '../locales/pl.json';
 
 // Все доступные переводы
 const messages = {
-    en,
-    uk,
-    zh,
-    ja,
-    pt,
-    es,
-    de,
-    ru,
-    pl
+    en: JSON.parse(JSON.stringify(en)),
+    uk: JSON.parse(JSON.stringify(uk)),
+    zh: JSON.parse(JSON.stringify(zh)),
+    ja: JSON.parse(JSON.stringify(ja)),
+    pt: JSON.parse(JSON.stringify(pt)),
+    es: JSON.parse(JSON.stringify(es)),
+    de: JSON.parse(JSON.stringify(de)),
+    ru: JSON.parse(JSON.stringify(ru)),
+    pl: JSON.parse(JSON.stringify(pl))
 };
 
 const supportedLanguages = Object.keys(messages);
