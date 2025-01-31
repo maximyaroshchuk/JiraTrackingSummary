@@ -68,7 +68,7 @@ import {useHead} from '@vueuse/head';
 
 const {t} = useI18n();
 
-const MAX_FILE_SIZE = 104857600;
+const MAX_FILE_SIZE = 52428800;
 const CHUNK_SIZE = 1024 * 1024;
 const CONVERSION_KEY = process.env.VUE_APP_CONVERSION_SECRET_KEY;
 

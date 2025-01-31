@@ -89,7 +89,7 @@
     "converter": {
         "convertTo": "Convertir",
         "to": "a",
-        "chooseFile": "Elige un archivo (hasta 100MB)",
+        "chooseFile": "Elige un archivo (hasta 50MB)",
         "downloadConverterFileButtonText": "Descargar archivo convertido",
         "convertButtonText": "Convertir",
         "convertButtonTextInProgress": "Conversión en progreso...",
@@ -102,7 +102,7 @@
         "metaTitle": "Convertir {from} a {to} - LightConvert",
         "metaDescription": "Convierte archivos {from} al formato {to} en línea. ¡Rápido, gratis y fácil de usar!",
         "metaKeywords": "Convertir {from} a {to}, por LightConvert {from} a {to}, convertidor en línea de {from} a {to}",
-        "fileTooLarge": "Archivo demasiado grande. Suba un archivo de no más de 100MB"
+        "fileTooLarge": "Archivo demasiado grande. Suba un archivo de no más de 50MB"
     },
     "menu": {
         "convert": "Convertir",
