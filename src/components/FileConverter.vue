@@ -1,11 +1,16 @@
 <template>
     <div>
-        <h2>Convert <span class="uppercase">{{ selectedInputFormat }}</span> to <span
-            class="uppercase">{{ selectedOutputFormat }}</span></h2>
+        <h2>{{ $t('converter.convertTo') }} <span class="uppercase">{{ selectedInputFormat }}</span>
+            {{ $t('converter.to') }} <span
+                class="uppercase">{{ selectedOutputFormat }}</span></h2>
 
         <div class="flex flex-column">
-            <Button type="dashed" class="btn-60" @click="triggerFileSelection">Choose a file (up to 100MB)</Button>
+            <Button type="dashed" class="input-60" @click="triggerFileSelection">{{
+                    $t('converter.chooseFile')
+                }}
+            </Button>
             <input
+                :key="selectFileInputKey"
                 ref="fileInputRef"
                 type="file"
                 id="fileInput"
@@ -13,7 +18,7 @@
                 @change="handleFileChange"
                 style="display: none;"
             />
-            <p class="p-secondary" for="fileInput">{{ selectedFile?.name }}</p>
+            <p class="m-0 mt-3" for="fileInput">{{ selectedFile?.name }}</p>
         </div>
 
         <form @submit.prevent="convertFile">
@@ -22,26 +27,26 @@
                     <span class="uppercase">
                         {{ selectedInputFormat }}
                     </span>
-                    to
+                    {{ $t('converter.to') }}
                 </h5>
-                <Select class="ml-2 uppercase" v-model:value="selectedOutputFormat">
+                <Select class="ml-2 uppercase" size="large" v-model:value="selectedOutputFormat">
                     <option class="uppercase" v-for="format in availableOutputFormats" :key="format" :value="format">
                     </option>
                 </Select>
             </div>
             <div class="flex flex-column">
-                <Button type="primary" class="btn-60" htmlType="submit" :loading="convertionInProgress"
-                        :disabled="!selectedFile">{{ convertButtonText }}
+                <Button type="primary" class="input-60 mt-3" htmlType="submit" :loading="convertionInProgress"
+                        :disabled="!selectedFile || !selectedOutputFormat">{{ convertButtonText }}
                 </Button>
 
                 <a
                     id="download_converted_file_button"
                     v-if="downloadUrl"
-                    class="link-60 mt-4"
+                    class="link-60"
                     download
                     :href="downloadUrl"
                 >
-                    {{ downloadConverterFileButtonText }}
+                    {{ $t('converter.downloadConverterFileButtonText') }}
                 </a>
             </div>
         </form>
@@ -54,6 +59,13 @@ import {getFileCategory, getAvailableOutputFormats} from '@/services/fileFormatS
 import {showToaster} from "@/services/messagesService";
 import {post} from "@/services/system/Request";
 import {AES, enc} from 'crypto-js';
+import {useI18n} from "vue-i18n";
+import {useHead} from '@vueuse/head'
+
+const {t} = useI18n();
+
+const MAX_FILE_SIZE = 104857600;
+const CONVERSION_KEY = process.env.VUE_APP_CONVERSION_SECRET_KEY
 
 const props = defineProps({
     from: {
@@ -67,6 +79,7 @@ const props = defineProps({
 });
 
 const selectedFile = ref(null);
+const selectFileInputKey = ref(0);
 const selectedOutputFormat = ref(null);
 const selectedInputFormat = ref(null);
 const convertionInProgress = ref(false);
@@ -87,19 +100,14 @@ watch(
     {immediate: true}
 );
 
-const fileCategory = computed(() => getFileCategory(selectedInputFormat.value));
+const fileCategory = computed(() => getFileCategory(selectedInputFormat.value, props.to));
 
 const availableOutputFormats = computed(() => {
     return getAvailableOutputFormats(fileCategory.value, selectedInputFormat.value);
 });
 
 const convertButtonText = computed(() => {
-    return convertionInProgress.value ? 'Convert in progress...' : 'Convert';
-});
-
-const downloadConverterFileButtonText = computed(() => {
-
-    return `Download converted ${fileCategory.value}`
+    return convertionInProgress.value ? t('converter.convertButtonTextInProgress') : t('converter.convertButtonText');
 });
 
 const triggerFileSelection = () => {
@@ -109,13 +117,23 @@ const triggerFileSelection = () => {
 };
 
 const handleFileChange = (event) => {
-    selectedFile.value = event.target.files[0];
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+        showToaster('error', t('converter.fileTooLarge', {size: '100MB'}));
+        selectedFile.value = null;
+        return;
+    }
+
+    selectedFile.value = file;
     downloadUrl.value = null;
 };
 
 const downloadConvertedFile = () => {
     if (!downloadUrl.value) {
-        showToaster('error', 'No file available for download');
+        showToaster('error', t('converter.noFileAvailableForDownload'));
         return;
     }
 
@@ -125,8 +143,6 @@ const downloadConvertedFile = () => {
     }, 1000)
 };
 
-const secretKey = 'mySecretKey123';
-
 const convertFile = async () => {
     if (!selectedFile.value || !selectedOutputFormat.value) return;
 
@@ -134,7 +150,7 @@ const convertFile = async () => {
 
     const fileBase64 = arrayBufferToBase64(fileBuffer);
 
-    const encryptedFile = AES.encrypt(fileBase64, secretKey).toString();
+    const encryptedFile = AES.encrypt(fileBase64, CONVERSION_KEY).toString();
 
     const dataToEncrypt = {
         fileType: fileCategory.value,
@@ -143,7 +159,7 @@ const convertFile = async () => {
         fileName: selectedFile.value.name,
     };
 
-    const encryptedData = AES.encrypt(JSON.stringify(dataToEncrypt), secretKey).toString();
+    const encryptedData = AES.encrypt(JSON.stringify(dataToEncrypt), CONVERSION_KEY).toString();
 
     const formData = new FormData();
     formData.append('file', new Blob([encryptedFile], {type: 'text/plain'}), selectedFile.value.name);
@@ -152,18 +168,19 @@ const convertFile = async () => {
     convertionInProgress.value = true;
     downloadUrl.value = null;
 
-    await showToaster('loading', 'Conversion started');
+    await showToaster('loading', t('converter.conversionStarted'));
 
     try {
         const response = await post('/api/convert', formData);
 
-        downloadUrl.value = AES.decrypt(response.data.encryptedDownloadLink, secretKey).toString(enc.Utf8);
+        downloadUrl.value = AES.decrypt(response.data.encryptedDownloadLink, CONVERSION_KEY).toString(enc.Utf8);
 
         convertionInProgress.value = false;
         downloadConvertedFile();
-        await showToaster('success', 'Conversion completed successfully');
+        await showToaster('success', t('converter.conversionSuccessfullyCompleted'));
     } catch (error) {
         selectedFile.value = null;
+        selectFileInputKey.value += 1
         convertionInProgress.value = false;
         await showToaster('error', error.data?.message);
     }
@@ -178,21 +195,38 @@ const arrayBufferToBase64 = (buffer) => {
     return btoa(binary);
 };
 
+const updateMeta = () => {
+    const fromUpper = props.from.toUpperCase()
+    const toUpper = props.to.toUpperCase()
+
+    useHead({
+        title: t('converter.metaTitle', {from: fromUpper, to: toUpper}),
+        meta: [
+            {
+                name: 'description',
+                content: t('converter.metaDescription', {from: fromUpper, to: toUpper})
+            },
+            {
+                name: 'keywords',
+                content: t('converter.metaKeywords', {from: props.from, to: props.to})
+            },
+            {
+                property: 'og:title',
+                content: t('converter.metaTitle', {from: fromUpper, to: toUpper})
+            },
+            {
+                property: 'og:description',
+                content: t('converter.metaDescription', {from: fromUpper, to: toUpper})
+            }
+        ]
+    })
+}
+
 watch(
     () => [props.from, props.to],
-    ([newFrom, newTo]) => {
-        document.title = `Convert ${newFrom.toUpperCase()} to ${newTo.toUpperCase()} - LightConvert`;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', `Convert ${newFrom.toUpperCase()} files to ${newTo.toUpperCase()} format online. Fast, free, and easy to use!`);
-        }
-
-        const metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (metaKeywords) {
-            metaKeywords.setAttribute('content', `Convert ${newFrom} to ${newTo}, by LightConvert ${newFrom} to ${newTo}, online ${newFrom} to ${newTo} converter`);
-        }
+    () => {
+        updateMeta()
     },
     {immediate: true}
-);
+)
 </script>

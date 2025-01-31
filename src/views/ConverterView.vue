@@ -9,21 +9,27 @@
 </template>
 
 <script setup>
-import {ref, watch} from 'vue';
+import {ref, watch, computed} from 'vue';
 import {useRoute} from 'vue-router';
 import FileConverter from "@/components/FileConverter.vue";
 
 const route = useRoute();
 
-const inputFormat = ref(route.query.from || '');
-const outputFormat = ref(route.query.to || '');
+const conversionParams = computed(() => {
+    const [from, to] = route.params.conversion?.split('-to-') || [];
+    return {from, to};
+});
+
+const inputFormat = ref(conversionParams.value.from || '');
+const outputFormat = ref(conversionParams.value.to || '');
 const componentKey = ref(Date.now());
 
 watch(
-    () => route.query,
-    (newQuery) => {
-        inputFormat.value = newQuery.from || '';
-        outputFormat.value = newQuery.to || '';
+    () => route.params.conversion,
+    (newConversion) => {
+        const [from, to] = newConversion?.split('-to-') || [];
+        inputFormat.value = from || '';
+        outputFormat.value = to || '';
         componentKey.value = Date.now();
     },
     {immediate: true}

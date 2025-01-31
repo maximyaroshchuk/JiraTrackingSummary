@@ -1,13 +1,12 @@
 import axios from "axios";
 import NProgress from 'nprogress';
 
-const API_URL = 'https://lightconvert-api.onrender.com/';
-
 const apiClient = axios.create({
-    baseURL: API_URL,
+    baseURL: process.env.VUE_APP_API_URL,
 });
 
 apiClient.interceptors.request.use(config => {
+    config.headers['Accept-Language'] = localStorage.getItem('preferredLanguage') || 'en';
     return config;
 }, error => {
     return Promise.reject(error);

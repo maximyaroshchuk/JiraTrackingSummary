@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="text-center">Contact us</h1>
+        <h1 class="text-center">{{ $t('contact.title') }}</h1>
         <div class="flex flex-column align-items-center">
             <Form
                 :model="formState"
@@ -14,40 +14,40 @@
             >
                 <!-- Name -->
                 <FormItem
-                    label="Your name"
+                    :label="$t('contact.nameLabel')"
                     name="name"
-                    :rules="[{ required: true, message: 'Please fill your name' }]"
+                    :rules="[{ required: true, message: $t('contact.nameError') }]"
                 >
                     <Input v-model:value="formState.name"/>
                 </FormItem>
 
                 <!-- Email -->
                 <FormItem
-                    label="Your email"
+                    :label="$t('contact.emailLabel')"
                     name="email"
-                    :rules="[{ required: true, message: 'Please fill your email' }]"
+                    :rules="[{ required: true, message: $t('contact.emailError') }]"
                 >
                     <Input v-model:value="formState.email"/>
                 </FormItem>
 
                 <!-- Subject -->
                 <FormItem
-                    label="Subject"
+                    :label="$t('contact.subjectLabel')"
                     name="subject"
-                    :rules="[{ required: true, message: 'Please select a subject' }]"
+                    :rules="[{ required: true, message: $t('contact.subjectError') }]"
                 >
-                    <Select v-model:value="formState.subject" placeholder="Please select Subject">
-                        <SelectOption value="API">Technical and API support</SelectOption>
-                        <SelectOption value="Error Report">Conversion does not work as expected</SelectOption>
-                        <SelectOption value="Other">Other</SelectOption>
+                    <Select v-model:value="formState.subject" :placeholder="$t('contact.subjectPlaceholder')">
+                        <SelectOption value="API">{{ $t('contact.subjectOptions.api') }}</SelectOption>
+                        <SelectOption value="Error Report">{{ $t('contact.subjectOptions.errorReport') }}</SelectOption>
+                        <SelectOption value="Other">{{ $t('contact.subjectOptions.other') }}</SelectOption>
                     </Select>
                 </FormItem>
 
                 <!-- Message -->
                 <FormItem
-                    label="Your message"
+                    :label="$t('contact.messageLabel')"
                     name="message"
-                    :rules="[{ required: true, message: 'Please write your message' }]"
+                    :rules="[{ required: true, message: $t('contact.messageError') }]"
                 >
                     <Textarea rows="10" v-model:value="formState.message"/>
                 </FormItem>
@@ -55,13 +55,14 @@
                 <!-- Privacy Policy -->
                 <FormItem class="text-right" name="accept-privacy-policy" :wrapper-col="{ span: 11 }">
                     <Checkbox v-model:checked="formState.acceptPrivacyPolicy">
-                        I accept the <a target="_blank" href="/privacy">Privacy Policy</a>.
+                        {{ $t('contact.privacyPolicy') }}
+                        <a target="_blank" href="/privacy">{{ $t('contact.privacyPolicyLinkText') }}</a>
                     </Checkbox>
                 </FormItem>
 
                 <!-- Submit Button -->
                 <FormItem class="text-right" :wrapper-col="{ span: 22 }">
-                    <Button :disabled="!allowSend" type="primary" html-type="submit">Send</Button>
+                    <Button :disabled="!allowSend" type="primary" html-type="submit">{{ $t('contact.submit') }}</Button>
                 </FormItem>
             </Form>
         </div>

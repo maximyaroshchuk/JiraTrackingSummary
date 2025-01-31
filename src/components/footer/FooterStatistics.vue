@@ -1,9 +1,11 @@
 <template>
     <p>
-        We've already converted
+        {{ $t('footer_statistics.convertedFiles') }}
         <span ref="totalFilesEl" class="highlight">{{ statistics.totalFiles }}</span>
-        files with a total size of
-        <span ref="totalSizeEl" class="highlight">{{ statistics.totalSizeTB }}</span> TB.
+        {{ $t('footer_statistics.withTotalSize') }}
+        <span ref="totalSizeEl" class="highlight">{{ statistics.totalSizeTB }}</span> {{
+            $t('footer_statistics.format')
+        }}.
     </p>
 </template>
 

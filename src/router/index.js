@@ -9,9 +9,24 @@ const routes = [
         component: HomeView
     },
     {
-        path: '/converter',
+        path: '/converter/:conversion',
         name: 'converter',
-        component: ConverterView
+        component: ConverterView,
+        beforeEnter: (to, from, next) => {
+            const [fromFormat, toFormat] = to.params.conversion.split('-to-');
+            if (!fromFormat || !toFormat) {
+                next({name: 'notfound'});
+            } else {
+                next();
+            }
+        },
+        props: (route) => {
+            const [from, to] = route.params.conversion.split('-to-');
+            return {
+                from: from.toLowerCase(),
+                to: to.toLowerCase(),
+            };
+        },
     },
     {
         path: '/about',
@@ -64,6 +79,11 @@ const routes = [
     {
         path: '/:pathMatch(.*)*',
         name: 'notfound',
+        component: () => import('../components/layouts/NotFound.vue')
+    },
+    {
+        path: '/not-found',
+        name: 'notfoundpage',
         component: () => import('../components/layouts/NotFound.vue')
     },
 ]

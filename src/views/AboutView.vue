@@ -1,48 +1,35 @@
 <template>
     <div class="container">
-        <h1 class="text-center">About us</h1>
+        <h1 class="text-center">{{ $t('about.title') }}</h1>
         <p>
-            <b>LightConvert</b>, developed by <b>Strixyco</b>, is a
+            <b>{{ $t('about.projectName') }}</b>, {{ $t('about.developedBy') }} <b>{{ $t('about.companyName') }}</b>,
+            {{ $t('about.description') }}
             <Tooltip>
-                <template #title>Brave with Ukraine 🇺🇦</template>
-                <b>Ukrainian</b>
+                <template #title>{{ $t('about.tooltipUkraine') }}</template>
+                <b>{{ $t('about.ukraine') }}</b>
             </Tooltip>
-            project born out of a passion for simplifying and
-            streamlining file conversion processes. Our goal is to provide a powerful yet user-friendly platform that
-            caters
-            to individuals and businesses around the world.
+            {{ $t('about.process') }}
         </p>
         <p>
-            At <b>LightConvert</b>, we believe file conversion should be effortless, secure, and accessible to all. By
-            supporting a
-            wide range of file formats, our service enables users to work more efficiently, saving time and resources in
-            today’s fast-paced digital environment.
+            {{ $t('about.mission') }}
         </p>
         <p>
-            Data security is at the heart of what we do. Every file processed on <b>LightConvert</b> is treated with the
-            highest
-            level of care, utilizing state-of-the-art security measures to ensure privacy and trust.
+            {{ $t('about.security') }}
         </p>
         <p>
-            <b>Strixyco’s</b> foundation in
+            <b>{{ $t('about.companyName') }}</b> {{ $t('about.foundation') }}
             <Tooltip>
-                <template #title>Brave with Ukraine 🇺🇦</template>
-                <b>Ukraine</b>
+                <template #title>{{ $t('about.tooltipUkraine') }}</template>
+                <b>{{ $t('about.ukraine') }}</b>
             </Tooltip>
-            reflects our values of innovation, resilience, and a commitment to
-            excellence.
-            We operate with a small, dynamic team dedicated to constant improvement and delivering an unparalleled user
-            experience.
+            {{ $t('about.values') }}
         </p>
         <p>
-            With <b>LightConvert</b>, you can focus on your priorities while we take care of all your file conversion
-            needs
-            with
-            precision and reliability.
+            {{ $t('about.focus') }}
         </p>
-
-        <small>App version: 1.0.0</small>
+        <small>{{ $t('about.version') }}</small>
     </div>
 </template>
+
 <script setup lang="ts">
 </script>

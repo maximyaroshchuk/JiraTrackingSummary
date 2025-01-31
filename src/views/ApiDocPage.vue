@@ -1,18 +1,26 @@
-<script setup>
-// Логика пока не требуется
-</script>
-
 <template>
     <div class="api-docs-placeholder">
-        <h1>API Documentation</h1>
-        <p>We're working hard to bring you the best API experience. Please check back soon!</p>
+        <h1>{{ $t('api_doc.title') }}</h1>
+        <p>{{ $t('api_doc.content') }}</p>
         <div class="construction-icon">
             <i class="pi pi-cog" style="font-size: 4rem; color: #1DA079;"></i>
         </div>
-        <p>In the meantime, feel free to <a href="/contact" class="api-link">contact us</a> if you have any questions.
-        </p>
+        <p v-html="translatedContactUs"></p>
     </div>
 </template>
+
+<script setup>
+import {computed} from 'vue';
+import {useI18n} from 'vue-i18n';
+
+const {t} = useI18n();
+
+const translatedContactUs = computed(() =>
+    t('api_doc.contact_us', {
+        link: `<a href="/contact" class="api-link">${t('api_doc.contact_us_link')}</a>`,
+    })
+);
+</script>
 
 <style scoped>
 .api-docs-placeholder {
@@ -47,16 +55,5 @@ p {
     to {
         transform: rotate(360deg);
     }
-}
-
-.api-link {
-    color: #1DA079; /* Цвет бренда */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.api-link:hover {
-    color: #168a6b; /* Темнее для hover */
 }
 </style>
