@@ -89,7 +89,7 @@
     "converter": {
         "convertTo": "Конвертувати",
         "to": "в",
-        "chooseFile": "Виберіть файл (до 50 МБ)",
+        "chooseFile": "Виберіть файл (до 100 МБ)",
         "downloadConverterFileButtonText": "Завантажити конвертований файл",
         "convertButtonText": "Конвертувати",
         "convertButtonTextInProgress": "Конвертація триває...",
@@ -102,7 +102,7 @@
         "metaTitle": "Конвертувати {from} у {to} - LightConvert",
         "metaDescription": "Конвертуйте файли {from} у формат {to} онлайн. Швидко, безкоштовно та легко у використанні!",
         "metaKeywords": "Конвертувати {from} у {to}, LightConvert {from} у {to}, онлайн конвертер {from} у {to}",
-        "fileTooLarge": "Файл занадто великий. Завантажте файл не більше ніж 50 МБ"
+        "fileTooLarge": "Файл занадто великий. Завантажте файл не більше ніж 100 МБ"
     },
     "menu": {
         "convert": "Конвертувати",

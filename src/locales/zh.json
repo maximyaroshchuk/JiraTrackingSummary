@@ -89,7 +89,7 @@
     "converter": {
         "convertTo": "转换",
         "to": "到",
-        "chooseFile": "选择文件（最大50MB）",
+        "chooseFile": "选择文件（最大100MB）",
         "downloadConverterFileButtonText": "下载转换后的文件",
         "convertButtonText": "转换",
         "convertButtonTextInProgress": "正在转换...",
@@ -102,7 +102,7 @@
         "metaTitle": "将 {from} 转换为 {to} - LightConvert",
         "metaDescription": "在线将 {from} 文件转换为 {to} 格式。快速、免费且易于使用！",
         "metaKeywords": "将 {from} 转换为 {to}, 通过 LightConvert {from} 转换为 {to}, 在线 {from} 转换为 {to} 转换器",
-        "fileTooLarge": "文件太大。请上传不超过50MB的文件"
+        "fileTooLarge": "文件太大。请上传不超过100MB的文件"
     },
     "menu": {
         "convert": "转换",

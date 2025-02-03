@@ -92,7 +92,7 @@
     "converter": {
         "convertTo": "Convert",
         "to": "to",
-        "chooseFile": "Choose a file (up to 50MB)",
+        "chooseFile": "Choose a file (up to 100MB)",
         "downloadConverterFileButtonText": "Download converted file",
         "convertButtonText": "Convert",
         "convertButtonTextInProgress": "Convert in progress...",
@@ -105,7 +105,7 @@
         "metaTitle": "Convert {from} to {to} - LightConvert",
         "metaDescription": "Convert {from} files to {to} format online. Fast, free, and easy to use!",
         "metaKeywords": "Convert {from} to {to}, by LightConvert {from} to {to}, online {from} to {to} converter",
-        "fileTooLarge": "File too large. Upload a file no larger than 50MB"
+        "fileTooLarge": "File too large. Upload a file no larger than 100MB"
     },
     "menu": {
         "convert": "Convert",

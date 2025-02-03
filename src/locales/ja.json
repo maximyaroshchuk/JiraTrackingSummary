@@ -89,7 +89,7 @@
     "converter": {
         "convertTo": "変換",
         "to": "へ",
-        "chooseFile": "ファイルを選択（最大50MB）",
+        "chooseFile": "ファイルを選択（最大100MB）",
         "downloadConverterFileButtonText": "変換されたファイルをダウンロード",
         "convertButtonText": "変換",
         "convertButtonTextInProgress": "変換中...",
@@ -102,7 +102,7 @@
         "metaTitle": "{from} を {to} に変換 - LightConvert",
         "metaDescription": "オンラインで {from} ファイルを {to} 形式に変換します。高速、無料、使いやすい！",
         "metaKeywords": "{from} を {to} に変換, LightConvert による {from} を {to} に変換, オンライン {from} から {to} へのコンバーター",
-        "fileTooLarge": "ファイルが大きすぎます。50MBを超えないファイルをアップロードしてください"
+        "fileTooLarge": "ファイルが大きすぎます。100MBを超えないファイルをアップロードしてください"
     },
     "menu": {
         "convert": "変換",

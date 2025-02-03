@@ -1,7 +1,8 @@
 <template>
     <div>
         <h2>{{ $t('converter.convertTo') }} <span class="uppercase">{{ selectedInputFormat }}</span>
-            {{ $t('converter.to') }} <span class="uppercase">{{ selectedOutputFormat }}</span></h2>
+            {{ $t('converter.to') }} <span class="uppercase">{{ selectedOutputFormat }}</span>
+        </h2>
 
         <div class="flex flex-column">
             <Button type="dashed" class="input-60" @click="triggerFileSelection">
@@ -16,7 +17,7 @@
                 @change="handleFileChange"
                 style="display: none;"
             />
-            <p class="m-0 mt-3" for="fileInput">{{ fileName }}</p>
+            <p class="m-0 mt-3">{{ fileName }}</p>
         </div>
 
         <form @submit.prevent="convertFile">
@@ -65,10 +66,11 @@ import {post} from "@/services/system/Request";
 import {AES, enc} from 'crypto-js';
 import {useI18n} from "vue-i18n";
 import {useHead} from '@vueuse/head';
+import {v4 as uuidv4} from 'uuid';
 
 const {t} = useI18n();
 
-const MAX_FILE_SIZE = 52428800;
+const MAX_FILE_SIZE = 104857600;
 const CHUNK_SIZE = 1024 * 1024;
 const CONVERSION_KEY = process.env.VUE_APP_CONVERSION_SECRET_KEY;
 
@@ -86,6 +88,7 @@ const props = defineProps({
 const fileInputRef = ref(null);
 const fileName = ref('');
 const hasFile = ref(false);
+const fileId = ref(null);
 const fileSize = ref(0);
 const selectFileInputKey = ref(0);
 const convertButtonKey = ref(0);
@@ -141,34 +144,8 @@ const triggerFileSelection = () => {
     }
 };
 
-async function processFileInChunks(file) {
-    const chunks = Math.ceil(file.size / CHUNK_SIZE);
-    let processedData = '';
-
-    for (let i = 0; i < chunks; i++) {
-        const start = i * CHUNK_SIZE;
-        const end = Math.min(start + CHUNK_SIZE, file.size);
-        const chunk = file.slice(start, end);
-
-        const buffer = await chunk.arrayBuffer();
-        processedData += arrayBufferToBase64Chunk(buffer);
-
-        await new Promise(resolve => setTimeout(resolve, 0));
-    }
-
-    return processedData;
-}
-
-const arrayBufferToBase64Chunk = (buffer) => {
-    const bytes = new Uint8Array(buffer);
-    return Array.from(bytes)
-        .map(byte => String.fromCharCode(byte))
-        .join('');
-};
-
 const handleFileChange = async (event) => {
     cleanup();
-
     const file = event.target.files?.[0];
     if (!file) return;
 
@@ -182,18 +159,41 @@ const handleFileChange = async (event) => {
     hasFile.value = true;
 };
 
+/**
+ * Завантажує файл чанками. Кожен чанк відправляється на бекенд за адресою "/api/upload-chunk".
+ * Функція повертає згенерований унікальний fileId.
+ */
+async function uploadFileInChunks(file) {
+    const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
+    const fileId = uuidv4();
+    for (let i = 0; i < totalChunks; i++) {
+        const start = i * CHUNK_SIZE;
+        const end = Math.min(start + CHUNK_SIZE, file.size);
+        const chunk = file.slice(start, end);
+
+        const formData = new FormData();
+        formData.append('chunk', chunk, file.name);
+        formData.append('fileId', fileId);
+        formData.append('chunkNumber', i);
+        formData.append('totalChunks', totalChunks);
+        formData.append('fileName', file.name);
+
+        // Відправляємо кожен чанк на кінцеву точку /api/upload-chunk
+        await post('/api/upload-chunk', formData);
+    }
+    return fileId;
+}
+
 const downloadConvertedFile = () => {
     if (!downloadUrl.value) {
         showToaster('error', t('converter.noFileAvailableForDownload'));
         return;
     }
-
     setTimeout(() => {
         const downloadButton = document.getElementById('download_converted_file_button');
-        downloadButton.click()
-    }, 1000)
+        downloadButton.click();
+    }, 1000);
 };
-
 
 const convertFile = async () => {
     if (!hasFile.value || !selectedOutputFormat.value) return;
@@ -203,35 +203,37 @@ const convertFile = async () => {
         conversionInProgress.value = true;
 
         const file = fileInputRef.value.files[0];
-        const processedData = await processFileInChunks(file);
-        const encryptedFile = AES.encrypt(btoa(processedData), CONVERSION_KEY).toString();
+
+        fileId.value = await uploadFileInChunks(file);
 
         const dataToEncrypt = {
             fileType: fileCategory.value,
             inputFormat: selectedInputFormat.value,
             outputFormat: selectedOutputFormat.value.toLowerCase(),
-            fileName: fileName.value,
         };
-
         const encryptedData = AES.encrypt(JSON.stringify(dataToEncrypt), CONVERSION_KEY).toString();
 
-        const formData = new FormData();
-        formData.append('file', new Blob([encryptedFile], {type: 'text/plain'}), fileName.value);
-        formData.append('encryptedData', encryptedData);
+        const conversionPayload = {
+            fileName: file.name,
+            encryptedData,
+        };
 
         await showToaster('loading', t('converter.conversionStarted'));
 
-        const response = await post('/api/convert', formData);
+        const response = await post('/api/convert', conversionPayload);
         const decryptedUrl = AES.decrypt(response.data.encryptedDownloadLink, CONVERSION_KEY).toString(enc.Utf8);
-
         downloadUrl.value = decryptedUrl;
-        downloadConvertedFile()
 
+        downloadConvertedFile();
         await showToaster('success', t('converter.conversionSuccessfullyCompleted'));
     } catch (error) {
         cleanup();
         selectFileInputKey.value++;
-        await showToaster('error', error.data?.message);
+        const errorMessage =
+            error?.response?.data?.message ||
+            error?.message ||
+            error
+        await showToaster('error', errorMessage);
     } finally {
         conversionInProgress.value = false;
     }

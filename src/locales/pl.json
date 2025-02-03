@@ -92,7 +92,7 @@
     "converter": {
         "convertTo": "Konwertuj",
         "to": "na",
-        "chooseFile": "Wybierz plik (do 50MB)",
+        "chooseFile": "Wybierz plik (do 100MB)",
         "downloadConverterFileButtonText": "Pobierz przekonwertowany plik",
         "convertButtonText": "Konwertuj",
         "convertButtonTextInProgress": "Konwersja w toku...",
@@ -105,7 +105,7 @@
         "metaTitle": "Konwertuj {from} na {to} - LightConvert",
         "metaDescription": "Konwertuj pliki {from} na format {to} online. Szybko, za darmo i łatwo w użyciu!",
         "metaKeywords": "Konwertuj {from} na {to}, przez LightConvert {from} na {to}, konwerter online {from} na {to}",
-        "fileTooLarge": "Plik jest za duży. Wgraj plik nie większy niż 50MB"
+        "fileTooLarge": "Plik jest za duży. Wgraj plik nie większy niż 100MB"
     },
     "menu": {
         "convert": "Konwertuj",
