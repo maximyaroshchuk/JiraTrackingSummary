@@ -178,8 +178,7 @@ async function uploadFileInChunks(file) {
         formData.append('totalChunks', totalChunks);
         formData.append('fileName', file.name);
 
-        // Відправляємо кожен чанк на кінцеву точку /api/upload-chunk
-        await post('/api/upload-chunk', formData);
+        await post('/api/upload-chunk', formData, true);
     }
     return fileId;
 }
@@ -232,7 +231,7 @@ const convertFile = async () => {
         const errorMessage =
             error?.response?.data?.message ||
             error?.message ||
-            error
+            error.data
         await showToaster('error', errorMessage);
     } finally {
         conversionInProgress.value = false;
