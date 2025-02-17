@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://lightconvert.app/sitemap.xml
-
-# Language information
-X-Languages-Available: en, uk, zh, ja, pt, es, de, ru, pl
