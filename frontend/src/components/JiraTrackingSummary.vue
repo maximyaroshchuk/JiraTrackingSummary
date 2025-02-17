@@ -7,11 +7,12 @@ const worklogs = ref([]);
 const totalHours = ref(0);
 const loading = ref(true);
 const error = ref(null);
+const API_URL = import.meta.env.VITE_API_URL;
 
 async function fetchWorklogs() {
     loading.value = true;
     try {
-        const response = await axios.get('http://localhost:3000/api/worklogs');
+        const response = await axios.get(`${API_URL}/api/worklogs`);
         worklogs.value = response.data.tasks;
         totalHours.value = response.data.total;
     } catch (err) {
