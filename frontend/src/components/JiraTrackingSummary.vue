@@ -69,16 +69,20 @@ onMounted(fetchWorklogs);
 
 <style scoped lang="scss">
 a {
-    color: #539df2;
+    color: #2e8cff;
+}
+
+a:hover {
+    color: #006aec;
 }
 
 .surface-card {
-    background-color: #242424 !important;
+    background-color: #e1e1e1 !important;
     border-radius: 12px;
 }
 
 .total {
-    color: #569b9d !important;
+    color: #006aec !important;
 }
 
 .error {
@@ -89,12 +93,12 @@ table a {
     text-decoration: none;
 }
 thead tr {
-    background-color: #f0f0f0 !important;
+    background-color: #151515 !important;
 }
 
 thead th {
-    color: #000000;
-    border: 1px solid #f0f0f0 !important;
+    color: #ffffff;
+    border: 1px solid #4f4f4f !important;
     font-weight: 500;
     text-align: left;
 }
@@ -114,15 +118,15 @@ tbody tr:first-child td {
 }
 
 table tbody tr {
-    border-left: 1px solid #f0f0f0;
-    border-right: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+    border-left: 1px solid #4f4f4f;
+    border-right: 1px solid #4f4f4f;
+    border-bottom: 1px solid #4f4f4f;
 }
 
 tbody td {
     text-align: left;
     padding: 0.5rem;
     border-top: none;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #4f4f4f;
 }
 </style>
