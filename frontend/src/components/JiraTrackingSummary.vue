@@ -1,43 +1,17 @@
-// Frontend: Vue 3 (Vite) - Displaying Jira Worklogs
-<script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-
-const worklogs = ref([]);
-const totalHours = ref(0);
-const loading = ref(true);
-const error = ref(null);
-const API_URL = import.meta.env.VITE_API_URL;
-
-async function fetchWorklogs() {
-    loading.value = true;
-    try {
-        const response = await axios.get(`${API_URL}/api/worklogs`);
-        worklogs.value = response.data.tasks;
-        totalHours.value = response.data.total;
-    } catch (err) {
-        error.value = 'Error loading worklogs';
-        console.error(err);
-    } finally {
-        loading.value = false;
-    }
-}
-
-onMounted(fetchWorklogs);
-</script>
-
 <template>
     <div class="p-4 surface-card">
-        <h1 class="text-2xl font-bold mb-6">Your Worklogs for Today</h1>
-
-        <div v-if="loading" class="text-center">Loading...</div>
-        <div v-else-if="error" class="text-red-500">{{ error }}</div>
+        <div v-if="loading" class="text-center"><CustomSpinner/></div>
+        <div v-else-if="error" class="flex flex-column error">
+            <p class="font-bold">{{ error }}</p>
+            <Button class="mt-4" type="primary" @click="fetchWorklogs">Try again</Button>
+        </div>
         <div v-else>
+            <h1 class="text-2xl font-bold mb-6">Your worklogs for {{todayDate}}</h1>
             <table>
                 <thead>
                 <tr class="bg-gray-100">
                     <th class="py-2 px-4 border">Task</th>
-                    <th class="py-2 px-4 border">Summary</th>
+                    <th class="py-2 px-4 border">Title</th>
                     <th class="py-2 px-4 border">Logged Time (h)</th>
                 </tr>
                 </thead>
@@ -60,11 +34,40 @@ onMounted(fetchWorklogs);
     </div>
 </template>
 
-<style scoped lang="scss">
-table {
-    border-collapse: collapse;
+<script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import CustomSpinner from "./CustomSpinner.vue";
+
+const worklogs = ref([]);
+const totalHours = ref(0);
+const loading = ref(true);
+const error = ref(null);
+const API_URL = import.meta.env.VITE_API_URL;
+const todayDate = new Date().toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+});
+
+async function fetchWorklogs() {
+    loading.value = true;
+    try {
+        const response = await axios.get(`${API_URL}/api/worklogs`);
+        worklogs.value = response.data.tasks;
+        totalHours.value = response.data.total;
+    } catch (err) {
+        error.value = 'Error loading worklogs';
+        console.error(err);
+    } finally {
+        loading.value = false;
+    }
 }
 
+onMounted(fetchWorklogs);
+</script>
+
+<style scoped lang="scss">
 a {
     color: #539df2;
 }
@@ -75,11 +78,51 @@ a {
 }
 
 .total {
+    color: #569b9d !important;
+}
+
+.error {
     color: #f55f5f !important;
 }
-table th, table td {
+
+table a {
+    text-decoration: none;
+}
+thead tr {
+    background-color: #f0f0f0 !important;
+}
+
+thead th {
+    color: #000000;
+    border: 1px solid #f0f0f0 !important;
+    font-weight: 500;
+    text-align: left;
+}
+
+thead th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 0;
+}
+
+thead th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0;
+}
+
+tbody tr:first-child td {
+    border-top: none;
+}
+
+table tbody tr {
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+tbody td {
     text-align: left;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: 1px solid #f0f0f0;
 }
 </style>
