@@ -87,6 +87,8 @@ const initials = computed(() => {
 .profile-link {
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 14px;
+    font-weight: 500;
     color: #020202;
 }
 
