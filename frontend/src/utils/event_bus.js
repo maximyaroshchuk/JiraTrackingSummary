@@ -2,7 +2,7 @@ import {ref} from 'vue';
 
 const listeners = ref({});
 
-export const clockyco_event_bus = {
+export const jts_event_bus = {
     $on(event, callback) {
         if (!listeners.value[event]) {
             listeners.value[event] = [];

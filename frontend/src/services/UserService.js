@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
-import {useUserStore} from '@/store/user';
-import {logout} from "@/services/auth/AuthService";
 import {useRouter} from "vue-router";
+import {useUserStore} from "../store/user.js";
+import {logout} from "./auth/AuthService.js";
 
 const router = useRouter()
 

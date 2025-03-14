@@ -4,7 +4,6 @@ export const useUserStore = defineStore('user', {
     state: () => ({
         user: {},
         userView: {},
-        usersList: {},
     }),
     getters: {
         getUserData: (state) => state.user,

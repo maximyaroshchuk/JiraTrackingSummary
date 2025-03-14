@@ -1,16 +1,11 @@
-<script setup>
-
-import JiraTrackingSummary from "./components/JiraTrackingSummary.vue";
-</script>
-
 <template>
     <ConfigProvider
         :theme="{
           token: {
-            colorPrimary: '#13c2c2',
+            colorPrimary: '#f59e0b',
           },
         }"
     >
-    <JiraTrackingSummary/>
+        <router-view />
     </ConfigProvider>
 </template>

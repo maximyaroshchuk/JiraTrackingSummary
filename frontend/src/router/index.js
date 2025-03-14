@@ -1,121 +1,65 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import HomeView from "@/views/HomeView.vue";
+import JiraTrackingSummary from "../components/JiraTrackingSummary.vue";
+import ProfilePage from "../components/ProfilePage.vue";
+import {isAuthenticated} from "../services/auth/AuthService.js";
+import AuthLayout from "../components/layouts/AuthLayout.vue";
+import MainLayout from "../components/layouts/MainLayout.vue";
 
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: HomeView
-    },
-    {
-        path: '/javascript',
-        name: 'javascript',
+        component: MainLayout,
+        redirect: () => {
+            if (isAuthenticated()) {
+                return {name: 'dashboard'};
+            } else {
+                return {name: 'auth'};
+            }
+        },
         children: [
             {
-                path: 'string',
-                name: 'javascriptstring',
-                component: () => import(/* webpackChunkName: "string" */ '../views/javascript/StringComponent.vue')
+                path: 'summary',
+                name: 'summary',
+                component: JiraTrackingSummary
             },
             {
-                path: 'object',
-                name: 'javascriptobject',
-                component: () => import(/* webpackChunkName: "object" */ '../views/javascript/object/ObjectView.vue')
+                path: 'profile',
+                name: 'profile',
+                component: ProfilePage
             },
-            {
-                path: 'json',
-                name: 'javascriptjson',
-                component: () => import(/* webpackChunkName: "json" */ '../views/javascript/json/JsonView.vue')
-            },
-            {
-                path: 'mutation',
-                name: 'javascriptmutation',
-                component: () => import(/* webpackChunkName: "mutation" */ '../views/javascript/mutation/MutationView.vue')
-            },
-            {
-                path: 'functions',
-                name: 'javascriptfunctions',
-                component: () => import(/* webpackChunkName: "functions" */ '../views/javascript/functions/FunctionsView.vue')
-            },
-            {
-                path: 'scope',
-                name: 'javascriptscope', 
-                component: () => import(/* webpackChunkName: "scope" */ '../views/javascript/scope/ScopeView.vue')
-            },
-            {
-                path: 'operators',
-                name: 'javascriptoperators',
-                component: () => import(/* webpackChunkName: "operators" */ '../views/javascript/operators/OperatorsView.vue')
-            },
-            {
-                path: 'arrays',
-                name: 'javascriptarrays', 
-                component: () => import(/* webpackChunkName: "arrays" */ '../views/javascript/arrays/ArraysView.vue')
-            }
         ]
     },
     {
-        path: '/about',
-        name: 'about',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/AboutView.vue')
-    },
-    {
-        path: '/security',
-        name: 'security',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/SecurityPage.vue')
-    },
-    {
-        path: '/privacy',
-        name: 'privacy',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/PrivacyPageStub.vue')
-    },
-    {
-        path: '/terms',
-        name: 'terms',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/TermsPageStub.vue')
-    },
-    {
-        path: '/contact',
-        name: 'contact',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/ContactUsPage.vue')
-    },
-    {
-        path: '/api-docs',
-        name: 'apidocs',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/footer/ApiDocPage.vue')
+        path: '/auth',
+        component: AuthLayout,
+        name: 'auth',
     },
     {
         path: '/:pathMatch(.*)*',
         name: 'notfound',
         component: () => import('../components/layouts/NotFound.vue')
     },
-    {
-        path: '/not-found',
-        name: 'notfoundpage',
-        component: () => import('../components/layouts/NotFound.vue')
-    },
 ]
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    const publicPages = ['auth'];
+    const authRequired = !publicPages.includes(to.name);
+    const loggedIn = isAuthenticated();
+
+    router.previousRoute = from;
+
+    if (authRequired && !loggedIn) {
+        next({name: 'auth'});
+    } else if (loggedIn && to.name === 'auth') {
+        next({name: 'summary'});
+    } else {
+        next();
+    }
+});
 
 export default router

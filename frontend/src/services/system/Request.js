@@ -1,14 +1,11 @@
 import axios from "axios";
-import NProgress from 'nprogress';
 import Cookies from "js-cookie";
-import {logout} from "@/services/auth/AuthService";
-import {getRouter} from "@/services/system/RouterService";
-import {showError, showInfo, showSuccess} from "@/services/system/ToastService";
-import {empty} from "@/utils/functions";
-import {ref} from "vue";
+import {showToaster} from "../messagesService.js";
+import {empty} from "../../utils/functions.js";
+import {logout} from "../auth/AuthService.js";
+import {getRouter} from "./RouterService.js";
 
 const API_URL = import.meta.env.VITE_API_URL;
-const loading = ref(true);
 
 const apiClient = axios.create({
     baseURL: API_URL,
@@ -26,7 +23,7 @@ function imminentlyLogout(error) {
         logout(router)
         if (!empty(token)) {
             setTimeout(() => {
-                showError("Our server is not responding, you have been logged out. Please contact us: support@clockyco.app", false, 60000)
+                showToaster('error',"Something went wrong. Please re-login.")
             }, 250)
         }
         return
@@ -35,7 +32,7 @@ function imminentlyLogout(error) {
     if (error.response.status === 401) {
         logout(router)
         setTimeout(() => {
-            showInfo(error.response.data.message || error.response.data.error)
+            showToaster('info', error.response.data.message || error.response.data.error)
         }, 250)
     }
 }
@@ -50,53 +47,36 @@ apiClient.interceptors.request.use(config => {
     return Promise.reject(error);
 });
 
-export const post = (url, data, silent = false, withoutAlert = false) => {
-    if (!silent) NProgress.start();
-    loading.value = true;
+export const post = (url, data, withoutAlert = false) => {
     return new Promise((resolve, reject) => {
         apiClient.post(url, data)
             .then(response => {
-                NProgress.done();
                 resolve(response);
-                console.log(response)
                 if (!withoutAlert) {
                     if (response.data.message) {
-                        showSuccess(response.data.message)
+                        showToaster('success', response.data.message)
                     }
                 }
-                setTimeout(() => {
-                    loading.value = false;
-                }, 500)
             })
             .catch(error => {
-                NProgress.done();
                 imminentlyLogout(error)
                 reject(error.response || error.response?.data);
             });
     });
 };
 
-export const get = (url, silent = false) => {
-    if (!silent) NProgress.start();
-    loading.value = true;
+export const get = (url) => {
     return new Promise((resolve, reject) => {
         apiClient.get(url)
             .then(response => {
-                NProgress.done();
                 resolve(response.data);
                 if (response.data.message) {
-                    showSuccess(response.data.message)
+                    showToaster('success', response.data.message);
                 }
-                setTimeout(() => {
-                    loading.value = false;
-                }, 500)
             })
             .catch(error => {
-                NProgress.done();
                 imminentlyLogout(error)
                 reject(error.data || error.response?.data);
             });
     });
 };
-
-export {loading}
