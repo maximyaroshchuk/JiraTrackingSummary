@@ -11,7 +11,7 @@ const routes = [
         component: MainLayout,
         redirect: () => {
             if (isAuthenticated()) {
-                return {name: 'dashboard'};
+                return {name: 'summary'};
             } else {
                 return {name: 'auth'};
             }

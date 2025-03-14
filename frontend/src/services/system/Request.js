@@ -19,7 +19,7 @@ function imminentlyLogout(error) {
     const router = getRouter()
     const token = getToken()
 
-    if (!error.response || error.request.status === 500) {
+    if (!error.response || error.request.status === 500 || error.request.status === 404) {
         logout(router)
         if (!empty(token)) {
             setTimeout(() => {

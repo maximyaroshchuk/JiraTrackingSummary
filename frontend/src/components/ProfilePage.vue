@@ -48,7 +48,7 @@ const toggleApiKeyVisibility = () => {
 
 const saveChanges = async () => {
     const now = Date.now();
-    if (now - lastRequestTime < 3000) return;
+    if (now - lastRequestTime < 1500) return;
 
     lastRequestTime = now;
 
@@ -77,25 +77,28 @@ const saveChanges = async () => {
                 <Input v-model:value="userProfile.email" disabled />
             </FormItem>
 
-            <FormItem label="Jira Email">
-                <Input v-model:value="userProfile.jiraEmail" />
+            <FormItem label="Jira Email" class="text-left">
+                <Input class="mb-2" v-model:value="userProfile.jiraEmail" />
+                <small class="text-color-secondary">This is the email associated with your Jira account. It must be the same email used for logging into Jira. If unsure, check your Atlassian account.</small>
             </FormItem>
 
-            <FormItem label="Jira instance url">
-                <Input v-model:value="userProfile.jiraInstanceUrl" />
+            <FormItem label="Jira instance url" class="text-left">
+                <Input class="mb-2" v-model:value="userProfile.jiraInstanceUrl" />
+                <small class="text-color-secondary">The base URL of your Jira workspace. You can find it by opening Jira in your browser and copying the address up to the first slash after the domain, e.g., https://yourcompany.atlassian.net/.</small>
             </FormItem>
 
-            <FormItem label="Jira API Key">
-                <div style="display: flex; align-items: center;">
-                    <Input
-                        v-model:value="userProfile.jiraApiKey"
-                        :type="showApiKey ? 'text' : 'password'"
-                        style="flex-grow: 1;"
-                    />
+            <FormItem label="Jira API Key" class="text-left">
+                <div style="display: flex; align-items: center;" class="mb-2">
+                        <Input
+                            v-model:value="userProfile.jiraApiKey"
+                            :type="showApiKey ? 'text' : 'password'"
+                            style="flex-grow: 1;"
+                        />
                     <Button @click="toggleApiKeyVisibility" style="margin-left: 10px;">
                         {{ showApiKey ? 'Hide' : 'Show' }}
                     </Button>
                 </div>
+                <small class="text-color-secondary">Jira API Key This is a personal authentication token required to access Jira's API. You can generate it in your <a href='https://id.atlassian.com/manage-profile/security/api-tokens' target='_blank'>Atlassian API Token Management</a> settings. Once created, copy and store it securely, as it will not be shown again.</small>
             </FormItem>
 
             <Space>

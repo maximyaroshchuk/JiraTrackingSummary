@@ -7,9 +7,9 @@
             </li>
         </ul>
         <div>
+            <TSAvatar class="mr-2" :src="`https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&color=FFFFFF&background=random&uppercase=true`" size="smallc">
+            </TSAvatar>
             <router-link to="/profile" class="profile-link">
-                <TSAvatar :src="`https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&color=FFFFFF&background=random&uppercase=true`" size="smallc">
-                </TSAvatar>
                 {{customer.fullname}}
             </router-link>
         </div>

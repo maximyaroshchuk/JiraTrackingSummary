@@ -22,7 +22,8 @@ import {
     Row,
     Col,
     Avatar,
-    Table
+    Table,
+    Tooltip
 } from 'ant-design-vue';
 import {setRouter} from "./services/system/RouterService.js";
 
@@ -47,6 +48,7 @@ createApp(App)
     .component('TSCol', Col)
     .component('TSTable', Table)
     .component('TSAvatar', Avatar)
+    .component('TSTooltip', Tooltip)
     .use(router)
     .use(pinia)
     .mount('#app')

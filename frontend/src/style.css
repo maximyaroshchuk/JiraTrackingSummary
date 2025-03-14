@@ -65,3 +65,7 @@ h1 {
         top: 14px;
     }
 }
+
+.text-color-secondary {
+    color: #888888 !important;
+}
