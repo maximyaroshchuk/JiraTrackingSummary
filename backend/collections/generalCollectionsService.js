@@ -3,7 +3,6 @@ const {getDatabaseInstance} = require("../general/database");
 const collectionsCache = {};
 
 async function getCollection(collectionName) {
-    console.log(typeof collectionName, collectionName);
     const stringifyCollectionName = String(collectionName);
 
     if (!collectionsCache[stringifyCollectionName]) {

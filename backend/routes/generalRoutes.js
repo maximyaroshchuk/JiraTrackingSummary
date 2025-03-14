@@ -3,16 +3,16 @@ const {
     getTodayWorklogs
 } = require("../controllers/worklogStatisticController");
 
+const {
+    getUserData,
+    saveUserData
+} = require("../controllers/userController");
+
 const router = express.Router();
 
-router.get('/api/worklogs', async (req, res) => {
-    try {
-        const result = await getTodayWorklogs();
-        res.json(result);
-    } catch (error) {
-        console.error('Error when getting worklog:', error.message);
-        res.status(500).json({ error: 'Error when getting worklog from Jira' });
-    }
-});
+router.get('/api/worklogs', getTodayWorklogs);
+
+router.post('/customer/save-user-data', saveUserData);
+router.get('/customer/get-user-data', getUserData);
 
 module.exports = router;
