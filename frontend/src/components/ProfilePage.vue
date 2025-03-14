@@ -9,6 +9,7 @@ import {setCurrentCustomerData} from "../services/UserService.js";
 import {jts_event_bus} from "../utils/event_bus.js";
 import CustomSpinner from "./CustomSpinner.vue";
 
+let lastRequestTime = 0;
 const loading = ref(true);
 const userProfile = ref({
     fullname: '',
@@ -46,14 +47,19 @@ const toggleApiKeyVisibility = () => {
 };
 
 const saveChanges = async () => {
+    const now = Date.now();
+    if (now - lastRequestTime < 3000) return;
+
+    lastRequestTime = now;
+
     try {
         const response = await post('/customer/save-user-data', userProfile.value);
         if (response) {
-            await setCurrentCustomerData(userProfile.value)
-            jts_event_bus.$emit('update_user_data')
+            await setCurrentCustomerData(userProfile.value);
+            jts_event_bus.$emit('update_user_data');
         }
     } catch (error) {
-        showToaster('error', error.data.message)
+        showToaster('error', error.data.message);
         throw error.data;
     }
 };
