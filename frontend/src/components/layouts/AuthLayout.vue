@@ -56,7 +56,7 @@ const toggleAuthState = () => {
 
 <template>
     <div class="h-full mx-3 flex align-items-center justify-content-center">
-        <Card class="w-full">
+        <Card class="w-full login-card">
             <h2 class="mb-5">Jira tracking summary app</h2>
             <Form layout="vertical">
                 <FormItem label="Email">
@@ -96,5 +96,10 @@ const toggleAuthState = () => {
 .action-buttons {
     margin-top: 20px;
     text-align: right;
+}
+
+.login-card {
+    max-width: 500px;
+    width: 100%;
 }
 </style>
