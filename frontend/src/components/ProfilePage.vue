@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { Card, Form, FormItem, Input, Button, Space } from 'ant-design-vue';
+import {Card, Form, FormItem, Input, Button, Space, Card as TSCard} from 'ant-design-vue';
 import {logout} from "../services/auth/AuthService.js";
 import {useRouter} from "vue-router";
 import {showToaster} from "../services/messagesService.js";
@@ -67,7 +67,7 @@ const saveChanges = async () => {
 
 <template>
     <div v-if="loading" class="text-center"><CustomSpinner/></div>
-    <Card v-else class="col-8 h-auto">
+    <TSCard v-else class="card h-auto">
         <Form layout="vertical">
             <FormItem label="Name">
                 <Input v-model:value="userProfile.fullname"  />
@@ -110,7 +110,7 @@ const saveChanges = async () => {
                 </Button>
             </Space>
         </Form>
-    </Card>
+    </TSCard>
 </template>
 
 <style scoped lang="scss">

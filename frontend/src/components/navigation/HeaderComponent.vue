@@ -1,13 +1,17 @@
 <template>
-    <div class="header-wrapper flex align-items-center justify-content-between">
-        <div><h4 class="my-0">Tracking summary</h4></div>
+    <div class="header-wrapper">
+        <div class="logo-wrapper">
+            <router-link to="/summary" class="profile-link">
+                <img src="/logo.svg" alt="Main logo" />
+            </router-link>
+        </div>
         <ul class="menu">
             <li v-for="item in items" :key="item.key" class="menu-item">
                 <router-link :to="`/${item.key}`" class="menu-link">{{ item.label }}</router-link>
             </li>
         </ul>
         <div>
-            <TSAvatar class="mr-2" :src="`https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&color=FFFFFF&background=random&uppercase=true`" size="smallc">
+            <TSAvatar :src="`https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&color=FFFFFF&background=random&uppercase=true`" size="smallc">
             </TSAvatar>
             <router-link to="/profile" class="profile-link">
                 {{customer.fullname}}
@@ -57,7 +61,8 @@ const initials = computed(() => {
 <style scoped>
 .header-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     margin-bottom: 30px;
     background: #f0f0f0;
@@ -89,6 +94,7 @@ const initials = computed(() => {
     transition: color 0.3s;
     font-size: 14px;
     font-weight: 500;
+    margin-left: 8px;
     color: #020202;
 }
 
@@ -103,5 +109,16 @@ const initials = computed(() => {
 
 .menu-link.active {
     font-weight: bold;
+}
+
+.logo-wrapper {
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 150px;
+    }
 }
 </style>

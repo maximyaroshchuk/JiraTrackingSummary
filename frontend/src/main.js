@@ -23,7 +23,8 @@ import {
     Col,
     Avatar,
     Table,
-    Tooltip
+    Tooltip,
+    DatePicker
 } from 'ant-design-vue';
 import {setRouter} from "./services/system/RouterService.js";
 
@@ -49,6 +50,7 @@ createApp(App)
     .component('TSTable', Table)
     .component('TSAvatar', Avatar)
     .component('TSTooltip', Tooltip)
+    .component('TSDatePicker', DatePicker)
     .use(router)
     .use(pinia)
     .mount('#app')

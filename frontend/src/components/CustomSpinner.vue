@@ -8,7 +8,7 @@ import { h } from 'vue';
 const indicator = h(LoadingOutlined, {
     style: {
         fontSize: '72px',
-        color: '#f59e0b'
+        color: '#496FE0'
     },
     spin: true,
 });

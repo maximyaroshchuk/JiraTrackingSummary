@@ -1,6 +1,6 @@
 <template>
     <HeaderComponent/>
-    <div class="content-wrapper flex align-items-start justify-content-center flex-grow-1">
+    <div class="content-wrapper mx-3 flex align-items-start justify-content-center flex-grow-1">
         <router-view/>
     </div>
 </template>
@@ -11,7 +11,6 @@ import HeaderComponent from "../navigation/HeaderComponent.vue";
 
 <style scoped>
 .content-wrapper {
-    width: 100%;
     height: calc(100vh - 90px);
 }
 </style>
