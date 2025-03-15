@@ -75,6 +75,13 @@ async function login(req, res) {
             {email},
         );
 
+        if (!user) {
+            return res.status(400).json({
+                needRegister: true,
+                error: "There is no user with such an email address, please register first."
+            });
+        }
+
 
         if (!email || !password) {
             return res.status(400).json({error: "Email and password are required"});
