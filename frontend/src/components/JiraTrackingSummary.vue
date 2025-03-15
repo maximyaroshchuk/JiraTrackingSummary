@@ -101,29 +101,12 @@ const formattedJiraUrl = computed(() =>
 </script>
 
 <style scoped lang="scss">
-//a {
-//    color: #2e8cff;
-//}
-//
-//a:hover {
-//    color: #006aec;
-//}
-
 .total {
     color: #0072ff !important;
 }
 
 .error {
     color: #f55f5f !important;
-}
-
-.ant-card {
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.surface-card {
-    width: 100%;
 }
 
 .highlighted {

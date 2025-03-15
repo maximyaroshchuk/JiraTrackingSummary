@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import {Card, Form, FormItem, Input, Button, Space, Card as TSCard} from 'ant-design-vue';
 import {logout} from "../services/auth/AuthService.js";
 import {useRouter} from "vue-router";
 import {showToaster} from "../services/messagesService.js";
@@ -18,6 +17,7 @@ const userProfile = ref({
     jiraInstanceUrl: '',
     jiraApiKey: ''
 });
+const showApiKey = ref(false);
 
 const router = useRouter()
 
@@ -39,8 +39,6 @@ const signOut = () => {
 onMounted(() => {
     fetchData();
 });
-
-const showApiKey = ref(false);
 
 const toggleApiKeyVisibility = () => {
     showApiKey.value = !showApiKey.value;
@@ -66,30 +64,30 @@ const saveChanges = async () => {
 </script>
 
 <template>
-    <div v-if="loading" class="text-center"><CustomSpinner/></div>
-    <TSCard v-else class="card h-auto">
-        <Form layout="vertical">
-            <FormItem label="Name">
-                <Input v-model:value="userProfile.fullname"  />
-            </FormItem>
+    <TSCard class="card h-auto">
+        <div v-if="loading" class="text-center"><CustomSpinner/></div>
+        <TSForm v-else layout="vertical">
+            <TSFormItem label="Name">
+                <TSInput v-model:value="userProfile.fullname"  />
+            </TSFormItem>
 
-            <FormItem label="Email">
-                <Input v-model:value="userProfile.email" disabled />
-            </FormItem>
+            <TSFormItem label="Email">
+                <TSInput v-model:value="userProfile.email" disabled />
+            </TSFormItem>
 
-            <FormItem label="Jira Email" class="text-left">
-                <Input class="mb-2" v-model:value="userProfile.jiraEmail" />
+            <TSFormItem label="Jira Email" class="text-left">
+                <TSInput class="mb-2" v-model:value="userProfile.jiraEmail" />
                 <small class="text-color-secondary">This is the email associated with your Jira account. It must be the same email used for logging into Jira. If unsure, check your Atlassian account.</small>
-            </FormItem>
+            </TSFormItem>
 
-            <FormItem label="Jira instance url" class="text-left">
-                <Input class="mb-2" v-model:value="userProfile.jiraInstanceUrl" />
+            <TSFormItem label="Jira instance url" class="text-left">
+                <TSInput class="mb-2" v-model:value="userProfile.jiraInstanceUrl" />
                 <small class="text-color-secondary">The base URL of your Jira workspace. You can find it by opening Jira in your browser and copying the address up to the first slash after the domain, e.g., https://yourcompany.atlassian.net/.</small>
-            </FormItem>
+            </TSFormItem>
 
-            <FormItem label="Jira API Key" class="text-left">
+            <TSFormItem label="Jira API Key" class="text-left">
                 <div style="display: flex; align-items: center;" class="mb-2">
-                        <Input
+                        <TSInput
                             v-model:value="userProfile.jiraApiKey"
                             :type="showApiKey ? 'text' : 'password'"
                             style="flex-grow: 1;"
@@ -99,17 +97,17 @@ const saveChanges = async () => {
                     </Button>
                 </div>
                 <small class="text-color-secondary">Jira API Key This is a personal authentication token required to access Jira's API. You can generate it in your <a href='https://id.atlassian.com/manage-profile/security/api-tokens' target='_blank'>Atlassian API Token Management</a> settings. Once created, copy and store it securely, as it will not be shown again.</small>
-            </FormItem>
+            </TSFormItem>
 
-            <Space>
+            <TSSpace>
                 <Button type="primary" @click="saveChanges">
                     Save
                 </Button>
                 <Button @click="signOut()" type="primary" danger>
                     Logout
                 </Button>
-            </Space>
-        </Form>
+            </TSSpace>
+        </TSForm>
     </TSCard>
 </template>
 
