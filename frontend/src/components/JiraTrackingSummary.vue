@@ -13,7 +13,7 @@
                 <TSTable :columns="columns" :data-source="worklogs" :pagination="pagination" rowKey="key">
                     <template v-slot:bodyCell="props">
                         <span v-if="props.column.dataIndex === 'key'">
-                            <a :href="`https://jira-splynx.atlassian.net/browse/${props.record.key}`" target="_blank">
+                            <a :href="`${formattedJiraUrl}browse/${props.record.key}`" target="_blank">
                                 {{ props.record.key }}
                             </a>
                         </span>
@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, onMounted, computed} from 'vue';
 import CustomSpinner from "./CustomSpinner.vue";
 import { useUserStore } from '../store/user.js';
 import { get } from "../services/system/Request.js";
@@ -94,6 +94,10 @@ async function fetchWorklogs() {
 }
 
 onMounted(fetchWorklogs);
+
+const formattedJiraUrl = computed(() =>
+    user.value.jiraInstanceUrl.endsWith('/') ? user.value.jiraInstanceUrl : `${user.value.jiraInstanceUrl}/`
+);
 </script>
 
 <style scoped lang="scss">
