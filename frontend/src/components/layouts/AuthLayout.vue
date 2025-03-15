@@ -25,6 +25,9 @@ const handleLogin = async () => {
         await router.push({name: 'summary'});
     } catch (error) {
         showToaster('error', error.error)
+        if (error.needRegister) {
+            isLogin.value = false
+        }
         if (error.warning) {
             showToaster('error', 'Enter a valid email address');
         }
