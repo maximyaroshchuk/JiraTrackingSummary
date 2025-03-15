@@ -31,9 +31,9 @@ async function register(req, res) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const fullnamePattern = /^(?!\s*$).{2,}$/;
 
-    const existingUser = usersCollection.findOne({email});
+    const existingUser = await usersCollection.findOne({email});
 
-    if (existingUser && false) {
+    if (existingUser) {
         return res.status(409).json({error: "User already registered"});
     }
 
