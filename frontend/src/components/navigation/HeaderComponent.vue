@@ -10,7 +10,7 @@
                 <router-link :to="`/${item.key}`" class="menu-link">{{ item.label }}</router-link>
             </li>
         </ul>
-        <div>
+        <div class="profile-block">
             <TSAvatar :src="`https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&color=FFFFFF&background=random&uppercase=true`" size="smallc">
             </TSAvatar>
             <router-link to="/profile" class="profile-link">
@@ -60,8 +60,8 @@ const initials = computed(() => {
 
 <style scoped>
 .header-wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 1rem;
     margin-bottom: 30px;
@@ -69,10 +69,14 @@ const initials = computed(() => {
     border-bottom: 1px solid white;
 }
 
+.profile-block {
+    justify-self: end;
+}
+
 .menu {
     list-style: none;
     display: flex;
-    align-items: center;
+    justify-self: center;
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -112,6 +116,8 @@ const initials = computed(() => {
 }
 
 .logo-wrapper {
+    justify-self: start;
+
     a {
         display: flex;
         align-items: center;
