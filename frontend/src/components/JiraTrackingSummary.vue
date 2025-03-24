@@ -21,6 +21,10 @@
                     </template>
                 </TSTable>
 
+                <div class="mt-4">
+                    Time since last worklog: <span class="font-bold time-since-last">{{ lastWorklogTime }}</span>
+                </div>
+
                 <div class="mt-4 text-lg font-bold">
                     Total: <span class="total">{{ totalHours }}</span>
                 </div>
@@ -41,6 +45,7 @@ const userStore = useUserStore();
 const user = ref(userStore.getUserData);
 const worklogs = ref([]);
 const totalHours = ref(0);
+const lastWorklogTime = ref(0);
 const loading = ref(true);
 const error = ref(null);
 const API_URL = import.meta.env.VITE_API_URL;
@@ -84,6 +89,7 @@ async function fetchWorklogs() {
         const response = await get(`${API_URL}/api/worklogs`);
         worklogs.value = response.tasks;
         totalHours.value = response.total;
+        lastWorklogTime.value = response.timeSinceLastWorklog;
     } catch (err) {
         showToaster('error', err.error);
 
@@ -103,6 +109,10 @@ const formattedJiraUrl = computed(() =>
 <style scoped lang="scss">
 .total {
     color: #0072ff !important;
+}
+
+.time-since-last {
+    color: #151515 !important;
 }
 
 .error {
