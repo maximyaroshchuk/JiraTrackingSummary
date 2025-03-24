@@ -21,10 +21,6 @@
                     </template>
                 </TSTable>
 
-                <div class="mt-4">
-                    Time since last worklog: <span class="font-bold time-since-last">{{ lastWorklogTime }}</span>
-                </div>
-
                 <div class="mt-4 text-lg font-bold">
                     Total: <span class="total">{{ totalHours }}</span>
                 </div>
@@ -72,6 +68,12 @@ const columns = [
         key: 'summary',
     },
     {
+        title: 'Time since last commit ',
+        dataIndex: 'lastCommit',
+        resizable: true,
+        key: 'lastCommit',
+    },
+    {
         title: 'Logged Time (h)',
         dataIndex: 'timeSpent',
         resizable: true,
@@ -109,10 +111,6 @@ const formattedJiraUrl = computed(() =>
 <style scoped lang="scss">
 .total {
     color: #0072ff !important;
-}
-
-.time-since-last {
-    color: #151515 !important;
 }
 
 .error {
