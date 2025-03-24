@@ -2,8 +2,8 @@ const axios = require('axios');
 const dayjs = require('dayjs');
 require('dotenv').config();
 const { getCollection } = require('../collections/generalCollectionsService');
-const {ObjectId} = require("mongodb");
-const {decrypt} = require("../general/cryptoController");
+const { ObjectId } = require('mongodb');
+const { decrypt } = require('../general/cryptoController');
 
 let usersCollection;
 const getCollections = async () => {
@@ -42,34 +42,46 @@ async function getTodayWorklogs(req, res) {
         const tasks = await Promise.all(
             issues.map(async (issue) => {
                 const worklogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/worklog`;
-                const worklogResponse = await axios.get(worklogUrl, AUTH_HEADER);
+                const changelogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/changelog`;
+
+                const [worklogResponse, changelogResponse] = await Promise.all([
+                    axios.get(worklogUrl, AUTH_HEADER),
+                    axios.get(changelogUrl, AUTH_HEADER)
+                ]);
 
                 const todayLogs = worklogResponse.data.worklogs.filter(log =>
                     log.author.emailAddress === user.jiraEmail && log.started.startsWith(today)
                 );
 
-                if (todayLogs.length > 0) {
-                    todayLogs.forEach(log => {
-                        const logStart = dayjs(log.started);
-                        const logEnd = logStart.add(log.timeSpentSeconds, 'second');
+                let latestLogCreated = null;
 
-                        if (!latestWorklogEnd || logEnd.isAfter(latestWorklogEnd)) {
-                            latestWorklogEnd = logEnd;
-                        }
-                    });
+                const todayChangelogs = changelogResponse.data.values.filter(change => {
+                    const createdAt = dayjs(change.created);
+                    return createdAt.isSame(today, 'day');
+                });
 
-                    const totalTimeSpent = todayLogs.reduce((sum, log) => sum + log.timeSpentSeconds, 0);
-                    const hours = Math.floor(totalTimeSpent / 3600);
-                    const minutes = Math.floor((totalTimeSpent % 3600) / 60);
-
-                    return {
-                        key: issue.key,
-                        summary: issue.fields.summary,
-                        timeSpent: `${hours}h ${minutes}m`
-                    };
+                if (todayChangelogs.length > 0) {
+                    latestLogCreated = dayjs(todayChangelogs[todayChangelogs.length - 1].created);
                 }
 
-                return null;
+                const totalTimeSpent = todayLogs.reduce((sum, log) => sum + log.timeSpentSeconds, 0);
+                const hours = Math.floor(totalTimeSpent / 3600);
+                const minutes = Math.floor((totalTimeSpent % 3600) / 60);
+
+                let timeSinceLastCommit = "0h 0m";
+                if (latestLogCreated) {
+                    const diffMinutes = dayjs().diff(latestLogCreated, 'minute');
+                    const diffHours = Math.floor(diffMinutes / 60);
+                    const remainingMinutes = diffMinutes % 60;
+                    timeSinceLastCommit = `${diffHours}h ${remainingMinutes}m`;
+                }
+
+                return {
+                    key: issue.key,
+                    summary: issue.fields.summary,
+                    timeSpent: `${hours}h ${minutes}m`,
+                    lastCommit: timeSinceLastCommit
+                };
             })
         );
 
@@ -84,8 +96,7 @@ async function getTodayWorklogs(req, res) {
 
         let timeSinceLastWorklog = "0h 0m";
         if (latestWorklogEnd) {
-            const now = dayjs();
-            const diffMinutes = now.diff(latestWorklogEnd, 'minute');
+            const diffMinutes = dayjs().diff(latestWorklogEnd, 'minute');
             const diffHours = Math.floor(diffMinutes / 60);
             const remainingMinutes = diffMinutes % 60;
             timeSinceLastWorklog = `${diffHours}h ${remainingMinutes}m`;

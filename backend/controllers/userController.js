@@ -45,11 +45,10 @@ async function saveUserData(req, res) {
         const { fullname, email, jiraEmail, jiraApiKey, jiraInstanceUrl } = req.body;
         const updateFields = {};
 
-        if (fullname && fullname.length <= 0) {
-            return res.status(400).json({message: 'Fullname cannot be empty'});
+        if (fullname.length <= 1) {
+            return res.status(400).json({message: 'Fullname cannot be empty. It must contain at least 2 characters.'});
         }
         if (fullname) updateFields.fullname = fullname;
-
         if (email) updateFields.email = email;
         if (jiraEmail) updateFields.jiraEmail = jiraEmail;
         if (jiraInstanceUrl) updateFields.jiraInstanceUrl = jiraInstanceUrl;
