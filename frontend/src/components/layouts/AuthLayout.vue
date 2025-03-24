@@ -8,7 +8,6 @@ import {useRouter} from "vue-router";
 const isLogin = ref(true);
 const router = useRouter();
 
-// Данные формы
 const formData = ref({
     email: '',
     fullname: '',
