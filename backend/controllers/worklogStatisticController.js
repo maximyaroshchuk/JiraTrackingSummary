@@ -53,7 +53,7 @@ async function getTodayWorklogs(req, res) {
 
                 let latestWorklogCreated = null;
                 if (todayLogs.length > 0) {
-                    latestWorklogCreated = dayjs(todayLogs[todayLogs.length - 1].started);
+                    latestWorklogCreated = dayjs(todayLogs[todayLogs.length - 1].created);
                 }
 
                 const todayChangelogs = changelogResponse.data.values.filter(change => {
