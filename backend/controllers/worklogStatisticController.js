@@ -104,7 +104,128 @@ async function getTodayWorklogs(req, res) {
 
         return res.json({
             tasks: filteredTasks,
-            total: `${totalHours}h ${totalMinutes}m`,
+            total: `${totalHours}h ${totalMinutes}m 🪨`,
+        });
+    } catch (error) {
+        console.error("Error fetching worklogs:", error);
+        return res.status(500).json({ error: "Server error while fetching worklogs." });
+    }
+}
+
+async function getWorklogsByDate(req, res) {
+    try {
+        const userId = req.user.userId;
+        const user = await usersCollection.findOne({ _id: new ObjectId(userId) });
+
+        if (!user || !user.jiraEmail || !user.jiraApiKey || !user.jiraInstanceUrl) {
+            return res.status(400).json({ error: 'Please configure your JIRA settings in your profile' });
+        }
+
+        const requestedDate = req.query.date;
+        if (!requestedDate || !dayjs(requestedDate, 'YYYY-MM-DD', true).isValid()) {
+            return res.status(400).json({ error: 'Invalid or missing date format. Use YYYY-MM-DD.' });
+        }
+
+        const JIRA_URL = user.jiraInstanceUrl;
+        const AUTH_HEADER = {
+            headers: {
+                Authorization: `Basic ${Buffer.from(`${user.jiraEmail}:${decrypt(user.jiraApiKey)}`).toString('base64')}`,
+                Accept: 'application/json'
+            }
+        };
+
+        const jql = `worklogAuthor = currentUser() AND worklogDate = ${requestedDate}`;
+        const searchUrl = `${JIRA_URL}/rest/api/3/search?jql=${encodeURIComponent(jql)}&fields=summary`;
+
+        const response = await axios.get(searchUrl, AUTH_HEADER);
+        const issues = response.data.issues;
+
+        const tasks = await Promise.all(
+            issues.map(async (issue) => {
+                const worklogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/worklog`;
+                const changelogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/changelog`;
+
+                const [worklogResponse, changelogResponse] = await Promise.all([
+                    axios.get(worklogUrl, AUTH_HEADER),
+                    axios.get(changelogUrl, AUTH_HEADER)
+                ]);
+
+                const dateStart = dayjs(requestedDate).format('YYYY-MM-DD');
+
+                const logsForDate = worklogResponse.data.worklogs.filter(log =>
+                    log.author.emailAddress === user.jiraEmail && log.started.startsWith(dateStart)
+                );
+
+                let latestWorklogCreated = logsForDate.length
+                    ? dayjs(logsForDate[logsForDate.length - 1].created)
+                    : null;
+
+                const changelogsForDate = changelogResponse.data.values.filter(change => {
+                    const createdAt = dayjs(change.created);
+                    const isCommit = change.items.some(item => item.field === 'commit');
+                    return createdAt.isSame(requestedDate, 'day') && isCommit;
+                });
+
+                let latestChangelogCreated = changelogsForDate.length
+                    ? dayjs(changelogsForDate[changelogsForDate.length - 1].created)
+                    : null;
+
+                let latestEventCreated = latestWorklogCreated;
+                if (latestChangelogCreated && (!latestWorklogCreated || latestChangelogCreated.isAfter(latestWorklogCreated))) {
+                    latestEventCreated = latestChangelogCreated;
+                }
+
+                let timeSinceLastCommit = '0h 0m';
+                if (latestEventCreated) {
+                    const diffMinutes = dayjs().diff(latestEventCreated, 'minute');
+                    const diffHours = Math.floor(diffMinutes / 60);
+                    const remainingMinutes = diffMinutes % 60;
+                    timeSinceLastCommit = `${diffHours}h ${remainingMinutes}m`;
+                }
+
+                const totalTimeSpent = logsForDate.reduce((sum, log) => sum + log.timeSpentSeconds, 0);
+                const hours = Math.floor(totalTimeSpent / 3600);
+                const minutes = Math.floor((totalTimeSpent % 3600) / 60);
+
+                return {
+                    key: issue.key,
+                    summary: issue.fields.summary,
+                    timeSpent: `${hours}h ${minutes}m`,
+                    lastCommit: timeSinceLastCommit,
+                };
+            })
+        );
+
+        const filteredTasks = tasks.filter(task => task !== null);
+        const total = filteredTasks.reduce((sum, task) => {
+            const [hours, minutes] = task.timeSpent.split(' ').map(t => parseInt(t));
+            return sum + (hours * 60 + minutes);
+        }, 0);
+
+        const totalHours = Math.floor(total / 60);
+        const totalMinutes = total % 60;
+
+        let emoji = '🪨';
+
+        if (totalHours >= 7) {
+            emoji = '🪨';
+        } else if (totalHours >= 5) {
+            emoji = '💪';
+        } else if (totalHours >= 3) {
+            emoji = '😎';
+        } else if (totalHours >= 1) {
+            emoji = '🐢';
+        } else {
+            emoji = '💤';
+        }
+
+        const formattedDate = dayjs(requestedDate).format('D MMMM YYYY');
+
+
+        return res.json({
+            tasks: filteredTasks,
+            total: `${totalHours}h ${totalMinutes}m ‎ ${emoji}`,
+            date: formattedDate,
         });
     } catch (error) {
         console.error("Error fetching worklogs:", error);
@@ -113,5 +234,6 @@ async function getTodayWorklogs(req, res) {
 }
 
 module.exports = {
-    getTodayWorklogs
+    getTodayWorklogs,
+    getWorklogsByDate
 };
