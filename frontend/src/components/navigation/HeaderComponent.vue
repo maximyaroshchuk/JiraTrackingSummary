@@ -104,11 +104,11 @@ const initials = computed(() => {
 
 .profile-link:hover {
     text-decoration: none;
-    color: #0072ff;
+    color: #eb5757;
 }
 
 .menu-link:hover {
-    color: #0072ff;
+    color: #eb5757;
 }
 
 .menu-link.active {

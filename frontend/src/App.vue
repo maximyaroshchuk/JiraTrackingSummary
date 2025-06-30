@@ -2,7 +2,7 @@
     <ConfigProvider
         :theme="{
           token: {
-            colorPrimary: '#496FE0',
+            colorPrimary: '#eb5757',
           },
         }"
     >

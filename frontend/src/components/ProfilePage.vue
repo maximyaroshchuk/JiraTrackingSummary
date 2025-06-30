@@ -87,11 +87,11 @@ const saveChanges = async () => {
 
             <TSFormItem label="Jira API Key" class="text-left">
                 <div style="display: flex; align-items: center;" class="mb-2">
-                        <TSInput
-                            v-model:value="userProfile.jiraApiKey"
-                            :type="showApiKey ? 'text' : 'password'"
-                            style="flex-grow: 1;"
-                        />
+                    <TSInput
+                        v-model:value="userProfile.jiraApiKey"
+                        :type="showApiKey ? 'text' : 'password'"
+                        style="flex-grow: 1;"
+                    />
                     <Button @click="toggleApiKeyVisibility" style="margin-left: 10px;">
                         {{ showApiKey ? 'Hide' : 'Show' }}
                     </Button>

@@ -10,16 +10,21 @@
                 <h2 class="font-bold mb-6">Hello, <span class="highlighted">{{ user.fullname }}</span></h2>
                 <h3 class="text-2xl mb-6">Your worklogs for {{ todayDate }}</h3>
 
-                <TSTable :columns="columns" :data-source="worklogs" :pagination="pagination" rowKey="key">
-                    <template v-slot:bodyCell="props">
-                        <span v-if="props.column.dataIndex === 'key'">
-                            <a :href="`${formattedJiraUrl}browse/${props.record.key}`" target="_blank">
-                                {{ props.record.key }}
-                            </a>
-                        </span>
-                        <span v-else>{{ props.value }}</span>
-                    </template>
-                </TSTable>
+                <div>
+                    <div class="datepicker-wrapper">
+                        <TSDatePicker class="datepicker" v-model:value="dateValue" :allow-clear="false" @change="fetchWorklogs" />
+                    </div>
+                    <TSTable :columns="columns" :data-source="worklogs" :pagination="pagination" rowKey="key">
+                        <template v-slot:bodyCell="props">
+                            <span v-if="props.column.dataIndex === 'key'">
+                                <a :href="`${formattedJiraUrl}browse/${props.record.key}`" target="_blank">
+                                    {{ props.record.key }}
+                                </a>
+                            </span>
+                            <span v-else>{{ props.value }}</span>
+                        </template>
+                    </TSTable>
+                </div>
 
                 <div class="mt-4 text-lg font-bold">
                     Total: <span class="total">{{ totalHours }}</span>
@@ -30,12 +35,14 @@
 </template>
 
 <script setup>
+import dayjs from 'dayjs';
 import {ref, onMounted, computed} from 'vue';
 import CustomSpinner from "./CustomSpinner.vue";
 import { useUserStore } from '../store/user.js';
 import { get } from "../services/system/Request.js";
 import { showToaster } from "../services/messagesService.js";
 import {Card as TSCard} from "ant-design-vue";
+import {DatePicker as TSDatePicker} from "ant-design-vue";
 
 const userStore = useUserStore();
 const user = ref(userStore.getUserData);
@@ -45,11 +52,14 @@ const lastWorklogTime = ref(0);
 const loading = ref(true);
 const error = ref(null);
 const API_URL = import.meta.env.VITE_API_URL;
-const todayDate = new Date().toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric'
-});
+
+const dateValue = ref(dayjs());
+const todayDate = ref('');
+// const todayDate = new Date().toLocaleDateString('en-GB', {
+//     day: '2-digit',
+//     month: 'long',
+//     year: 'numeric'
+// });
 
 const columns = [
     {
@@ -88,9 +98,11 @@ const pagination = {
 async function fetchWorklogs() {
     loading.value = true;
     try {
-        const response = await get(`${API_URL}/api/worklogs`);
+        const selectedDate = dayjs(dateValue.value).format('YYYY-MM-DD');
+        const response = await get(`${API_URL}/api/worklogs-by-date?date=${selectedDate}`);
         worklogs.value = response.tasks;
         totalHours.value = response.total;
+        todayDate.value = response.date;
         lastWorklogTime.value = response.timeSinceLastWorklog;
     } catch (err) {
         showToaster('error', err.error);
@@ -110,14 +122,23 @@ const formattedJiraUrl = computed(() =>
 
 <style scoped lang="scss">
 .total {
-    color: #0072ff !important;
+    color: #eb5757 !important;
 }
 
 .error {
-    color: #f55f5f !important;
+    color: #ff0000 !important;
 }
 
 .highlighted {
-    color: #496FE0 !important;
+    color: #343434 !important;
+}
+
+.datepicker-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .datepicker {
+        margin-bottom: 24px;
+    }
 }
 </style>
