@@ -134,33 +134,31 @@ async function getWorklogsByDate(req, res) {
             }
         };
 
-        const jql = `worklogAuthor = currentUser() AND worklogDate = ${requestedDate}`;
-        const searchUrl = `${JIRA_URL}/rest/api/3/search?jql=${encodeURIComponent(jql)}&fields=summary`;
+        const jql = `worklogAuthor = currentUser() AND worklogDate = "${requestedDate}"`;
+        const searchJqlUrl = `${JIRA_URL}/rest/api/3/search/jql?jql=${encodeURIComponent(jql)}&fields=summary&expand=changelog`;
 
-        const response = await axios.get(searchUrl, AUTH_HEADER);
+        const response = await axios.get(searchJqlUrl, AUTH_HEADER);
         const issues = response.data.issues;
 
         const tasks = await Promise.all(
             issues.map(async (issue) => {
                 const worklogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/worklog`;
-                const changelogUrl = `${JIRA_URL}/rest/api/3/issue/${issue.key}/changelog`;
 
-                const [worklogResponse, changelogResponse] = await Promise.all([
-                    axios.get(worklogUrl, AUTH_HEADER),
-                    axios.get(changelogUrl, AUTH_HEADER)
-                ]);
+                const worklogResponse = await axios.get(worklogUrl, AUTH_HEADER);
 
                 const dateStart = dayjs(requestedDate).format('YYYY-MM-DD');
 
                 const logsForDate = worklogResponse.data.worklogs.filter(log =>
-                    log.author.emailAddress === user.jiraEmail && log.started.startsWith(dateStart)
+                    log.author.emailAddress === user.jiraEmail &&
+                    log.started.startsWith(dateStart)
                 );
 
                 let latestWorklogCreated = logsForDate.length
                     ? dayjs(logsForDate[logsForDate.length - 1].created)
                     : null;
 
-                const changelogsForDate = changelogResponse.data.values.filter(change => {
+                const histories = issue.changelog?.histories || [];
+                const changelogsForDate = histories.filter(change => {
                     const createdAt = dayjs(change.created);
                     const isCommit = change.items.some(item => item.field === 'commit');
                     return createdAt.isSame(requestedDate, 'day') && isCommit;
@@ -197,16 +195,15 @@ async function getWorklogsByDate(req, res) {
         );
 
         const filteredTasks = tasks.filter(task => task !== null);
-        const total = filteredTasks.reduce((sum, task) => {
-            const [hours, minutes] = task.timeSpent.split(' ').map(t => parseInt(t));
-            return sum + (hours * 60 + minutes);
+        const totalMinutesAll = filteredTasks.reduce((sum, task) => {
+            const [h, m] = task.timeSpent.split(' ').map(t => parseInt(t));
+            return sum + (h * 60 + m);
         }, 0);
 
-        const totalHours = Math.floor(total / 60);
-        const totalMinutes = total % 60;
+        const totalHours = Math.floor(totalMinutesAll / 60);
+        const totalMinutes = totalMinutesAll % 60;
 
         let emoji = '🪨';
-
         if (totalHours >= 7) {
             emoji = '🪨';
         } else if (totalHours >= 5) {
@@ -221,14 +218,13 @@ async function getWorklogsByDate(req, res) {
 
         const formattedDate = dayjs(requestedDate).format('D MMMM YYYY');
 
-
         return res.json({
             tasks: filteredTasks,
             total: `${totalHours}h ${totalMinutes}m ‎ ${emoji}`,
             date: formattedDate,
         });
     } catch (error) {
-        console.error("Error fetching worklogs:", error);
+        console.error("Error fetching worklogs:", error.response?.data || error.message);
         return res.status(500).json({ error: "Server error while fetching worklogs." });
     }
 }
