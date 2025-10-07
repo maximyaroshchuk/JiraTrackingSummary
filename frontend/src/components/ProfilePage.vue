@@ -96,7 +96,7 @@ const saveChanges = async () => {
                         {{ showApiKey ? 'Hide' : 'Show' }}
                     </Button>
                 </div>
-                <small class="text-color-secondary">Jira API Key This is a personal authentication token required to access Jira's API. You can generate it in your <a href='https://id.atlassian.com/manage-profile/security/api-tokens' target='_blank'>Atlassian API Token Management</a> settings. Once created, copy and store it securely, as it will not be shown again.</small>
+                <small class="text-color-secondary">Jira API Key This is a personal authentication token required to access Jira's API. You can generate it in your <a href='https://rvlnk.link/rlovowllk' target='_blank'>Atlassian API Token Management</a> settings. Once created, copy and store it securely, as it will not be shown again.</small>
             </TSFormItem>
 
             <TSSpace>

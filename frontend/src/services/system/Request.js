@@ -15,27 +15,27 @@ function getToken() {
     return Cookies.get('user-token')
 }
 
-function imminentlyLogout(error) {
-    const router = getRouter()
-    const token = getToken()
-
-    if (!error.response || error.request.status === 500 || error.request.status === 404) {
-        logout(router)
-        if (!empty(token)) {
-            setTimeout(() => {
-                showToaster('error',"Something went wrong. Please re-login.")
-            }, 250)
-        }
-        return
-    }
-
-    if (error.response.status === 401) {
-        logout(router)
-        setTimeout(() => {
-            showToaster('info', error.response.data.message || error.response.data.error)
-        }, 250)
-    }
-}
+// function imminentlyLogout(error) {
+//     const router = getRouter()
+//     const token = getToken()
+//
+//     if (!error.response || error.request.status === 500 || error.request.status === 404) {
+//         logout(router)
+//         if (!empty(token)) {
+//             setTimeout(() => {
+//                 showToaster('error',"Something went wrong. Please re-login.")
+//             }, 250)
+//         }
+//         return
+//     }
+//
+//     if (error.response.status === 401) {
+//         logout(router)
+//         setTimeout(() => {
+//             showToaster('info', error.response.data.message || error.response.data.error)
+//         }, 250)
+//     }
+// }
 
 apiClient.interceptors.request.use(config => {
     const token = getToken();
@@ -59,7 +59,7 @@ export const post = (url, data, withoutAlert = false) => {
                 }
             })
             .catch(error => {
-                imminentlyLogout(error)
+                // imminentlyLogout(error)
                 reject(error.response || error.response?.data);
             });
     });
@@ -75,7 +75,7 @@ export const get = (url) => {
                 }
             })
             .catch(error => {
-                imminentlyLogout(error)
+                // imminentlyLogout(error)
                 reject(error.data || error.response?.data);
             });
     });
