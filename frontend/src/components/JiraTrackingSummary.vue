@@ -10,6 +10,13 @@
                 <h2 class="font-bold mb-6">Hello, <span class="highlighted">{{ user.fullname }}</span></h2>
                 <h3 class="text-2xl mb-6">Your worklogs for {{ todayDate }}</h3>
 
+                <Button v-if="showTikniButton" type="primary" danger size="large" @click="openModal">ТИКНИ</Button>
+
+                <Modal v-model:open="isModalOpen" :onOk="closeModal" title="😑🤣" centered>
+                    <img src="/a9ykoc.jpg" alt="Funny image" class="w-full rounded-xl" />
+                </Modal>
+
+
                 <div>
                     <div class="datepicker-wrapper">
                         <TSDatePicker class="datepicker" v-model:value="dateValue" :allow-clear="false" @change="fetchWorklogs" />
@@ -43,6 +50,7 @@ import { get } from "../services/system/Request.js";
 import { showToaster } from "../services/messagesService.js";
 import {Card as TSCard} from "ant-design-vue";
 import {DatePicker as TSDatePicker} from "ant-design-vue";
+import {Modal} from "ant-design-vue";
 
 const userStore = useUserStore();
 const user = ref(userStore.getUserData);
@@ -117,6 +125,17 @@ onMounted(fetchWorklogs);
 
 const formattedJiraUrl = computed(() =>
     user.value.jiraInstanceUrl.endsWith('/') ? user.value.jiraInstanceUrl : `${user.value.jiraInstanceUrl}/`
+);
+
+const isModalOpen = ref(false);
+const openModal = () => { isModalOpen.value = true; };
+
+const closeModal = () => { isModalOpen.value = false; };
+
+const deadline = dayjs('2025-10-27');
+const showTikniButton = computed(() =>
+    dayjs().isBefore(deadline.add(1, 'day'), 'day')
+    && user.value?.email === 'victor.poprozhuk@splynx.com'
 );
 </script>
 
