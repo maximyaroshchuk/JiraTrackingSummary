@@ -13,7 +13,7 @@
                 <Button v-if="showTikniButton" type="primary" danger size="large" @click="openModal">ТИКНИ</Button>
 
                 <Modal v-model:open="isModalOpen" :onOk="closeModal" title="😑🤣" centered>
-                    <img src="/a9ykoc.jpg" alt="Funny image" class="w-full rounded-xl" />
+                    <img src="/adgjm5.jpg" alt="Funny image" class="w-full rounded-xl" />
                 </Modal>
 
 
@@ -132,10 +132,10 @@ const openModal = () => { isModalOpen.value = true; };
 
 const closeModal = () => { isModalOpen.value = false; };
 
-const deadline = dayjs('2025-10-27');
+const deadline = dayjs('2025-12-01');
 const showTikniButton = computed(() =>
     dayjs().isBefore(deadline.add(1, 'day'), 'day')
-    && user.value?.email === 'victor.poprozhuk@splynx.com'
+    && user.value?.email === 'andrii.yurchuk@splynx.com'
 );
 </script>
 
