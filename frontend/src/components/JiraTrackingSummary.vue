@@ -132,10 +132,9 @@ const openModal = () => { isModalOpen.value = true; };
 
 const closeModal = () => { isModalOpen.value = false; };
 
-const deadline = dayjs('2025-12-01');
+// const deadline = dayjs('2025-12-01');
 const showTikniButton = computed(() =>
-    dayjs().isBefore(deadline.add(1, 'day'), 'day')
-    && user.value?.email === 'maxim.yaroshuk@splynx.com'
+   user.value?.email === 'maxim.yaroshuk@splynx.com'
 );
 </script>
 
