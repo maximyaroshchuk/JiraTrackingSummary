@@ -10,10 +10,10 @@
                 <h2 class="font-bold mb-6">Hello, <span class="highlighted">{{ user.fullname }}</span></h2>
                 <h3 class="text-2xl mb-6">Your worklogs for {{ todayDate }}</h3>
 
-                <Button v-if="showTikniButton" type="primary" danger size="large" @click="openModal">ТИКНИ</Button>
+                <Button v-if="showTikniButton" type="primary" size="large" @click="openModal">Новий мем 😎</Button>
 
-                <Modal v-model:open="isModalOpen" :onOk="closeModal" title="😑🤣" centered>
-                    <img src="/adgjm5.jpg" alt="Funny image" class="w-full rounded-xl" />
+                <Modal v-model:open="isModalOpen" :onOk="closeModal" title="🔫" centered>
+                    <img src="/3ww.png" alt="Funny image" class="w-full rounded-xl" />
                 </Modal>
 
 
@@ -76,7 +76,7 @@ const columns = [
         key: 'key',
         resizable: true,
         render: (text, record) => {
-            return `<a href="https://jira-splynx.atlassian.net/browse/${record.key}" target="_blank">${text}</a>`;
+            return `<a href="${formattedJiraUrl}browse/${record.key}" target="_blank">${text}</a>`;
         }
     },
     {
@@ -132,10 +132,9 @@ const openModal = () => { isModalOpen.value = true; };
 
 const closeModal = () => { isModalOpen.value = false; };
 
-const deadline = dayjs('2025-12-01');
+const deadline = dayjs('2026-03-04');
 const showTikniButton = computed(() =>
     dayjs().isBefore(deadline.add(1, 'day'), 'day')
-    && user.value?.email === 'andrii.yurchuk@splynx.com'
 );
 </script>
 
